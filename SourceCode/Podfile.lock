@@ -1,0 +1,16 @@
+PODS:
+  - MaterialTextField (1.0.1)
+
+DEPENDENCIES:
+  - MaterialTextField
+
+SPEC REPOS:
+  trunk:
+    - MaterialTextField
+
+SPEC CHECKSUMS:
+  MaterialTextField: f1a0786588e4d3610cb9bb62d2adbe9777cebbf9
+
+PODFILE CHECKSUM: 8acb8836e33441723e238bcc2ee9daf46218655e
+
+COCOAPODS: 1.11.2
