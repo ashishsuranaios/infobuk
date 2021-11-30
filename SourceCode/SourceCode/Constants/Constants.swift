@@ -10,3 +10,4 @@ import UIKit
 
 
 var shodowBgViewCornerRadius = CGFloat(10.0)
+var appButtonCornerRadius = CGFloat(10.0)

@@ -23,4 +23,13 @@ extension UIView {
 
          layer.insertSublayer(shadowLayer, at: 0)
     }
+    
+    func setCornerRadius(radius : CGFloat) {
+     
+        self.layer.cornerRadius = radius
+        self.layer.masksToBounds = true
+        
+    }
 }
+
+

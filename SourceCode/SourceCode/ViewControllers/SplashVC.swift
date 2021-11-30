@@ -14,11 +14,11 @@ class SplashVC: UIViewController {
         // Do any additional setup after loading the view.
         
         let controller = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let mySceneDelegate = UIApplication.shared.connectedScenes.first!.delegate as! SceneDelegate
         let navigationController = UINavigationController(rootViewController: controller)
         navigationController.navigationBar.isHidden = true
-        appDelegate.window?.rootViewController = navigationController
-        appDelegate.window?.makeKeyAndVisible()
+        mySceneDelegate.window?.rootViewController = navigationController
+        mySceneDelegate.window?.makeKeyAndVisible()
     }
 
 

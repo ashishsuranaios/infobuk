@@ -10,6 +10,7 @@ import UIKit
 class LoginVC: UIViewController {
 
     @IBOutlet weak var shadowBg: UIView!
+    @IBOutlet weak var btnLogin: UIButton!
 
     
     override func viewDidLoad() {
@@ -20,6 +21,8 @@ class LoginVC: UIViewController {
     
     func setUI() {
         shadowBg.setShodowEffectWithCornerRadius(radius: shodowBgViewCornerRadius)
+        
+        btnLogin.setCornerRadius(radius: appButtonCornerRadius)
     }
 
 
