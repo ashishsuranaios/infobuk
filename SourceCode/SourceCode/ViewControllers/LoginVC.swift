@@ -53,7 +53,8 @@ class LoginVC: MainViewController {
     
     @IBAction func btnLoginClicked(_ sender: Any) {
         if isValidateForm() {
-            
+            let controller = self.storyboard?.instantiateViewController(withIdentifier: "OrganisationListVC") as! OrganisationListVC
+            self.navigationController?.pushViewController(controller, animated: true)
         }
     }
     

@@ -28,6 +28,7 @@
 		75BBB78F2755EA6800460069 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75BBB78D2755EA6800460069 /* LaunchScreen.storyboard */; };
 		75BBB79A2755EA6900460069 /* SourceCodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BBB7992755EA6900460069 /* SourceCodeTests.swift */; };
 		75BBB7A52755EA6900460069 /* SourceCodeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BBB7A42755EA6900460069 /* SourceCodeUITests.swift */; };
+		75F083C5275900F300A4D9F8 /* OrganisationListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F083C4275900F300A4D9F8 /* OrganisationListVC.swift */; };
 		E24E3DDC3810F43DDC2F6062 /* Pods_SourceCode_SourceCodeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06DC8A32D71D3B0AE44B775F /* Pods_SourceCode_SourceCodeUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +78,7 @@
 		75BBB7A02755EA6900460069 /* SourceCodeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SourceCodeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		75BBB7A42755EA6900460069 /* SourceCodeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceCodeUITests.swift; sourceTree = "<group>"; };
 		75BBB7A62755EA6900460069 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		75F083C4275900F300A4D9F8 /* OrganisationListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganisationListVC.swift; sourceTree = "<group>"; };
 		7AB7E1F503005C9DED5D1B37 /* Pods-SourceCode.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SourceCode.debug.xcconfig"; path = "Target Support Files/Pods-SourceCode/Pods-SourceCode.debug.xcconfig"; sourceTree = "<group>"; };
 		BA5ED8307FA52AFD4A0C32E2 /* Pods-SourceCodeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SourceCodeTests.release.xcconfig"; path = "Target Support Files/Pods-SourceCodeTests/Pods-SourceCodeTests.release.xcconfig"; sourceTree = "<group>"; };
 		BCD720FC4EAC7ADD42070F7A /* Pods_SourceCode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SourceCode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +131,7 @@
 		75462D09275626850002FCB8 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				75F083C3275900D500A4D9F8 /* Organisation */,
 				75462D0D275626BF0002FCB8 /* SplashVC.swift */,
 				75462D0F275626CB0002FCB8 /* LoginVC.swift */,
 				75462D11275626D60002FCB8 /* RegisterVC.swift */,
@@ -253,6 +256,14 @@
 				75BBB7A62755EA6900460069 /* Info.plist */,
 			);
 			path = SourceCodeUITests;
+			sourceTree = "<group>";
+		};
+		75F083C3275900D500A4D9F8 /* Organisation */ = {
+			isa = PBXGroup;
+			children = (
+				75F083C4275900F300A4D9F8 /* OrganisationListVC.swift */,
+			);
+			path = Organisation;
 			sourceTree = "<group>";
 		};
 		D4B660F8944FB0FF0EA0864D /* Frameworks */ = {
@@ -508,6 +519,7 @@
 			files = (
 				75BBB7872755EA6700460069 /* ViewController.swift in Sources */,
 				75B1D8E6275649F800FABDC2 /* ForgotPasswordVC.swift in Sources */,
+				75F083C5275900F300A4D9F8 /* OrganisationListVC.swift in Sources */,
 				75462D0E275626BF0002FCB8 /* SplashVC.swift in Sources */,
 				75BBB7832755EA6700460069 /* AppDelegate.swift in Sources */,
 				757547002758A221005D5C49 /* APIManager.swift in Sources */,
