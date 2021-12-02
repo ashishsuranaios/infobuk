@@ -15,6 +15,8 @@
 		75462D1927562BFC0002FCB8 /* opensans_bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 75462D1627562BFC0002FCB8 /* opensans_bold.ttf */; };
 		75462D1A27562BFC0002FCB8 /* opensans_regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 75462D1727562BFC0002FCB8 /* opensans_regular.ttf */; };
 		75462D1B27562BFC0002FCB8 /* opensans_semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 75462D1827562BFC0002FCB8 /* opensans_semibold.ttf */; };
+		757547002758A221005D5C49 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757546FF2758A221005D5C49 /* APIManager.swift */; };
+		758C1A4027573E66008EDDA8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758C1A3F27573E66008EDDA8 /* MainViewController.swift */; };
 		75B1D8E6275649F800FABDC2 /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B1D8E5275649F800FABDC2 /* ForgotPasswordVC.swift */; };
 		75B1D8E92756507A00FABDC2 /* ExtentionsFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B1D8E82756507A00FABDC2 /* ExtentionsFiles.swift */; };
 		75B1D8EC2756517C00FABDC2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B1D8EB2756517C00FABDC2 /* Constants.swift */; };
@@ -56,6 +58,8 @@
 		75462D1627562BFC0002FCB8 /* opensans_bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = opensans_bold.ttf; sourceTree = "<group>"; };
 		75462D1727562BFC0002FCB8 /* opensans_regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = opensans_regular.ttf; sourceTree = "<group>"; };
 		75462D1827562BFC0002FCB8 /* opensans_semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = opensans_semibold.ttf; sourceTree = "<group>"; };
+		757546FF2758A221005D5C49 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		758C1A3F27573E66008EDDA8 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		75B1D8E5275649F800FABDC2 /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
 		75B1D8E82756507A00FABDC2 /* ExtentionsFiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtentionsFiles.swift; sourceTree = "<group>"; };
 		75B1D8EB2756517C00FABDC2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -129,6 +133,7 @@
 				75462D0F275626CB0002FCB8 /* LoginVC.swift */,
 				75462D11275626D60002FCB8 /* RegisterVC.swift */,
 				75B1D8E5275649F800FABDC2 /* ForgotPasswordVC.swift */,
+				758C1A3F27573E66008EDDA8 /* MainViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -163,6 +168,14 @@
 				75462D1827562BFC0002FCB8 /* opensans_semibold.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		757546FE2758A209005D5C49 /* WebService */ = {
+			isa = PBXGroup;
+			children = (
+				757546FF2758A221005D5C49 /* APIManager.swift */,
+			);
+			path = WebService;
 			sourceTree = "<group>";
 		};
 		75B1D8E72756504800FABDC2 /* Extensions */ = {
@@ -206,6 +219,7 @@
 		75BBB7812755EA6700460069 /* SourceCode */ = {
 			isa = PBXGroup;
 			children = (
+				757546FE2758A209005D5C49 /* WebService */,
 				75B1D8EA2756516D00FABDC2 /* Constants */,
 				75B1D8E72756504800FABDC2 /* Extensions */,
 				75462D0C2756269C0002FCB8 /* Custom Files */,
@@ -496,11 +510,13 @@
 				75B1D8E6275649F800FABDC2 /* ForgotPasswordVC.swift in Sources */,
 				75462D0E275626BF0002FCB8 /* SplashVC.swift in Sources */,
 				75BBB7832755EA6700460069 /* AppDelegate.swift in Sources */,
+				757547002758A221005D5C49 /* APIManager.swift in Sources */,
 				75B1D8E92756507A00FABDC2 /* ExtentionsFiles.swift in Sources */,
 				75462D12275626D60002FCB8 /* RegisterVC.swift in Sources */,
 				75BBB7852755EA6700460069 /* SceneDelegate.swift in Sources */,
 				75462D10275626CB0002FCB8 /* LoginVC.swift in Sources */,
 				75B1D8EC2756517C00FABDC2 /* Constants.swift in Sources */,
+				758C1A4027573E66008EDDA8 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

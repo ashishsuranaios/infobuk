@@ -6,6 +6,9 @@ target 'SourceCode' do
   use_frameworks!
 
 pod 'MaterialTextField'
+pod 'MaterialComponents/TextControls+OutlinedTextFields'
+pod 'Alamofire'
+pod 'SwiftyJSON'
 
   # Pods for SourceCode
 

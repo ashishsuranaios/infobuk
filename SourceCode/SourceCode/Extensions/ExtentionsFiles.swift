@@ -15,10 +15,10 @@ extension UIView {
          shadowLayer.path = UIBezierPath(roundedRect: bounds, cornerRadius: 12).cgPath
          shadowLayer.fillColor = UIColor.white.cgColor
 
-         shadowLayer.shadowColor = UIColor.darkGray.cgColor
+         shadowLayer.shadowColor = UIColor.lightGray.cgColor
          shadowLayer.shadowPath = shadowLayer.path
-         shadowLayer.shadowOffset = CGSize(width: 2.0, height: 2.0)
-         shadowLayer.shadowOpacity = 0.8
+        shadowLayer.shadowOffset = CGSize(width: 1.0, height: 1.0)
+        shadowLayer.shadowOpacity = 0.5
         shadowLayer.shadowRadius = radius
 
          layer.insertSublayer(shadowLayer, at: 0)
@@ -33,3 +33,51 @@ extension UIView {
 }
 
 
+extension String {
+
+    //To check text field or String is blank or not
+    var isBlank: Bool {
+        get {
+            let trimmed = trimmingCharacters(in: CharacterSet.whitespaces)
+            return trimmed.isEmpty
+        }
+    }
+
+    //Validate Email
+
+    var isEmail: Bool {
+        do {
+            let regex = try NSRegularExpression(pattern: "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}", options: .caseInsensitive)
+            return regex.firstMatch(in: self, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, self.count)) != nil
+        } catch {
+            return false
+        }
+    }
+
+    var isAlphanumeric: Bool {
+        return !isEmpty && range(of: "[^a-zA-Z0-9]", options: .regularExpression) == nil
+    }
+
+    //validate Password
+    var isValidPassword: Bool {
+        do {
+            let regex = try NSRegularExpression(pattern: "^[a-zA-Z_0-9\\-_,;.:#+*?=!§$%&/()@]+$", options: .caseInsensitive)
+            if(regex.firstMatch(in: self, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, self.count)) != nil){
+
+                if(self.count>=6 && self.count<=20){
+                    return true
+                }else{
+                    return false
+                }
+            }else{
+                return false
+            }
+        } catch {
+            return false
+        }
+    }
+}
+
+extension UIColor {
+    
+}
