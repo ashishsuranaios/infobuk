@@ -7,10 +7,17 @@
 
 import UIKit
 import MaterialComponents
+import NVActivityIndicatorView
 
 class RegisterVC: MainViewController {
     
+    @IBOutlet weak var successViewBg: UIView!
+    @IBOutlet weak var shadowBgSuccess: UIView!
+    @IBOutlet weak var lblResetEmailDetail: UILabel!
+
+    
     @IBOutlet weak var shadowBg: UIView!
+
     @IBOutlet weak var btnRegister: UIButton!
     @IBOutlet weak var txtEmail: MDCOutlinedTextField!
     @IBOutlet weak var txtName: MDCOutlinedTextField!
@@ -23,18 +30,46 @@ class RegisterVC: MainViewController {
 
     let downArrowBtn = UIButton(type: .custom)
     var isAgreeTerms = false
+    var phoneCodeArray = [PhoneCode]()
+    var selectedPhoneCode : PhoneCode?
+
+    var pickerView = UIPickerView()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        successViewBg.isHidden = true
         imgAgreeTerms.image = UIImage(named: "checkbox_unselected")
 
         // Do any additional setup after loading the view.
         setUI()
+        
+        self.txtEmail.text = "abcd123@mailinator.com"
+        self.txtName.text = "Abcd"
+        self.txtPhone.text = "545146548"
+        self.txtWebsite.text = "www.abcd.com"
+        self.txtInstitureName.text = "ABCD"
+
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        pickerView.dataSource = self
+        pickerView.delegate = self
+
+        txtCode.delegate = self
+        txtCode.inputView = pickerView
+        
+        APICallManager.instance.getCountryListWithCodes { (arr) in
+            self.phoneCodeArray = arr
+        } onFailure: { (error) in
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     
     func setUI() {
         shadowBg.setShodowEffectWithCornerRadius(radius: shodowBgViewCornerRadius)
-        
+        shadowBgSuccess.setShodowEffectWithCornerRadius(radius: shodowBgViewCornerRadius)
+
         btnRegister.setCornerRadius(radius: appButtonCornerRadius)
         
         self.txtEmail.delegate = self
@@ -78,8 +113,30 @@ class RegisterVC: MainViewController {
     }
     
     @IBAction func btnRegisterClicked(_ sender: Any) {
+        self.view.endEditing(true)
+
         if isValidateForm() {
-            
+            self.startLoading()
+            let param : [String : String] = ["email" : "\(txtEmail.text!)", "name" : "\(txtName.text!)", "orgName" : "\(txtInstitureName.text!)", "Website" : "\(txtWebsite.text!)", "phoneCountryId" : "\(selectedPhoneCode!.id ?? "")", "phone" : "\(txtPhone.text!)"]
+            APICallManager.instance.requestForSignUp(param: param) { (res) in
+                if res.success ?? false {
+                    var myMutableString = NSMutableAttributedString()
+                    let myString = "Please check your email \(self.txtEmail.text!) and click on the included link to proceed."
+                    myMutableString = NSMutableAttributedString(string: myString as String, attributes: [NSAttributedString.Key.font:UIFont(name: "Georgia", size: 18.0)!, NSAttributedString.Key.foregroundColor : AppGrayColor])
+                    if let range = myString.range(of: self.txtEmail.text!) {
+                        let nsRange = NSRange(range, in: myString)
+                        myMutableString.addAttribute(NSAttributedString.Key.foregroundColor, value: AppColor, range: nsRange)
+                    }
+                    self.lblResetEmailDetail.attributedText = myMutableString
+                    self.successViewBg.isHidden = false
+                } else {
+                }
+                self.stopLoading()
+            } onFailure: { (err) in
+                self.stopLoading()
+
+            }
+
         }
     }
     
@@ -104,7 +161,7 @@ class RegisterVC: MainViewController {
             return false
         }
         
-        if (self.txtCode.text!.isBlank) {
+        if (self.selectedPhoneCode == nil) {
             self.setUpErrorInTextField(textField: txtCode, errorText: "Please select code.")
             return false
         }
@@ -124,6 +181,11 @@ class RegisterVC: MainViewController {
 //            return false
         }
         
+        if (!isAgreeTerms) {
+            self.showAlert(msg : "Please accept terms and conditions.")
+            return false
+        }
+        
         return true
     }
 
@@ -136,4 +198,27 @@ extension RegisterVC : UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
+}
+
+extension RegisterVC : UIPickerViewDataSource, UIPickerViewDelegate {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        phoneCodeArray.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        let rec = phoneCodeArray[row]
+        return "\(rec.phoneCode ?? "") \(rec.name ?? "")"
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let rec = phoneCodeArray[row]
+        txtCode.text = "\(rec.phoneCode ?? "") \(rec.name ?? "")"
+        selectedPhoneCode = rec
+        txtCode.resignFirstResponder()
+    }
+    
 }

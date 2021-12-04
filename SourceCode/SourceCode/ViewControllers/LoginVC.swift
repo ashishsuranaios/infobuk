@@ -22,6 +22,8 @@ class LoginVC: MainViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.setUI()
+        self.txtEmail.text = "abcd123@mailinator.com"
+        self.txtPassword.text = "1234567"
     }
     
     func setUI() {
@@ -52,9 +54,29 @@ class LoginVC: MainViewController {
     }
     
     @IBAction func btnLoginClicked(_ sender: Any) {
+        self.view.endEditing(true)
         if isValidateForm() {
-            let controller = self.storyboard?.instantiateViewController(withIdentifier: "OrganisationListVC") as! OrganisationListVC
-            self.navigationController?.pushViewController(controller, animated: true)
+            self.startLoading()
+            let param : [String : String] = ["email" : "\(txtEmail.text!)", "password" : "\(txtPassword.text!)"]
+            APICallManager.instance.requestForLogin(param: param) { [self] (res) in
+                if res.success ?? false {
+                    let controller = self.storyboard?.instantiateViewController(withIdentifier: "OrganisationListVC") as! OrganisationListVC
+                    self.navigationController?.pushViewController(controller, animated: true)
+                } else {
+                    if res.error?.keys.count ?? 0 > 0 {
+                        if res.error?.keys.first == "password" {
+                            self.setUpErrorInTextField(textField: self.txtPassword, errorText: res.error?.values.first ?? "Something went wrong")
+                        } else if res.error?.keys.first == "email" {
+                            self.setUpErrorInTextField(textField: self.txtEmail, errorText: res.error?.values.first ?? "Something went wrong")
+                        }
+                    }
+                }
+                self.stopLoading()
+            } onFailure: { (err) in
+                self.stopLoading()
+
+            }
+           
         }
     }
     

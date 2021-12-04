@@ -7,15 +7,28 @@
 
 import UIKit
 import MaterialComponents
+import NVActivityIndicatorView
 
 class MainViewController: UIViewController {
-
+    
+    var nvActivityIndicatorView : NVActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        NVActivityIndicatorView.DEFAULT_BLOCKER_SIZE = CGSize(width: 45, height: 45)
 
         // Do any additional setup after loading the view.
     }
     
+    func startLoading() {
+        nvActivityIndicatorView = NVActivityIndicatorView(frame: CGRect(x: self.view.frame.width/2 - 40, y: self.view.frame.height/2 - 40, width: 80, height: 80), type: .ballClipRotateMultiple, color: AppColor, padding: 10.0)
+        self.view.addSubview(nvActivityIndicatorView)
+        nvActivityIndicatorView.startAnimating()
+    }
+    
+    func stopLoading(){
+        nvActivityIndicatorView.stopAnimating()
+    }
     
     func setUpTexxtField(textField : MDCOutlinedTextField , errorText: String, placeHolder : String, isSecureText : Bool? = false, leftImageName : String? = "") {
         textField.label.text = placeHolder
@@ -80,6 +93,11 @@ class MainViewController: UIViewController {
         textField.setFloatingLabelColor(AppDarkGrayColor, for: MDCTextControlState.normal)
     }
     
+    func showAlert(msg : String)  {
+        let alert = UIAlertController(title: "Alert", message: msg, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
     
     func isValidEmail(_ email: String) -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"

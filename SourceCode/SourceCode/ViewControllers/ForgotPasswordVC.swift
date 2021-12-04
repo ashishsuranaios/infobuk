@@ -9,22 +9,34 @@ import UIKit
 import MaterialComponents
 
 class ForgotPasswordVC: MainViewController {
+    @IBOutlet weak var successViewBg: UIView!
+    @IBOutlet weak var shadowBgSuccess: UIView!
+    @IBOutlet weak var lblResetEmailDetail: UILabel!
 
+    
     @IBOutlet weak var shadowBg: UIView!
     @IBOutlet weak var btnLogin: UIButton!
+    @IBOutlet weak var stack: UIStackView!
+
     @IBOutlet weak var txtEmail: MDCOutlinedTextField!
+
+
+
 
     let eyePasswordBtn = UIButton(type: .custom)
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        successViewBg.isHidden = true
+
         // Do any additional setup after loading the view.
         self.setUI()
     }
     
     func setUI() {
         shadowBg.setShodowEffectWithCornerRadius(radius: shodowBgViewCornerRadius)
-        
+        shadowBgSuccess.setShodowEffectWithCornerRadius(radius: shodowBgViewCornerRadius)
+
         btnLogin.setCornerRadius(radius: appButtonCornerRadius)
         
         self.txtEmail.delegate = self
@@ -34,8 +46,35 @@ class ForgotPasswordVC: MainViewController {
    
     
     @IBAction func btnForgotPasswordClicked(_ sender: Any) {
+        self.view.endEditing(true)
         if isValidateForm() {
-            
+            self.startLoading()
+            let param : [String : String] = ["email" : "\(txtEmail.text!)"]
+            APICallManager.instance.requestForResetPassword(param: param) { [self] (res) in
+                if res.success ?? false {
+                    
+                    var myMutableString = NSMutableAttributedString()
+                    let myString = "Please check your email \(self.txtEmail.text!) and click on the included link to proceed."
+                    myMutableString = NSMutableAttributedString(string: myString as String, attributes: [NSAttributedString.Key.font:UIFont(name: "Georgia", size: 18.0)!, NSAttributedString.Key.foregroundColor : AppGrayColor])
+                    if let range = myString.range(of: self.txtEmail.text!) {
+                        let nsRange = NSRange(range, in: myString)
+                        myMutableString.addAttribute(NSAttributedString.Key.foregroundColor, value: AppColor, range: nsRange)
+                    }
+                    self.lblResetEmailDetail.attributedText = myMutableString
+                    
+                    self.successViewBg.isHidden = false
+
+
+                } else {
+                    if res.error?.keys.count ?? 0 > 0 {
+                        self.setUpErrorInTextField(textField: self.txtEmail, errorText: res.error?.values.first ?? "Something went wrong")
+                    }
+                }
+                self.stopLoading()
+            } onFailure: { (err) in
+                self.stopLoading()
+
+            }
         }
     }
     

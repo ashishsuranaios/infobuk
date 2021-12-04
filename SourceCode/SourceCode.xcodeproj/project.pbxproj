@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18183668275B2BD600380E11 /* PhoneCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18183667275B2BD600380E11 /* PhoneCode.swift */; };
+		18CA7753275BD31D00EEA26D /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CA7752275BD31D00EEA26D /* SignUpModel.swift */; };
+		18CA7758275BF38A00EEA26D /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CA7757275BF38A00EEA26D /* LoginModel.swift */; };
 		3322D80E2487BB40BC75F9D5 /* Pods_SourceCode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCD720FC4EAC7ADD42070F7A /* Pods_SourceCode.framework */; };
 		546E784C7E3B961880249AA8 /* Pods_SourceCodeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7844A76DC88F800E7A99957 /* Pods_SourceCodeTests.framework */; };
 		75462D0E275626BF0002FCB8 /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75462D0D275626BF0002FCB8 /* SplashVC.swift */; };
@@ -51,6 +54,9 @@
 
 /* Begin PBXFileReference section */
 		06DC8A32D71D3B0AE44B775F /* Pods_SourceCode_SourceCodeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SourceCode_SourceCodeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		18183667275B2BD600380E11 /* PhoneCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneCode.swift; sourceTree = "<group>"; };
+		18CA7752275BD31D00EEA26D /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
+		18CA7757275BF38A00EEA26D /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		5BE88F96A0310C822DB14B4A /* Pods-SourceCodeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SourceCodeTests.debug.xcconfig"; path = "Target Support Files/Pods-SourceCodeTests/Pods-SourceCodeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		664D7B9C23174DCF7F6DDB56 /* Pods-SourceCode-SourceCodeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SourceCode-SourceCodeUITests.release.xcconfig"; path = "Target Support Files/Pods-SourceCode-SourceCodeUITests/Pods-SourceCode-SourceCodeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		75462D0D275626BF0002FCB8 /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
@@ -144,6 +150,9 @@
 		75462D0A2756268E0002FCB8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				18183667275B2BD600380E11 /* PhoneCode.swift */,
+				18CA7752275BD31D00EEA26D /* SignUpModel.swift */,
+				18CA7757275BF38A00EEA26D /* LoginModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -287,7 +296,7 @@
 				75BBB77B2755EA6700460069 /* Sources */,
 				75BBB77C2755EA6700460069 /* Frameworks */,
 				75BBB77D2755EA6700460069 /* Resources */,
-				06A5714D51BCD9F5D0C4F987 /* [CP] Embed Pods Frameworks */,
+				75414C428B46190B09D2A43B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -325,7 +334,7 @@
 				75BBB79C2755EA6900460069 /* Sources */,
 				75BBB79D2755EA6900460069 /* Frameworks */,
 				75BBB79E2755EA6900460069 /* Resources */,
-				B67A06E185471A9112252317 /* [CP] Embed Pods Frameworks */,
+				1C1302ED8967B29E3C9838F0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -410,21 +419,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		06A5714D51BCD9F5D0C4F987 /* [CP] Embed Pods Frameworks */ = {
+		1C1302ED8967B29E3C9838F0 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SourceCode/Pods-SourceCode-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-SourceCode-SourceCodeUITests/Pods-SourceCode-SourceCodeUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SourceCode/Pods-SourceCode-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-SourceCode-SourceCodeUITests/Pods-SourceCode-SourceCodeUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SourceCode/Pods-SourceCode-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SourceCode-SourceCodeUITests/Pods-SourceCode-SourceCodeUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		336D7B540A034AE212597BD3 /* [CP] Check Pods Manifest.lock */ = {
@@ -471,21 +480,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B67A06E185471A9112252317 /* [CP] Embed Pods Frameworks */ = {
+		75414C428B46190B09D2A43B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SourceCode-SourceCodeUITests/Pods-SourceCode-SourceCodeUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-SourceCode/Pods-SourceCode-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SourceCode-SourceCodeUITests/Pods-SourceCode-SourceCodeUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-SourceCode/Pods-SourceCode-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SourceCode-SourceCodeUITests/Pods-SourceCode-SourceCodeUITests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SourceCode/Pods-SourceCode-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CAFEA377B277F30E425C3419 /* [CP] Check Pods Manifest.lock */ = {
@@ -518,6 +527,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				75BBB7872755EA6700460069 /* ViewController.swift in Sources */,
+				18CA7753275BD31D00EEA26D /* SignUpModel.swift in Sources */,
 				75B1D8E6275649F800FABDC2 /* ForgotPasswordVC.swift in Sources */,
 				75F083C5275900F300A4D9F8 /* OrganisationListVC.swift in Sources */,
 				75462D0E275626BF0002FCB8 /* SplashVC.swift in Sources */,
@@ -526,6 +536,8 @@
 				75B1D8E92756507A00FABDC2 /* ExtentionsFiles.swift in Sources */,
 				75462D12275626D60002FCB8 /* RegisterVC.swift in Sources */,
 				75BBB7852755EA6700460069 /* SceneDelegate.swift in Sources */,
+				18CA7758275BF38A00EEA26D /* LoginModel.swift in Sources */,
+				18183668275B2BD600380E11 /* PhoneCode.swift in Sources */,
 				75462D10275626CB0002FCB8 /* LoginVC.swift in Sources */,
 				75B1D8EC2756517C00FABDC2 /* Constants.swift in Sources */,
 				758C1A4027573E66008EDDA8 /* MainViewController.swift in Sources */,
@@ -634,7 +646,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -689,7 +701,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -707,6 +719,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SourceCode/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -726,6 +739,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SourceCode/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
