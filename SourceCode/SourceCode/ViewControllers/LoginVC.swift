@@ -8,6 +8,7 @@
 import UIKit
 import MaterialTextField
 import MaterialComponents
+import JWTDecode
 
 class LoginVC: MainViewController {
 
@@ -23,7 +24,7 @@ class LoginVC: MainViewController {
         // Do any additional setup after loading the view.
         self.setUI()
         self.txtEmail.text = "abcd123@mailinator.com"
-        self.txtPassword.text = "1234567"
+        self.txtPassword.text = "12345678"
     }
     
     func setUI() {
@@ -60,6 +61,11 @@ class LoginVC: MainViewController {
             let param : [String : String] = ["email" : "\(txtEmail.text!)", "password" : "\(txtPassword.text!)"]
             APICallManager.instance.requestForLogin(param: param) { [self] (res) in
                 if res.success ?? false {
+                    let jwt = try? decode(jwt: res.token ?? "")
+
+                    UserDefaults.standard.set(jwt?.body, forKey: loginResponseLocal)
+                    UserDefaults.standard.set(res.token, forKey: loginTokenLocal)
+
                     let controller = self.storyboard?.instantiateViewController(withIdentifier: "OrganisationListVC") as! OrganisationListVC
                     self.navigationController?.pushViewController(controller, animated: true)
                 } else {
@@ -117,6 +123,11 @@ class LoginVC: MainViewController {
 
 extension LoginVC : UITextFieldDelegate {
 
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.removeErrorFromTextField(textField: txtEmail)
+        self.removeErrorFromTextField(textField: txtPassword)
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true

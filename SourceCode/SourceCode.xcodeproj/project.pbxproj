@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		18183668275B2BD600380E11 /* PhoneCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18183667275B2BD600380E11 /* PhoneCode.swift */; };
+		18805843275D2E4B008AD317 /* AddOrganisationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18805842275D2E4B008AD317 /* AddOrganisationVC.swift */; };
+		189504DC275D1711007CBE36 /* CustomOrgListSingleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189504DA275D1711007CBE36 /* CustomOrgListSingleCell.swift */; };
+		189504DD275D1711007CBE36 /* CustomOrgListSingleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 189504DB275D1711007CBE36 /* CustomOrgListSingleCell.xib */; };
 		18CA7753275BD31D00EEA26D /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CA7752275BD31D00EEA26D /* SignUpModel.swift */; };
 		18CA7758275BF38A00EEA26D /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CA7757275BF38A00EEA26D /* LoginModel.swift */; };
 		3322D80E2487BB40BC75F9D5 /* Pods_SourceCode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCD720FC4EAC7ADD42070F7A /* Pods_SourceCode.framework */; };
@@ -55,6 +58,9 @@
 /* Begin PBXFileReference section */
 		06DC8A32D71D3B0AE44B775F /* Pods_SourceCode_SourceCodeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SourceCode_SourceCodeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18183667275B2BD600380E11 /* PhoneCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneCode.swift; sourceTree = "<group>"; };
+		18805842275D2E4B008AD317 /* AddOrganisationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrganisationVC.swift; sourceTree = "<group>"; };
+		189504DA275D1711007CBE36 /* CustomOrgListSingleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomOrgListSingleCell.swift; sourceTree = "<group>"; };
+		189504DB275D1711007CBE36 /* CustomOrgListSingleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomOrgListSingleCell.xib; sourceTree = "<group>"; };
 		18CA7752275BD31D00EEA26D /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
 		18CA7757275BF38A00EEA26D /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		5BE88F96A0310C822DB14B4A /* Pods-SourceCodeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SourceCodeTests.debug.xcconfig"; path = "Target Support Files/Pods-SourceCodeTests/Pods-SourceCodeTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -121,6 +127,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		189504D8275D16E7007CBE36 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				189504D9275D16F0007CBE36 /* TableViewCell */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		189504D9275D16F0007CBE36 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				189504DA275D1711007CBE36 /* CustomOrgListSingleCell.swift */,
+				189504DB275D1711007CBE36 /* CustomOrgListSingleCell.xib */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
 		2AA46D81E71F8D1E705BE7AA /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -231,6 +254,7 @@
 		75BBB7812755EA6700460069 /* SourceCode */ = {
 			isa = PBXGroup;
 			children = (
+				189504D8275D16E7007CBE36 /* CustomViews */,
 				757546FE2758A209005D5C49 /* WebService */,
 				75B1D8EA2756516D00FABDC2 /* Constants */,
 				75B1D8E72756504800FABDC2 /* Extensions */,
@@ -271,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				75F083C4275900F300A4D9F8 /* OrganisationListVC.swift */,
+				18805842275D2E4B008AD317 /* AddOrganisationVC.swift */,
 			);
 			path = Organisation;
 			sourceTree = "<group>";
@@ -394,6 +419,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				75462D1A27562BFC0002FCB8 /* opensans_regular.ttf in Resources */,
+				189504DD275D1711007CBE36 /* CustomOrgListSingleCell.xib in Resources */,
 				75462D1927562BFC0002FCB8 /* opensans_bold.ttf in Resources */,
 				75BBB78F2755EA6800460069 /* LaunchScreen.storyboard in Resources */,
 				75BBB78C2755EA6800460069 /* Assets.xcassets in Resources */,
@@ -535,6 +561,8 @@
 				757547002758A221005D5C49 /* APIManager.swift in Sources */,
 				75B1D8E92756507A00FABDC2 /* ExtentionsFiles.swift in Sources */,
 				75462D12275626D60002FCB8 /* RegisterVC.swift in Sources */,
+				18805843275D2E4B008AD317 /* AddOrganisationVC.swift in Sources */,
+				189504DC275D1711007CBE36 /* CustomOrgListSingleCell.swift in Sources */,
 				75BBB7852755EA6700460069 /* SceneDelegate.swift in Sources */,
 				18CA7758275BF38A00EEA26D /* LoginModel.swift in Sources */,
 				18183668275B2BD600380E11 /* PhoneCode.swift in Sources */,

@@ -163,6 +163,46 @@ class APICallManager {
         )
     }
     
+    // MARK : SIGN UP API
+    
+    func requestForAddOrganization(param : [String : String], onSuccess successCallback : ((_ countryList : LoginModel) -> Void)?, onFailure failureCallback: ((_ errorMessage : String) -> Void)?) {
+        // Build URL
+        let url = API_BASE_URL + Endpoint.AddOrg.rawValue
+        let token = UserDefaults.standard.value(forKey: loginTokenLocal) as? String ?? ""
+
+        let headers: HTTPHeaders = [
+            "Content-Type": "application/x-www-form-urlencoded",
+            "Accept": "*/*",
+            "Authorization" : "Bearer \(token)"
+        ]
+        // call API
+        self.createRequest(
+            url, method: .post, headers: headers, parameters: param,
+            onSuccess: {(responseObject: JSON) -> Void in
+                // Create dictionary
+                // Convert JSON String to Model
+               
+                if let responseDict = responseObject.dictionaryObject {
+                    let t1 = (try? JSONSerialization.data(withJSONObject: responseDict, options: []))!
+                    let jsonDecoder = JSONDecoder()
+                    let responseModel = try? jsonDecoder.decode(LoginModel.self, from: t1)
+//                    let responseModel : SignUpModel = self.stringArrayToData(stringArray: responseDict) as! SignUpModel
+//                    // Fire callback
+                    if responseModel?.success ?? false {
+                        successCallback?(responseModel!)
+                    } else {
+                        failureCallback?("An error has occured.")
+                    }
+                } else {
+                    failureCallback?("An error has occured.")
+                }
+        },
+            onFailure: {(errorMessage: String) -> Void in
+                failureCallback?(errorMessage)
+        }
+        )
+    }
+    
     func stringArrayToData(stringArray: Any) -> Any? {
         let t1 = (try? JSONSerialization.data(withJSONObject: stringArray, options: []))!
         let jsonDecoder = JSONDecoder()

@@ -100,6 +100,10 @@ class ForgotPasswordVC: MainViewController {
 
 extension ForgotPasswordVC : UITextFieldDelegate {
 
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.removeErrorFromTextField(textField: txtEmail)
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true

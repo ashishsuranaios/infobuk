@@ -44,11 +44,11 @@ class RegisterVC: MainViewController {
         // Do any additional setup after loading the view.
         setUI()
         
-        self.txtEmail.text = "abcd123@mailinator.com"
-        self.txtName.text = "Abcd"
-        self.txtPhone.text = "545146548"
-        self.txtWebsite.text = "www.abcd.com"
-        self.txtInstitureName.text = "ABCD"
+//        self.txtEmail.text = "abcd123@mailinator.com"
+//        self.txtName.text = "Abcd"
+//        self.txtPhone.text = "545146548"
+//        self.txtWebsite.text = "www.abcd.com"
+//        self.txtInstitureName.text = "ABCD"
 
     }
     
@@ -193,6 +193,15 @@ class RegisterVC: MainViewController {
 
 
 extension RegisterVC : UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.removeErrorFromTextField(textField: txtEmail)
+        self.removeErrorFromTextField(textField: txtCode)
+        self.removeErrorFromTextField(textField: txtName)
+        self.removeErrorFromTextField(textField: txtPhone)
+        self.removeErrorFromTextField(textField: txtInstitureName)
+        self.removeErrorFromTextField(textField: txtWebsite)
+    }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
