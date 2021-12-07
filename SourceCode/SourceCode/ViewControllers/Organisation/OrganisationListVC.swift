@@ -13,7 +13,7 @@ class OrganisationListVC: UIViewController {
 
 
     var loginModel : [String : Any]?
-    
+    var allKeys = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,13 +23,19 @@ class OrganisationListVC: UIViewController {
         tblView.register(UINib(nibName: "CustomOrgListSingleCell", bundle: nil), forCellReuseIdentifier: "CustomOrgListSingleCell")
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         self.setUI()
     }
     
+    
     func setUI(){
         loginModel = UserDefaults.standard.value(forKey: loginResponseLocal) as! [String : Any]
+        if let orgDict = (loginModel?["orgs"] as? [String : Any]) {
+            allKeys = Array(orgDict.keys)
+        }
         tblView.reloadData()
+        tblView.reloadData()
+
     }
     
     // MARK :- Button action
@@ -63,7 +69,6 @@ extension OrganisationListVC : UITableViewDelegate, UITableViewDataSource {
         customCell.lblType.setCornerRadius(radius: 15.0)
         
         if let orgDict = (loginModel?["orgs"] as? [String : Any]) {
-            let allKeys = Array(orgDict.keys)
             if let keyValue = allKeys[indexPath.row] as? String {
                 if let orgRecord = orgDict[keyValue] as? [String : Any] {
                     customCell.orgDict = orgRecord
@@ -73,6 +78,10 @@ extension OrganisationListVC : UITableViewDelegate, UITableViewDataSource {
             }
         }
         return customCell
+    }
+    
+    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        (cell as! CustomOrgListSingleCell).checkForShadow()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

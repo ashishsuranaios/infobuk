@@ -34,21 +34,28 @@ class AddOrganisationVC: MainViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        setUI()
         
 //        self.txtName.text = "Abcd"
 //        self.txtPhone.text = "545146548"
 //        self.txtWebsite.text = "www.abcd.com"
 //        self.txtInstitureName.text = "ABCD"
-
+        self.setUpTexxtField(textField: txtName, errorText: "Please enter a valid Name", placeHolder: "Your Name", leftImageName: "name_icon")
+        self.setUpTexxtField(textField: txtCode, errorText: "Please enter a valid Code", placeHolder: "Code", leftImageName: "code_icon")
+        self.setUpTexxtField(textField: txtPhone, errorText: "Please enter a valid Phone Number", placeHolder: "Phone", leftImageName: "phone_icon")
+        self.setUpTexxtField(textField: txtInstitureName, errorText: "Please enter a valid Institute Name", placeHolder: "Institute Name", leftImageName: "institute_icon")
+        self.setUpTexxtField(textField: txtWebsite, errorText: "Please enter a valid Website", placeHolder: "Website (optional)", leftImageName: "website_icon")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.setUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        pickerView.dataSource = self
-        pickerView.delegate = self
-
-        txtCode.delegate = self
-        txtCode.inputView = pickerView
+//        pickerView.dataSource = self
+//        pickerView.delegate = self
+//
+//        txtCode.delegate = self
+//        txtCode.inputView = pickerView
         
         APICallManager.instance.getCountryListWithCodes { (arr) in
             self.phoneCodeArray = arr
@@ -58,7 +65,7 @@ class AddOrganisationVC: MainViewController {
     }
     
     func setUI() {
-        shadowBg.setShodowEffectWithCornerRadius(radius: shodowBgViewCornerRadius)
+   //     shadowBg.setShodowEffectWithCornerRadius(radius: shodowBgViewCornerRadius)
 
         btnRegister.setCornerRadius(radius: appButtonCornerRadius)
         
@@ -68,11 +75,7 @@ class AddOrganisationVC: MainViewController {
         self.txtInstitureName.delegate = self
         self.txtWebsite.delegate = self
 
-        self.setUpTexxtField(textField: txtName, errorText: "Please enter a valid Name", placeHolder: "Your Name", leftImageName: "name_icon")
-        self.setUpTexxtField(textField: txtCode, errorText: "Please enter a valid Code", placeHolder: "Code", leftImageName: "code_icon")
-        self.setUpTexxtField(textField: txtPhone, errorText: "Please enter a valid Phone Number", placeHolder: "Phone", leftImageName: "phone_icon")
-        self.setUpTexxtField(textField: txtInstitureName, errorText: "Please enter a valid Institute Name", placeHolder: "Institute Name", leftImageName: "institute_icon")
-        self.setUpTexxtField(textField: txtWebsite, errorText: "Please enter a valid Website", placeHolder: "Website (optional)", leftImageName: "website_icon")
+ 
 
         
         downArrowBtn.setImage(UIImage(named: "dropdown_arrow"), for: .normal)
@@ -165,6 +168,21 @@ extension AddOrganisationVC : UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        return true
+    }
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+       // handle begin editing event
+        if textField == txtCode {
+            if self.phoneCodeArray.count > 0 {
+                let controller = self.storyboard?.instantiateViewController(withIdentifier: "CountryCodeSelectPopupVC") as! CountryCodeSelectPopupVC
+                controller.phoneCodeArray = self.phoneCodeArray
+                controller.parentVC = self
+                controller.displayPhoneCodeArray = self.phoneCodeArray
+                self.navigationController?.pushViewController(controller, animated: true)
+            }
+            return false
+        }
         return true
     }
 }

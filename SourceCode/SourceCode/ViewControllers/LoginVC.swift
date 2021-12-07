@@ -22,9 +22,15 @@ class LoginVC: MainViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.setUI()
         self.txtEmail.text = "abcd123@mailinator.com"
         self.txtPassword.text = "12345678"
+        
+        self.setUpTexxtField(textField: txtEmail, errorText: "Please enter a valid email", placeHolder: "Email Address", leftImageName: "email_icon")
+        self.setUpTexxtField(textField: txtPassword, errorText: "Please enter a valid password", placeHolder: "Password",isSecureText: true, leftImageName: "password_icon")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.setUI()
     }
     
     func setUI() {
@@ -34,8 +40,7 @@ class LoginVC: MainViewController {
         
         self.txtEmail.delegate = self
         self.txtPassword.delegate = self
-        self.setUpTexxtField(textField: txtEmail, errorText: "Please enter a valid email", placeHolder: "Email Address", leftImageName: "email_icon")
-        self.setUpTexxtField(textField: txtPassword, errorText: "Please enter a valid password", placeHolder: "Password",isSecureText: true, leftImageName: "password_icon")
+ 
         
         eyePasswordBtn.setImage(UIImage(named: "eye_visible"), for: .normal)
         eyePasswordBtn.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
@@ -66,8 +71,16 @@ class LoginVC: MainViewController {
                     UserDefaults.standard.set(jwt?.body, forKey: loginResponseLocal)
                     UserDefaults.standard.set(res.token, forKey: loginTokenLocal)
 
-                    let controller = self.storyboard?.instantiateViewController(withIdentifier: "OrganisationListVC") as! OrganisationListVC
-                    self.navigationController?.pushViewController(controller, animated: true)
+//                    let controller = self.storyboard?.instantiateViewController(withIdentifier: "OrganisationListVC") as! OrganisationListVC
+//                    self.navigationController?.pushViewController(controller, animated: true)
+                    
+                    let controller = self.storyboard?.instantiateViewController(withIdentifier: "OrganisationListVC")
+
+                    let mySceneDelegate = UIApplication.shared.connectedScenes.first!.delegate as! SceneDelegate
+                    let navigationController = UINavigationController(rootViewController: controller!)
+                    navigationController.navigationBar.isHidden = true
+                    mySceneDelegate.window?.rootViewController = navigationController
+                    mySceneDelegate.window?.makeKeyAndVisible()
                 } else {
                     if res.error?.keys.count ?? 0 > 0 {
                         if res.error?.keys.first == "password" {

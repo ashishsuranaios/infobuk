@@ -34,6 +34,9 @@
 		75BBB78F2755EA6800460069 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75BBB78D2755EA6800460069 /* LaunchScreen.storyboard */; };
 		75BBB79A2755EA6900460069 /* SourceCodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BBB7992755EA6900460069 /* SourceCodeTests.swift */; };
 		75BBB7A52755EA6900460069 /* SourceCodeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BBB7A42755EA6900460069 /* SourceCodeUITests.swift */; };
+		75DC02E6275F53C800BBBEFC /* CountryCodeSelectPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DC02E5275F53C800BBBEFC /* CountryCodeSelectPopupVC.swift */; };
+		75DC02EA275F639A00BBBEFC /* CustomOnlyLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DC02E8275F639A00BBBEFC /* CustomOnlyLabelCell.swift */; };
+		75DC02EB275F639A00BBBEFC /* CustomOnlyLabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75DC02E9275F639A00BBBEFC /* CustomOnlyLabelCell.xib */; };
 		75F083C5275900F300A4D9F8 /* OrganisationListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F083C4275900F300A4D9F8 /* OrganisationListVC.swift */; };
 		E24E3DDC3810F43DDC2F6062 /* Pods_SourceCode_SourceCodeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06DC8A32D71D3B0AE44B775F /* Pods_SourceCode_SourceCodeUITests.framework */; };
 /* End PBXBuildFile section */
@@ -90,6 +93,9 @@
 		75BBB7A02755EA6900460069 /* SourceCodeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SourceCodeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		75BBB7A42755EA6900460069 /* SourceCodeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceCodeUITests.swift; sourceTree = "<group>"; };
 		75BBB7A62755EA6900460069 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		75DC02E5275F53C800BBBEFC /* CountryCodeSelectPopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCodeSelectPopupVC.swift; sourceTree = "<group>"; };
+		75DC02E8275F639A00BBBEFC /* CustomOnlyLabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomOnlyLabelCell.swift; sourceTree = "<group>"; };
+		75DC02E9275F639A00BBBEFC /* CustomOnlyLabelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomOnlyLabelCell.xib; sourceTree = "<group>"; };
 		75F083C4275900F300A4D9F8 /* OrganisationListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganisationListVC.swift; sourceTree = "<group>"; };
 		7AB7E1F503005C9DED5D1B37 /* Pods-SourceCode.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SourceCode.debug.xcconfig"; path = "Target Support Files/Pods-SourceCode/Pods-SourceCode.debug.xcconfig"; sourceTree = "<group>"; };
 		BA5ED8307FA52AFD4A0C32E2 /* Pods-SourceCodeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SourceCodeTests.release.xcconfig"; path = "Target Support Files/Pods-SourceCodeTests/Pods-SourceCodeTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -138,6 +144,7 @@
 		189504D9275D16F0007CBE36 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				75DC02E7275F637900BBBEFC /* CustomOnlyLabelCell */,
 				189504DA275D1711007CBE36 /* CustomOrgListSingleCell.swift */,
 				189504DB275D1711007CBE36 /* CustomOrgListSingleCell.xib */,
 			);
@@ -160,6 +167,7 @@
 		75462D09275626850002FCB8 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				75DC02E4275F53A200BBBEFC /* CountryCodeSelectPopup */,
 				75F083C3275900D500A4D9F8 /* Organisation */,
 				75462D0D275626BF0002FCB8 /* SplashVC.swift */,
 				75462D0F275626CB0002FCB8 /* LoginVC.swift */,
@@ -289,6 +297,23 @@
 				75BBB7A62755EA6900460069 /* Info.plist */,
 			);
 			path = SourceCodeUITests;
+			sourceTree = "<group>";
+		};
+		75DC02E4275F53A200BBBEFC /* CountryCodeSelectPopup */ = {
+			isa = PBXGroup;
+			children = (
+				75DC02E5275F53C800BBBEFC /* CountryCodeSelectPopupVC.swift */,
+			);
+			path = CountryCodeSelectPopup;
+			sourceTree = "<group>";
+		};
+		75DC02E7275F637900BBBEFC /* CustomOnlyLabelCell */ = {
+			isa = PBXGroup;
+			children = (
+				75DC02E8275F639A00BBBEFC /* CustomOnlyLabelCell.swift */,
+				75DC02E9275F639A00BBBEFC /* CustomOnlyLabelCell.xib */,
+			);
+			path = CustomOnlyLabelCell;
 			sourceTree = "<group>";
 		};
 		75F083C3275900D500A4D9F8 /* Organisation */ = {
@@ -423,6 +448,7 @@
 				75462D1927562BFC0002FCB8 /* opensans_bold.ttf in Resources */,
 				75BBB78F2755EA6800460069 /* LaunchScreen.storyboard in Resources */,
 				75BBB78C2755EA6800460069 /* Assets.xcassets in Resources */,
+				75DC02EB275F639A00BBBEFC /* CustomOnlyLabelCell.xib in Resources */,
 				75462D1B27562BFC0002FCB8 /* opensans_semibold.ttf in Resources */,
 				75BBB78A2755EA6700460069 /* Main.storyboard in Resources */,
 			);
@@ -555,8 +581,10 @@
 				75BBB7872755EA6700460069 /* ViewController.swift in Sources */,
 				18CA7753275BD31D00EEA26D /* SignUpModel.swift in Sources */,
 				75B1D8E6275649F800FABDC2 /* ForgotPasswordVC.swift in Sources */,
+				75DC02E6275F53C800BBBEFC /* CountryCodeSelectPopupVC.swift in Sources */,
 				75F083C5275900F300A4D9F8 /* OrganisationListVC.swift in Sources */,
 				75462D0E275626BF0002FCB8 /* SplashVC.swift in Sources */,
+				75DC02EA275F639A00BBBEFC /* CustomOnlyLabelCell.swift in Sources */,
 				75BBB7832755EA6700460069 /* AppDelegate.swift in Sources */,
 				757547002758A221005D5C49 /* APIManager.swift in Sources */,
 				75B1D8E92756507A00FABDC2 /* ExtentionsFiles.swift in Sources */,

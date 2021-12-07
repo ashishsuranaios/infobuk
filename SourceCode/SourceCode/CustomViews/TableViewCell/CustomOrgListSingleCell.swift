@@ -16,12 +16,19 @@ class CustomOrgListSingleCell: UITableViewCell {
     @IBOutlet weak var btnSetting : UIButton!
 
     var orgDict : [String : Any]?
-
+    var isShadowApplied = false
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        self.shadowView.setShodowEffectWithCornerRadius(radius: shodowBgViewCornerRadius)
+        let seconds = 0.2
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+            // Put your code which should be executed with a delay here
+            if !self.isShadowApplied {
+                self.isShadowApplied = true
+            self.shadowView.setShodowEffectWithCornerRadius(radius: shodowBgViewCornerRadius)
+            }
+        }
     }
 
 
@@ -31,7 +38,7 @@ class CustomOrgListSingleCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func reloadData()  {
+    func reloadData() {
         lblOrgName.text = (orgDict?["orgName"] ?? "") as? String
         if let usersDict = orgDict?["users"] as? [String : Any] {
             let allKeys = Array(usersDict.keys)
@@ -42,6 +49,10 @@ class CustomOrgListSingleCell: UITableViewCell {
                 
             }
         }
+    }
+    
+    func checkForShadow()  {
+        
     }
     
 }

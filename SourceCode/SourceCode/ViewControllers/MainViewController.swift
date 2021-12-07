@@ -55,7 +55,7 @@ class MainViewController: UIViewController {
             textField.leftView = leftImageView
             textField.leftViewMode = .always
         }
-        textField.sizeToFit()
+//        textField.sizeToFit()
     }
     
 

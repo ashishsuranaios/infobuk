@@ -28,8 +28,12 @@ class ForgotPasswordVC: MainViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         successViewBg.isHidden = true
+        self.setUpTexxtField(textField: txtEmail, errorText: "Please enter a valid email", placeHolder: "Email Address", leftImageName: "email_icon")
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         self.setUI()
     }
     
@@ -40,7 +44,6 @@ class ForgotPasswordVC: MainViewController {
         btnLogin.setCornerRadius(radius: appButtonCornerRadius)
         
         self.txtEmail.delegate = self
-        self.setUpTexxtField(textField: txtEmail, errorText: "Please enter a valid email", placeHolder: "Email Address", leftImageName: "email_icon")
     }
     
    
@@ -55,7 +58,7 @@ class ForgotPasswordVC: MainViewController {
                     
                     var myMutableString = NSMutableAttributedString()
                     let myString = "Please check your email \(self.txtEmail.text!) and click on the included link to proceed."
-                    myMutableString = NSMutableAttributedString(string: myString as String, attributes: [NSAttributedString.Key.font:UIFont(name: "Georgia", size: 18.0)!, NSAttributedString.Key.foregroundColor : AppGrayColor])
+                    myMutableString = NSMutableAttributedString(string: myString as String, attributes: [NSAttributedString.Key.font:UIFont(name: "opensans_regular", size: 18.0)!, NSAttributedString.Key.foregroundColor : AppGrayColor])
                     if let range = myString.range(of: self.txtEmail.text!) {
                         let nsRange = NSRange(range, in: myString)
                         myMutableString.addAttribute(NSAttributedString.Key.foregroundColor, value: AppColor, range: nsRange)

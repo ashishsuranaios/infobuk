@@ -41,23 +41,32 @@ class RegisterVC: MainViewController {
         successViewBg.isHidden = true
         imgAgreeTerms.image = UIImage(named: "checkbox_unselected")
 
-        // Do any additional setup after loading the view.
-        setUI()
-        
+        // Do any additional setup after loading the view.        
 //        self.txtEmail.text = "abcd123@mailinator.com"
 //        self.txtName.text = "Abcd"
 //        self.txtPhone.text = "545146548"
 //        self.txtWebsite.text = "www.abcd.com"
 //        self.txtInstitureName.text = "ABCD"
+        
+        self.setUpTexxtField(textField: txtEmail, errorText: "Please enter a valid email", placeHolder: "Email Address", leftImageName: "email_icon")
+        self.setUpTexxtField(textField: txtName, errorText: "Please enter a valid Name", placeHolder: "Your Name", leftImageName: "name_icon")
+        self.setUpTexxtField(textField: txtCode, errorText: "Please enter a valid Code", placeHolder: "Code", leftImageName: "code_icon")
+        self.setUpTexxtField(textField: txtPhone, errorText: "Please enter a valid Phone Number", placeHolder: "Phone", leftImageName: "phone_icon")
+        self.setUpTexxtField(textField: txtInstitureName, errorText: "Please enter a valid Institute Name", placeHolder: "Institute Name", leftImageName: "institute_icon")
+        self.setUpTexxtField(textField: txtWebsite, errorText: "Please enter a valid Website", placeHolder: "Website (optional)", leftImageName: "website_icon")
 
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        self.setUI()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
-        pickerView.dataSource = self
-        pickerView.delegate = self
-
-        txtCode.delegate = self
-        txtCode.inputView = pickerView
+//        pickerView.dataSource = self
+//        pickerView.delegate = self
+//
+//        txtCode.delegate = self
+//        txtCode.inputView = pickerView
         
         APICallManager.instance.getCountryListWithCodes { (arr) in
             self.phoneCodeArray = arr
@@ -65,6 +74,8 @@ class RegisterVC: MainViewController {
             self.navigationController?.popViewController(animated: true)
         }
     }
+    
+    
     
     func setUI() {
         shadowBg.setShodowEffectWithCornerRadius(radius: shodowBgViewCornerRadius)
@@ -79,12 +90,7 @@ class RegisterVC: MainViewController {
         self.txtInstitureName.delegate = self
         self.txtWebsite.delegate = self
 
-        self.setUpTexxtField(textField: txtEmail, errorText: "Please enter a valid email", placeHolder: "Email Address", leftImageName: "email_icon")
-        self.setUpTexxtField(textField: txtName, errorText: "Please enter a valid Name", placeHolder: "Your Name", leftImageName: "name_icon")
-        self.setUpTexxtField(textField: txtCode, errorText: "Please enter a valid Code", placeHolder: "Code", leftImageName: "code_icon")
-        self.setUpTexxtField(textField: txtPhone, errorText: "Please enter a valid Phone Number", placeHolder: "Phone", leftImageName: "phone_icon")
-        self.setUpTexxtField(textField: txtInstitureName, errorText: "Please enter a valid Institute Name", placeHolder: "Institute Name", leftImageName: "institute_icon")
-        self.setUpTexxtField(textField: txtWebsite, errorText: "Please enter a valid Website", placeHolder: "Website (optional)", leftImageName: "website_icon")
+
 
         
         downArrowBtn.setImage(UIImage(named: "dropdown_arrow"), for: .normal)
@@ -122,7 +128,7 @@ class RegisterVC: MainViewController {
                 if res.success ?? false {
                     var myMutableString = NSMutableAttributedString()
                     let myString = "Please check your email \(self.txtEmail.text!) and click on the included link to proceed."
-                    myMutableString = NSMutableAttributedString(string: myString as String, attributes: [NSAttributedString.Key.font:UIFont(name: "Georgia", size: 18.0)!, NSAttributedString.Key.foregroundColor : AppGrayColor])
+                    myMutableString = NSMutableAttributedString(string: myString as String, attributes: [NSAttributedString.Key.font:UIFont(name: "opensans_regular", size: 18.0)!, NSAttributedString.Key.foregroundColor : AppGrayColor])
                     if let range = myString.range(of: self.txtEmail.text!) {
                         let nsRange = NSRange(range, in: myString)
                         myMutableString.addAttribute(NSAttributedString.Key.foregroundColor, value: AppColor, range: nsRange)
@@ -205,6 +211,21 @@ extension RegisterVC : UITextFieldDelegate {
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        return true
+    }
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+       // handle begin editing event
+        if textField == txtCode {
+            if self.phoneCodeArray.count > 0 {
+                let controller = self.storyboard?.instantiateViewController(withIdentifier: "CountryCodeSelectPopupVC") as! CountryCodeSelectPopupVC
+                controller.phoneCodeArray = self.phoneCodeArray
+                controller.parentVC = self
+                controller.displayPhoneCodeArray = self.phoneCodeArray
+                self.navigationController?.pushViewController(controller, animated: true)
+            }
+            return false
+        }
         return true
     }
 }
