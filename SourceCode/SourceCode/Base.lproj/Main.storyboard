@@ -449,6 +449,24 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EhL-H7-Hyk">
                                                                 <rect key="frame" x="0.0" y="176.33333333333331" width="344" height="78.333333333333314"/>
                                                                 <subviews>
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cTY-ln-wFB" customClass="DropDown" customModule="SourceCode" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="50" width="344" height="1"/>
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="1" id="kKx-Gu-OSW"/>
+                                                                        </constraints>
+                                                                        <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <textInputTraits key="textInputTraits"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="arrowSize">
+                                                                                <real key="value" value="0.0"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="arrowColor">
+                                                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </textField>
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Enter Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="HHr-zj-sm3" customClass="MDCOutlinedTextField">
                                                                         <rect key="frame" x="0.0" y="0.0" width="344" height="78.333333333333329"/>
                                                                         <color key="tintColor" red="0.40784313729999999" green="0.43921568630000002" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -465,7 +483,10 @@
                                                                 <constraints>
                                                                     <constraint firstItem="HHr-zj-sm3" firstAttribute="top" secondItem="EhL-H7-Hyk" secondAttribute="top" id="4iC-ax-S05"/>
                                                                     <constraint firstItem="HHr-zj-sm3" firstAttribute="leading" secondItem="EhL-H7-Hyk" secondAttribute="leading" id="89h-2s-8rk"/>
+                                                                    <constraint firstItem="cTY-ln-wFB" firstAttribute="leading" secondItem="HHr-zj-sm3" secondAttribute="leading" id="JFj-ww-2MC"/>
+                                                                    <constraint firstItem="cTY-ln-wFB" firstAttribute="trailing" secondItem="HHr-zj-sm3" secondAttribute="trailing" id="PcM-pM-UBn"/>
                                                                     <constraint firstAttribute="trailing" secondItem="HHr-zj-sm3" secondAttribute="trailing" id="eEw-h1-MWJ"/>
+                                                                    <constraint firstItem="cTY-ln-wFB" firstAttribute="top" secondItem="EhL-H7-Hyk" secondAttribute="top" constant="50" id="zgl-Ur-qfo"/>
                                                                     <constraint firstAttribute="bottom" secondItem="HHr-zj-sm3" secondAttribute="bottom" id="zsA-0Y-qra"/>
                                                                 </constraints>
                                                             </view>
@@ -801,6 +822,7 @@
                     </view>
                     <connections>
                         <outlet property="btnRegister" destination="bfo-JD-69E" id="dQP-xK-u5X"/>
+                        <outlet property="dropDown" destination="cTY-ln-wFB" id="WqS-KO-scK"/>
                         <outlet property="imgAgreeTerms" destination="Gnz-ye-X6m" id="CXP-P3-G5w"/>
                         <outlet property="lblResetEmailDetail" destination="3c3-eI-vXu" id="ZQi-1t-GTb"/>
                         <outlet property="shadowBg" destination="dFH-dC-zVT" id="kKA-oc-p7Q"/>
@@ -1216,6 +1238,24 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fvA-Nw-6va">
                                                                 <rect key="frame" x="0.0" y="90.333333333333343" width="354" height="80.666666666666657"/>
                                                                 <subviews>
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z6k-Wp-Ret" customClass="DropDown" customModule="SourceCode" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="49.999999999999972" width="354" height="1"/>
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="1" id="ZsY-72-3E7"/>
+                                                                        </constraints>
+                                                                        <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <textInputTraits key="textInputTraits"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="arrowSize">
+                                                                                <real key="value" value="0.0"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="arrowColor">
+                                                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </textField>
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Enter Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="lYo-Tq-m49" customClass="MDCOutlinedTextField">
                                                                         <rect key="frame" x="0.0" y="0.0" width="354" height="80.666666666666671"/>
                                                                         <color key="tintColor" red="0.40784313729999999" green="0.43921568630000002" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1231,8 +1271,11 @@
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="bottom" secondItem="lYo-Tq-m49" secondAttribute="bottom" id="MtV-dE-qio"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="Z6k-Wp-Ret" secondAttribute="trailing" id="WaS-3Y-J3h"/>
+                                                                    <constraint firstItem="Z6k-Wp-Ret" firstAttribute="top" secondItem="fvA-Nw-6va" secondAttribute="top" constant="50" id="aav-xo-xH3"/>
                                                                     <constraint firstItem="lYo-Tq-m49" firstAttribute="top" secondItem="fvA-Nw-6va" secondAttribute="top" id="f9U-tE-Cfi"/>
                                                                     <constraint firstItem="lYo-Tq-m49" firstAttribute="leading" secondItem="fvA-Nw-6va" secondAttribute="leading" id="l9A-9Z-oge"/>
+                                                                    <constraint firstItem="Z6k-Wp-Ret" firstAttribute="leading" secondItem="fvA-Nw-6va" secondAttribute="leading" id="lNU-at-M4a"/>
                                                                     <constraint firstAttribute="trailing" secondItem="lYo-Tq-m49" secondAttribute="trailing" id="tDc-Qv-bGJ"/>
                                                                 </constraints>
                                                             </view>
@@ -1411,6 +1454,7 @@
                     </view>
                     <connections>
                         <outlet property="btnRegister" destination="qb1-MB-w3L" id="70e-nF-ajD"/>
+                        <outlet property="dropDown" destination="Z6k-Wp-Ret" id="RmO-Zd-Meh"/>
                         <outlet property="shadowBg" destination="0AK-Aa-7zI" id="Z41-2e-ogK"/>
                         <outlet property="txtCode" destination="lYo-Tq-m49" id="NPF-4f-fer"/>
                         <outlet property="txtInstitureName" destination="CLN-1A-MbU" id="N5i-ve-0rd"/>

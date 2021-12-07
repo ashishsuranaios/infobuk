@@ -22,10 +22,12 @@ class AddOrganisationVC: MainViewController {
     @IBOutlet weak var txtInstitureName: MDCOutlinedTextField!
     @IBOutlet weak var txtWebsite: MDCOutlinedTextField!
 
+    @IBOutlet weak var dropDown : DropDown!
 
     let downArrowBtn = UIButton(type: .custom)
     var phoneCodeArray = [PhoneCode]()
     var selectedPhoneCode : PhoneCode?
+    var displayPhoneCodeArray = [PhoneCode]()
 
     var pickerView = UIPickerView()
     
@@ -44,6 +46,9 @@ class AddOrganisationVC: MainViewController {
         self.setUpTexxtField(textField: txtPhone, errorText: "Please enter a valid Phone Number", placeHolder: "Phone", leftImageName: "phone_icon")
         self.setUpTexxtField(textField: txtInstitureName, errorText: "Please enter a valid Institute Name", placeHolder: "Institute Name", leftImageName: "institute_icon")
         self.setUpTexxtField(textField: txtWebsite, errorText: "Please enter a valid Website", placeHolder: "Website (optional)", leftImageName: "website_icon")
+        
+        txtCode.addTarget(self, action: #selector(textFieldValueChanged(textField:)), for: .allEditingEvents)
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -173,17 +178,65 @@ extension AddOrganisationVC : UITextFieldDelegate {
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
        // handle begin editing event
+//        if textField == txtCode {
+//            if self.phoneCodeArray.count > 0 {
+//                let controller = self.storyboard?.instantiateViewController(withIdentifier: "CountryCodeSelectPopupVC") as! CountryCodeSelectPopupVC
+//                controller.phoneCodeArray = self.phoneCodeArray
+//                controller.parentVC = self
+//                controller.displayPhoneCodeArray = self.phoneCodeArray
+//                self.navigationController?.pushViewController(controller, animated: true)
+//            }
+//            return false
+//        }
         if textField == txtCode {
-            if self.phoneCodeArray.count > 0 {
-                let controller = self.storyboard?.instantiateViewController(withIdentifier: "CountryCodeSelectPopupVC") as! CountryCodeSelectPopupVC
-                controller.phoneCodeArray = self.phoneCodeArray
-                controller.parentVC = self
-                controller.displayPhoneCodeArray = self.phoneCodeArray
-                self.navigationController?.pushViewController(controller, animated: true)
-            }
-            return false
+            dropDown.showList()
         }
         return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField == txtCode {
+            dropDown.hideList()
+            if selectedPhoneCode != nil {
+                self.txtCode.text = "\(selectedPhoneCode?.phoneCode ?? "") \(selectedPhoneCode?.name ?? "")"
+            } else {
+                txtCode.text = ""
+            }
+        }
+    }
+    
+    @objc func textFieldValueChanged(textField : UITextField) {
+        if (textField == txtCode){
+//            txtCode.resignFirstResponder()
+            
+//            dropDown.becomeFirstResponder()
+            if ((txtCode.text!.count <= 0)){
+                displayPhoneCodeArray = phoneCodeArray
+            } else {
+                let filterServices = phoneCodeArray.filter({($0.name! + $0.phoneCode!).lowercased().range(of: self.txtCode.text!.lowercased()) != nil})
+                displayPhoneCodeArray = filterServices
+            }
+            // The list of array to display. Can be changed dynamically
+            var titleArray = [String]()
+
+            for rec in self.displayPhoneCodeArray {
+                titleArray.append("\(rec.phoneCode ?? "") \(rec.name ?? "")")
+            }
+            dropDown.optionArray = titleArray
+            dropDown.isSearchEnable = false
+            dropDown.text = txtCode.text ?? ""
+
+            self.dropDown.showList()
+            //Its Id Values and its optional
+            // Image Array its optional
+            // The the Closure returns Selected Index and String
+            dropDown.didSelect{(selectedText , index ,id) in
+                let rec = self.displayPhoneCodeArray[index]
+                self.txtCode.text = "\(rec.phoneCode ?? "") \(rec.name ?? "")"
+                self.selectedPhoneCode = rec
+                self.txtCode.resignFirstResponder()
+            }
+        }
     }
 }
 
