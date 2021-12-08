@@ -24,7 +24,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d26-Iq-zlI">
-                        <rect key="frame" x="10" y="10" width="180" height="84"/>
+                        <rect key="frame" x="10" y="0.0" width="180" height="91"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7vp-kJ-jKq">
                                 <rect key="frame" x="10" y="8" width="43" height="24"/>
@@ -33,7 +33,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tob-w7-cqJ">
-                                <rect key="frame" x="10" y="50.5" width="43" height="23.5"/>
+                                <rect key="frame" x="10" y="57.5" width="43" height="23.5"/>
                                 <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
                                 <color key="textColor" red="0.40784313729999999" green="0.43921568630000002" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -48,10 +48,10 @@
                                 <state key="normal" image="setting_icon"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Admin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Od-cl-2ya">
-                                <rect key="frame" x="110" y="53" width="60" height="26"/>
+                                <rect key="frame" x="110" y="59" width="60" height="22"/>
                                 <color key="backgroundColor" red="0.40784313725490196" green="0.4392156862745098" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="26" id="LUc-Qx-Jan"/>
+                                    <constraint firstAttribute="height" constant="22" id="LUc-Qx-Jan"/>
                                     <constraint firstAttribute="width" constant="60" id="vsi-lG-pRa"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="12"/>
@@ -64,7 +64,7 @@
                             <constraint firstItem="tuH-RD-Crg" firstAttribute="top" secondItem="7vp-kJ-jKq" secondAttribute="top" constant="-5" id="E9Q-M4-zvX"/>
                             <constraint firstItem="7vp-kJ-jKq" firstAttribute="top" secondItem="d26-Iq-zlI" secondAttribute="top" constant="8" id="VaA-Le-xsW"/>
                             <constraint firstItem="7vp-kJ-jKq" firstAttribute="leading" secondItem="d26-Iq-zlI" secondAttribute="leading" constant="10" id="ce5-zS-aNF"/>
-                            <constraint firstItem="3Od-cl-2ya" firstAttribute="bottom" secondItem="tob-w7-cqJ" secondAttribute="bottom" constant="5" id="dJt-h6-560"/>
+                            <constraint firstItem="3Od-cl-2ya" firstAttribute="bottom" secondItem="tob-w7-cqJ" secondAttribute="bottom" id="dJt-h6-560"/>
                             <constraint firstItem="tob-w7-cqJ" firstAttribute="leading" secondItem="d26-Iq-zlI" secondAttribute="leading" constant="10" id="jVt-2L-YqQ"/>
                             <constraint firstItem="tob-w7-cqJ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="7vp-kJ-jKq" secondAttribute="bottom" constant="5" id="jm8-jK-FvX"/>
                             <constraint firstItem="3Od-cl-2ya" firstAttribute="trailing" secondItem="tuH-RD-Crg" secondAttribute="trailing" id="sWe-hu-YHO"/>
@@ -76,8 +76,8 @@
                 <constraints>
                     <constraint firstItem="d26-Iq-zlI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="e6t-XE-MOD"/>
                     <constraint firstAttribute="trailing" secondItem="d26-Iq-zlI" secondAttribute="trailing" constant="10" id="jIm-dx-uyT"/>
-                    <constraint firstItem="d26-Iq-zlI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="sPc-0U-4kM"/>
-                    <constraint firstAttribute="bottom" secondItem="d26-Iq-zlI" secondAttribute="bottom" constant="5" id="vDJ-ao-7hY"/>
+                    <constraint firstItem="d26-Iq-zlI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="sPc-0U-4kM"/>
+                    <constraint firstAttribute="bottom" secondItem="d26-Iq-zlI" secondAttribute="bottom" constant="8" id="vDJ-ao-7hY"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
