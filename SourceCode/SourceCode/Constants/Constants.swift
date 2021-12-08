@@ -13,6 +13,7 @@ import UIKit
 
 var loginResponseLocal = "loginResponseLocal"
 var loginTokenLocal = "loginTokenLocal"
+var UD_OrgDictKeysArrayLocal = "orgDictKeysArrayLocal"
 
 
 var shodowBgViewCornerRadius = CGFloat(10.0)

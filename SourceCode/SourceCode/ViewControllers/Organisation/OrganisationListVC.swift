@@ -30,9 +30,11 @@ class OrganisationListVC: UIViewController {
     
     func setUI(){
         loginModel = UserDefaults.standard.value(forKey: loginResponseLocal) as! [String : Any]
-        if let orgDict = (loginModel?["orgs"] as? [String : Any]) {
-            allKeys = Array(orgDict.keys)
-        }
+        allKeys = UserDefaults.standard.value(forKey: UD_OrgDictKeysArrayLocal) as! [String]
+        
+//        if let orgDict = (loginModel?["orgs"] as? [String : Any]) {
+//            allKeys = Array(orgDict.keys)
+//        }
         tblView.reloadData()
         tblView.reloadData()
 
@@ -47,6 +49,7 @@ class OrganisationListVC: UIViewController {
     @IBAction func btnLogoutClicked(_ sender: Any) {
         UserDefaults.standard.set(nil, forKey: loginResponseLocal)
         UserDefaults.standard.set(nil, forKey: loginTokenLocal)
+        UserDefaults.standard.set(nil, forKey: UD_OrgDictKeysArrayLocal)
         var controller = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC")
 
 
@@ -66,7 +69,7 @@ extension OrganisationListVC : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let customCell = tableView.dequeueReusableCell(withIdentifier: "CustomOrgListSingleCell", for: indexPath) as! CustomOrgListSingleCell
-        customCell.lblType.setCornerRadius(radius: 15.0)
+        customCell.lblType.setCornerRadius(radius: 11.0)
         
         if let orgDict = (loginModel?["orgs"] as? [String : Any]) {
             if let keyValue = allKeys[indexPath.row] as? String {
@@ -79,10 +82,7 @@ extension OrganisationListVC : UITableViewDelegate, UITableViewDataSource {
         }
         return customCell
     }
-    
-    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        (cell as! CustomOrgListSingleCell).checkForShadow()
-    }
+
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 90.0

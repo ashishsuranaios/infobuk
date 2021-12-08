@@ -37,6 +37,8 @@ class RegisterVC: MainViewController {
 
     var pickerView = UIPickerView()
     
+    var isShadowApplied = false
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,8 +85,12 @@ class RegisterVC: MainViewController {
     
     
     func setUI() {
-        shadowBg.setShodowEffectWithCornerRadius(radius: shodowBgViewCornerRadius)
-        shadowBgSuccess.setShodowEffectWithCornerRadius(radius: shodowBgViewCornerRadius)
+        
+        if (!isShadowApplied){
+            isShadowApplied = true
+            shadowBg.setShodowEffectWithCornerRadius(radius: shodowBgViewCornerRadius)
+            shadowBgSuccess.setShodowEffectWithCornerRadius(radius: shodowBgViewCornerRadius)
+        }
 
         btnRegister.setCornerRadius(radius: appButtonCornerRadius)
         
@@ -133,7 +139,7 @@ class RegisterVC: MainViewController {
                 if res.success ?? false {
                     var myMutableString = NSMutableAttributedString()
                     let myString = "Please check your email \(self.txtEmail.text!) and click on the included link to proceed."
-                    myMutableString = NSMutableAttributedString(string: myString as String, attributes: [NSAttributedString.Key.font:UIFont(name: "opensans_regular", size: 18.0)!, NSAttributedString.Key.foregroundColor : AppGrayColor])
+                    myMutableString = NSMutableAttributedString(string: myString as String, attributes: [NSAttributedString.Key.font:UIFont(name: "opensans_regular", size: 15.0)!, NSAttributedString.Key.foregroundColor : AppGrayColor])
                     if let range = myString.range(of: self.txtEmail.text!) {
                         let nsRange = NSRange(range, in: myString)
                         myMutableString.addAttribute(NSAttributedString.Key.foregroundColor, value: AppColor, range: nsRange)

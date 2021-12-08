@@ -108,6 +108,13 @@ class AddOrganisationVC: MainViewController {
                     UserDefaults.standard.set(jwt?.body, forKey: loginResponseLocal)
                     UserDefaults.standard.set(res.token, forKey: loginTokenLocal)
                     
+                    var allKeys = [String]()
+
+                    if let orgDict = (jwt?.body["orgs"] as? [String : Any]) {
+                        allKeys = Array(orgDict.keys)
+                    }
+                    UserDefaults.standard.set(allKeys, forKey: UD_OrgDictKeysArrayLocal)
+                    
                     self.showAlertWithBackAction(msg: "Organization registered successfully.")
                 } else {
                 }

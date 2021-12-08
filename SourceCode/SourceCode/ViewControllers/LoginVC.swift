@@ -18,6 +18,8 @@ class LoginVC: MainViewController {
     @IBOutlet weak var txtPassword: MDCOutlinedTextField!
 
     let eyePasswordBtn = UIButton(type: .custom)
+    
+    var isShadowApplied = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +36,10 @@ class LoginVC: MainViewController {
     }
     
     func setUI() {
-        shadowBg.setShodowEffectWithCornerRadius(radius: shodowBgViewCornerRadius)
+        if (!isShadowApplied){
+            isShadowApplied = true
+            shadowBg.setShodowEffectWithCornerRadius(radius: shodowBgViewCornerRadius)
+        }
         
         btnLogin.setCornerRadius(radius: appButtonCornerRadius)
         
@@ -70,7 +75,16 @@ class LoginVC: MainViewController {
 
                     UserDefaults.standard.set(jwt?.body, forKey: loginResponseLocal)
                     UserDefaults.standard.set(res.token, forKey: loginTokenLocal)
+                    var allKeys = [String]()
 
+                    if let orgDict = (jwt?.body["orgs"] as? [String : Any]) {
+                        allKeys = Array(orgDict.keys)
+                    }
+                    UserDefaults.standard.set(allKeys, forKey: UD_OrgDictKeysArrayLocal)
+
+                    
+                    
+                    
 //                    let controller = self.storyboard?.instantiateViewController(withIdentifier: "OrganisationListVC") as! OrganisationListVC
 //                    self.navigationController?.pushViewController(controller, animated: true)
                     

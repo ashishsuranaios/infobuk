@@ -236,7 +236,7 @@ open class DropDown : UITextField{
         if height < (keyboardHeight+tableheightX){
             y = self.pointToParent.y - tableheightX
         }
-        UIView.animate(withDuration: 0.9,
+        UIView.animate(withDuration: 0.0,
                        delay: 0,
                        usingSpringWithDamping: 0.4,
                        initialSpringVelocity: 0.1,

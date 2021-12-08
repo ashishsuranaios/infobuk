@@ -20,6 +20,7 @@ class ForgotPasswordVC: MainViewController {
 
     @IBOutlet weak var txtEmail: MDCOutlinedTextField!
 
+    var isShadowApplied = false
 
 
 
@@ -38,8 +39,11 @@ class ForgotPasswordVC: MainViewController {
     }
     
     func setUI() {
-        shadowBg.setShodowEffectWithCornerRadius(radius: shodowBgViewCornerRadius)
-        shadowBgSuccess.setShodowEffectWithCornerRadius(radius: shodowBgViewCornerRadius)
+        if (!isShadowApplied){
+            isShadowApplied = true
+            shadowBg.setShodowEffectWithCornerRadius(radius: shodowBgViewCornerRadius)
+            shadowBgSuccess.setShodowEffectWithCornerRadius(radius: shodowBgViewCornerRadius)
+        }
 
         btnLogin.setCornerRadius(radius: appButtonCornerRadius)
         
@@ -58,7 +62,7 @@ class ForgotPasswordVC: MainViewController {
                     
                     var myMutableString = NSMutableAttributedString()
                     let myString = "Please check your email \(self.txtEmail.text!) and click on the included link to proceed."
-                    myMutableString = NSMutableAttributedString(string: myString as String, attributes: [NSAttributedString.Key.font:UIFont(name: "opensans_regular", size: 18.0)!, NSAttributedString.Key.foregroundColor : AppGrayColor])
+                    myMutableString = NSMutableAttributedString(string: myString as String, attributes: [NSAttributedString.Key.font:UIFont(name: "opensans_regular", size: 15.0)!, NSAttributedString.Key.foregroundColor : AppGrayColor])
                     if let range = myString.range(of: self.txtEmail.text!) {
                         let nsRange = NSRange(range, in: myString)
                         myMutableString.addAttribute(NSAttributedString.Key.foregroundColor, value: AppColor, range: nsRange)
