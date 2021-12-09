@@ -36,6 +36,7 @@ class LoginVC: MainViewController {
     }
     
     func setUI() {
+        self.view.layoutIfNeeded()
         if (!isShadowApplied){
             isShadowApplied = true
             shadowBg.setShodowEffectWithCornerRadius(radius: shodowBgViewCornerRadius)

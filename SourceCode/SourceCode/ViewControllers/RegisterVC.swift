@@ -43,6 +43,7 @@ class RegisterVC: MainViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         successViewBg.isHidden = true
+        shadowBg.isHidden = true
         imgAgreeTerms.image = UIImage(named: "checkbox_unselected")
 
         // Do any additional setup after loading the view.        
@@ -60,11 +61,16 @@ class RegisterVC: MainViewController {
         self.setUpTexxtField(textField: txtWebsite, errorText: "Please enter a valid Website", placeHolder: "Website (optional)", leftImageName: "website_icon")
         txtCode.addTarget(self, action: #selector(textFieldValueChanged(textField:)), for: .allEditingEvents)
 
+        btnRegister.setCornerRadius(radius: appButtonCornerRadius)
+
 
     }
     
+    override func viewDidLayoutSubviews() {
+        
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
-        self.setUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -73,7 +79,8 @@ class RegisterVC: MainViewController {
 //
 //        txtCode.delegate = self
 //        txtCode.inputView = pickerView
-        
+        self.setUI()
+
         APICallManager.instance.getCountryListWithCodes { (arr) in
             self.phoneCodeArray = arr
             self.displayPhoneCodeArray = arr
@@ -85,14 +92,14 @@ class RegisterVC: MainViewController {
     
     
     func setUI() {
-        
+        self.view.layoutIfNeeded()
+
         if (!isShadowApplied){
             isShadowApplied = true
+            shadowBg.isHidden = false
             shadowBg.setShodowEffectWithCornerRadius(radius: shodowBgViewCornerRadius)
             shadowBgSuccess.setShodowEffectWithCornerRadius(radius: shodowBgViewCornerRadius)
         }
-
-        btnRegister.setCornerRadius(radius: appButtonCornerRadius)
         
         self.txtEmail.delegate = self
         self.txtName.delegate = self
@@ -139,7 +146,7 @@ class RegisterVC: MainViewController {
                 if res.success ?? false {
                     var myMutableString = NSMutableAttributedString()
                     let myString = "Please check your email \(self.txtEmail.text!) and click on the included link to proceed."
-                    myMutableString = NSMutableAttributedString(string: myString as String, attributes: [NSAttributedString.Key.font:UIFont(name: "opensans_regular", size: 15.0)!, NSAttributedString.Key.foregroundColor : AppGrayColor])
+                    myMutableString = NSMutableAttributedString(string: myString as String, attributes: [NSAttributedString.Key.font:UIFont(name: "OpenSans-Regular", size: 15.0)!, NSAttributedString.Key.foregroundColor : AppGrayColor])
                     if let range = myString.range(of: self.txtEmail.text!) {
                         let nsRange = NSRange(range, in: myString)
                         myMutableString.addAttribute(NSAttributedString.Key.foregroundColor, value: AppColor, range: nsRange)

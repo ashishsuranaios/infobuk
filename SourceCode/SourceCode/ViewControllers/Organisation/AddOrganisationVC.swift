@@ -49,6 +49,8 @@ class AddOrganisationVC: MainViewController {
         
         txtCode.addTarget(self, action: #selector(textFieldValueChanged(textField:)), for: .allEditingEvents)
 
+        btnRegister.setCornerRadius(radius: appButtonCornerRadius)
+
     }
     
     override func viewDidAppear(_ animated: Bool) {

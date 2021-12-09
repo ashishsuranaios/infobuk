@@ -21,6 +21,11 @@ class OrganisationListVC: UIViewController {
         tblView.delegate = self
         tblView.dataSource = self
         tblView.register(UINib(nibName: "CustomOrgListSingleCell", bundle: nil), forCellReuseIdentifier: "CustomOrgListSingleCell")
+        
+        var insets: UIEdgeInsets = tblView.contentInset
+        insets.bottom = 70
+        insets.top = 10
+        tblView.contentInset = insets
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -31,7 +36,7 @@ class OrganisationListVC: UIViewController {
     func setUI(){
         loginModel = UserDefaults.standard.value(forKey: loginResponseLocal) as! [String : Any]
         allKeys = UserDefaults.standard.value(forKey: UD_OrgDictKeysArrayLocal) as! [String]
-        
+        allKeys = allKeys.sorted(by: <)
 //        if let orgDict = (loginModel?["orgs"] as? [String : Any]) {
 //            allKeys = Array(orgDict.keys)
 //        }
@@ -47,17 +52,29 @@ class OrganisationListVC: UIViewController {
     }
     
     @IBAction func btnLogoutClicked(_ sender: Any) {
-        UserDefaults.standard.set(nil, forKey: loginResponseLocal)
-        UserDefaults.standard.set(nil, forKey: loginTokenLocal)
-        UserDefaults.standard.set(nil, forKey: UD_OrgDictKeysArrayLocal)
-        var controller = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC")
+        let alert = UIAlertController(title: "Alert", message: "Are you sure you want to logout from this account?", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.default, handler: { (action) in
+                                        
+            UserDefaults.standard.set(nil, forKey: loginResponseLocal)
+            UserDefaults.standard.set(nil, forKey: loginTokenLocal)
+            var controller = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC")
 
 
-        let mySceneDelegate = UIApplication.shared.connectedScenes.first!.delegate as! SceneDelegate
-        let navigationController = UINavigationController(rootViewController: controller!)
-        navigationController.navigationBar.isHidden = true
-        mySceneDelegate.window?.rootViewController = navigationController
-        mySceneDelegate.window?.makeKeyAndVisible()
+            let mySceneDelegate = UIApplication.shared.connectedScenes.first!.delegate as! SceneDelegate
+            let navigationController = UINavigationController(rootViewController: controller!)
+            navigationController.navigationBar.isHidden = true
+            mySceneDelegate.window?.rootViewController = navigationController
+            mySceneDelegate.window?.makeKeyAndVisible()
+            
+        }))
+        
+        alert.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.default, handler: { (action) in
+            alert.dismiss(animated: true) {
+                
+            }
+        }))
+        self.present(alert, animated: true, completion: nil)
+        
     }
     
 }

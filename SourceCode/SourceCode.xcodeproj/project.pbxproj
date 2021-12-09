@@ -170,7 +170,6 @@
 			isa = PBXGroup;
 			children = (
 				7519F7E2275F8B4500206204 /* Classes */,
-				7519F7E5275F8B4500206204 /* Assets */,
 			);
 			path = iOSDropDown;
 			sourceTree = "<group>";
@@ -181,13 +180,6 @@
 				7519F7E3275F8B4500206204 /* iOSDropDown.swift */,
 			);
 			path = Classes;
-			sourceTree = "<group>";
-		};
-		7519F7E5275F8B4500206204 /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Assets;
 			sourceTree = "<group>";
 		};
 		75462D09275626850002FCB8 /* ViewControllers */ = {

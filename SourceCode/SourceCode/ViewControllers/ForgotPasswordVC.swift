@@ -30,22 +30,30 @@ class ForgotPasswordVC: MainViewController {
         super.viewDidLoad()
         successViewBg.isHidden = true
         self.setUpTexxtField(textField: txtEmail, errorText: "Please enter a valid email", placeHolder: "Email Address", leftImageName: "email_icon")
-
+        btnLogin.setCornerRadius(radius: appButtonCornerRadius)
+        self.shadowBg.isHidden = true
         // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(_ animated: Bool) {
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         self.setUI()
     }
     
+    override func viewDidLayoutSubviews() {
+       
+    }
+    
     func setUI() {
+        self.view.layoutIfNeeded()
         if (!isShadowApplied){
             isShadowApplied = true
+            self.shadowBg.isHidden = false
             shadowBg.setShodowEffectWithCornerRadius(radius: shodowBgViewCornerRadius)
             shadowBgSuccess.setShodowEffectWithCornerRadius(radius: shodowBgViewCornerRadius)
         }
-
-        btnLogin.setCornerRadius(radius: appButtonCornerRadius)
         
         self.txtEmail.delegate = self
     }
@@ -62,7 +70,7 @@ class ForgotPasswordVC: MainViewController {
                     
                     var myMutableString = NSMutableAttributedString()
                     let myString = "Please check your email \(self.txtEmail.text!) and click on the included link to proceed."
-                    myMutableString = NSMutableAttributedString(string: myString as String, attributes: [NSAttributedString.Key.font:UIFont(name: "opensans_regular", size: 15.0)!, NSAttributedString.Key.foregroundColor : AppGrayColor])
+                    myMutableString = NSMutableAttributedString(string: myString as String, attributes: [NSAttributedString.Key.font:UIFont(name: "OpenSans-Regular", size: 15.0)!, NSAttributedString.Key.foregroundColor : AppGrayColor])
                     if let range = myString.range(of: self.txtEmail.text!) {
                         let nsRange = NSRange(range, in: myString)
                         myMutableString.addAttribute(NSAttributedString.Key.foregroundColor, value: AppColor, range: nsRange)
