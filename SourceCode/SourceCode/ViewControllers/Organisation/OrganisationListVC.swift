@@ -81,7 +81,44 @@ class OrganisationListVC: UIViewController {
 
 extension OrganisationListVC : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if let orgDict = (loginModel?["orgs"] as? [String : Any]) {
+            if let keyValue = allKeys[section] as? String {
+                if let orgRecord = orgDict[keyValue] as? [String : Any] {
+                    if let usersDict = orgRecord["users"] as? [String : Any] {
+                        return usersDict.count
+                    }
+                }
+                
+            }
+        }
+        return 0
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
         return (loginModel?["orgs"] as? [String : Any])?.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 30
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 30))
+        
+        if let orgDict = (loginModel?["orgs"] as? [String : Any]) {
+            if let keyValue = allKeys[section] as? String {
+                if let orgRecord = orgDict[keyValue] as? [String : Any] {
+                    let label = UILabel()
+                    label.frame = CGRect.init(x: 5, y: 5, width: headerView.frame.width-10, height: headerView.frame.height-10)
+                    label.text = (orgRecord["orgName"] ?? "") as? String
+                    label.font = UIFont(name: "OpenSans-Regular", size: 17.0)
+                    label.textColor = .black
+                    
+                    headerView.addSubview(label)
+                }
+            }
+        }
+        return headerView
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -102,7 +139,7 @@ extension OrganisationListVC : UITableViewDelegate, UITableViewDataSource {
 
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 90.0
+        return 60.0
     }
     
     

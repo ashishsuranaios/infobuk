@@ -24,8 +24,8 @@ class LoginVC: MainViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.txtEmail.text = "abcd123@mailinator.com"
-        self.txtPassword.text = "12345678"
+        self.txtEmail.text = "ashishk_786@yahoo.com"
+        self.txtPassword.text = "ashish@123"
         
         self.setUpTexxtField(textField: txtEmail, errorText: "Please enter a valid email", placeHolder: "Email Address", leftImageName: "email_icon")
         self.setUpTexxtField(textField: txtPassword, errorText: "Please enter a valid password", placeHolder: "Password",isSecureText: true, leftImageName: "password_icon")

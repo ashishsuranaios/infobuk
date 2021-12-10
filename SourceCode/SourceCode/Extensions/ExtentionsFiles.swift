@@ -34,6 +34,12 @@ extension UIView {
 
 
 extension String {
+    
+    func capitalizingFirstLetter() -> String {
+            let first = String(self.prefix(1)).capitalized
+            let other = String(self.dropFirst())
+            return first + other
+        }
 
     //To check text field or String is blank or not
     var isBlank: Bool {
