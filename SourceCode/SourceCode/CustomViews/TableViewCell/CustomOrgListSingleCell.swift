@@ -25,10 +25,10 @@ class CustomOrgListSingleCell: UITableViewCell {
         let seconds = 0.2
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
             // Put your code which should be executed with a delay here
-            if !self.isShadowApplied {
-                self.isShadowApplied = true
-            self.shadowView.setShodowEffectWithCornerRadius(radius: shodowBgViewCornerRadius)
-            }
+//            if !self.isShadowApplied {
+//                self.isShadowApplied = true
+//            self.shadowView.setShodowEffectWithCornerRadius(radius: shodowBgViewCornerRadius)
+//            }
         }
     }
 
@@ -39,12 +39,14 @@ class CustomOrgListSingleCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func reloadData() {
+    func reloadData(index : Int) {
 //        lblOrgName.text = (orgDict?["orgName"] ?? "") as? String
 
         if let usersDict = orgDict?["users"] as? [String : Any] {
-            let allKeys = Array(usersDict.keys)
-            if let keyValue = allKeys.first as? String {
+            var allKeys = Array(usersDict.keys)
+            allKeys = allKeys.sorted {$0.localizedStandardCompare($1) == .orderedAscending}
+
+            if let keyValue = allKeys[index] as? String {
                 if let userRec = usersDict[keyValue] as? [String : Any] {
                     lblName.text = (userRec["fullName"] ?? "") as? String
                     lblType.text = " " + ((userRec["userType"] ?? "") as? String)!.capitalizingFirstLetter() + " "

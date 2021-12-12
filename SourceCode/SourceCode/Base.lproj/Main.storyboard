@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -259,8 +259,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="E8o-Eh-EPJ">
-                                <rect key="frame" x="0.0" y="102" width="414" height="760"/>
+                            <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="E8o-Eh-EPJ">
+                                <rect key="frame" x="0.0" y="94" width="414" height="768"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4za-E6-EkR">
@@ -308,13 +308,13 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pDb-G8-c0W">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="102"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="94"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KXW-Rl-PdV">
-                                        <rect key="frame" x="0.0" y="52" width="414" height="50"/>
+                                        <rect key="frame" x="0.0" y="44" width="414" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Organizations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hKA-2U-dI8">
-                                                <rect key="frame" x="128" y="12.666666666666671" width="158" height="25"/>
+                                                <rect key="frame" x="128" y="12.666666666666664" width="158" height="25"/>
                                                 <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="18"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -361,7 +361,7 @@
                             <constraint firstItem="ANb-9d-Fzq" firstAttribute="bottom" secondItem="4za-E6-EkR" secondAttribute="bottom" constant="10" id="hwM-ie-7PU"/>
                             <constraint firstItem="ANb-9d-Fzq" firstAttribute="trailing" secondItem="4za-E6-EkR" secondAttribute="trailing" constant="15" id="lYh-po-ycv"/>
                             <constraint firstAttribute="trailing" secondItem="E8o-Eh-EPJ" secondAttribute="trailing" id="loO-uQ-aDy"/>
-                            <constraint firstItem="KXW-Rl-PdV" firstAttribute="top" secondItem="ANb-9d-Fzq" secondAttribute="top" constant="8" id="r4F-J3-6vU"/>
+                            <constraint firstItem="KXW-Rl-PdV" firstAttribute="top" secondItem="ANb-9d-Fzq" secondAttribute="top" id="r4F-J3-6vU"/>
                         </constraints>
                     </view>
                     <connections>

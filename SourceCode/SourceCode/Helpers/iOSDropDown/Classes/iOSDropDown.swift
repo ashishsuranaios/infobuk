@@ -18,7 +18,7 @@ open class DropDown : UITextField{
 
     //MARK: IBInspectable
 
-    @IBInspectable public var rowHeight: CGFloat = 30
+    @IBInspectable public var rowHeight: CGFloat = 44
     @IBInspectable public var rowBackgroundColor: UIColor = .white
     @IBInspectable public var selectedRowColor: UIColor = .cyan
     @IBInspectable public var hideOptionsWhenSelect = true
