@@ -63,19 +63,29 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yvB-c1-z9G">
+                                <rect key="frame" x="0.0" y="0.0" width="303" height="41"/>
+                                <connections>
+                                    <action selector="btnUserClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="10s-J0-9Yj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="tuH-RD-Crg" firstAttribute="centerY" secondItem="d26-Iq-zlI" secondAttribute="centerY" id="1R1-qN-Amc"/>
                             <constraint firstItem="gxK-ye-adK" firstAttribute="top" secondItem="3Od-cl-2ya" secondAttribute="top" id="2RU-Xi-imU"/>
+                            <constraint firstItem="yvB-c1-z9G" firstAttribute="top" secondItem="d26-Iq-zlI" secondAttribute="top" id="4Y5-GV-k4M"/>
                             <constraint firstItem="tuH-RD-Crg" firstAttribute="leading" secondItem="3Od-cl-2ya" secondAttribute="trailing" constant="8" symbolic="YES" id="9ZM-U9-I68"/>
                             <constraint firstItem="gxK-ye-adK" firstAttribute="leading" secondItem="tob-w7-cqJ" secondAttribute="trailing" constant="10" id="FPY-zd-iGb"/>
                             <constraint firstItem="gxK-ye-adK" firstAttribute="bottom" secondItem="3Od-cl-2ya" secondAttribute="bottom" id="PC2-Gv-Pvb"/>
                             <constraint firstItem="3Od-cl-2ya" firstAttribute="bottom" secondItem="tob-w7-cqJ" secondAttribute="bottom" id="dJt-h6-560"/>
                             <constraint firstItem="3Od-cl-2ya" firstAttribute="leading" secondItem="gxK-ye-adK" secondAttribute="trailing" constant="8" symbolic="YES" id="fYJ-Pl-Z44"/>
                             <constraint firstItem="tob-w7-cqJ" firstAttribute="centerY" secondItem="d26-Iq-zlI" secondAttribute="centerY" id="ftJ-SY-SMf"/>
+                            <constraint firstItem="yvB-c1-z9G" firstAttribute="leading" secondItem="d26-Iq-zlI" secondAttribute="leading" id="hHZ-DU-Zm4"/>
                             <constraint firstItem="tob-w7-cqJ" firstAttribute="leading" secondItem="d26-Iq-zlI" secondAttribute="leading" constant="25" id="jVt-2L-YqQ"/>
                             <constraint firstItem="3Od-cl-2ya" firstAttribute="centerY" secondItem="d26-Iq-zlI" secondAttribute="centerY" id="rhs-Og-bpf"/>
+                            <constraint firstAttribute="bottom" secondItem="yvB-c1-z9G" secondAttribute="bottom" id="vQe-T1-5g6"/>
+                            <constraint firstItem="yvB-c1-z9G" firstAttribute="trailing" secondItem="tob-w7-cqJ" secondAttribute="trailing" id="zE5-7k-CNf"/>
                             <constraint firstAttribute="trailing" secondItem="tuH-RD-Crg" secondAttribute="trailing" constant="10" id="zeo-xK-MSc"/>
                         </constraints>
                     </view>
@@ -90,6 +100,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="btnSetting" destination="tuH-RD-Crg" id="Sxj-ML-eoC"/>
+                <outlet property="btnUserClick" destination="yvB-c1-z9G" id="teN-68-FrI"/>
                 <outlet property="lblName" destination="tob-w7-cqJ" id="y87-VN-pVg"/>
                 <outlet property="lblStatus" destination="gxK-ye-adK" id="c7M-7t-5tt"/>
                 <outlet property="lblType" destination="3Od-cl-2ya" id="WQK-f7-IOI"/>

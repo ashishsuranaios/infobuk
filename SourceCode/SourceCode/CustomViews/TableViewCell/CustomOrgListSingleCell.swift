@@ -15,9 +15,13 @@ class CustomOrgListSingleCell: UITableViewCell {
     @IBOutlet weak var lblType : UILabel!
     @IBOutlet weak var btnSetting : UIButton!
     @IBOutlet weak var lblStatus : UILabel!
+    
+    @IBOutlet weak var btnUserClick : UIButton!
+
 
     var orgDict : [String : Any]?
     var isShadowApplied = false
+    var parentVC : UIViewController?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -75,6 +79,27 @@ class CustomOrgListSingleCell: UITableViewCell {
     }
     
     func checkForShadow()  {
+        
+    }
+    
+    @objc @IBAction func btnUserClicked(_ sender: UIButton) {
+        
+        if let usersDict = orgDict?["users"] as? [String : Any] {
+            var allKeys = Array(usersDict.keys)
+            allKeys = allKeys.sorted {$0.localizedStandardCompare($1) == .orderedAscending}
+
+            if let keyValue = allKeys[sender.tag] as? String {
+                if let userRec = usersDict[keyValue] as? [String : Any] {
+                    
+                    APP_DEL.userSelectedDict = userRec as! [String : String]
+                    
+                    let controller = parentVC?.storyboard?.instantiateViewController(withIdentifier: "UserDashboardVC") as! UserDashboardVC
+                    parentVC?.navigationController?.pushViewController(controller, animated: true)
+                }
+                
+            }
+        }
+        
         
     }
     

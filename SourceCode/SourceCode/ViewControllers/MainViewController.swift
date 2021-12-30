@@ -94,13 +94,13 @@ class MainViewController: UIViewController {
     }
     
     func showAlert(msg : String)  {
-        let alert = UIAlertController(title: "Alert", message: msg, preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: "Infobuk", message: msg, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
     
     func showAlertWithBackAction(msg : String)  {
-        let alert = UIAlertController(title: "Alert", message: msg, preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: "Infobuk", message: msg, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: { (action) in
             self.navigationController?.popViewController(animated: true)
         }))
@@ -124,4 +124,6 @@ class MainViewController: UIViewController {
     func getCountryCode() {
         
     }
+    
+
 }

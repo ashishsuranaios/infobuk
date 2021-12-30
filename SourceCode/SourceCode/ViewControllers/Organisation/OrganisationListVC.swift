@@ -66,6 +66,20 @@ class OrganisationListVC: UIViewController {
         self.navigationController?.pushViewController(controller, animated: true)
     }
     
+//    @objc @IBAction func btnUserClicked(_ sender: Any) {
+//        if let orgDict = (loginModel?["orgs"] as? [String : Any]) {
+//            if let keyValue = allKeys[indexPath.section] as? String {
+//                if let orgRecord = orgDict[keyValue] as? [String : Any] {
+//                    customCell.orgDict = orgRecord
+//                    customCell.reloadData(index: indexPath.row)
+//                }
+//                
+//            }
+//        }
+//        let controller = self.storyboard?.instantiateViewController(withIdentifier: "UserDashboardVC") as! UserDashboardVC
+//        self.navigationController?.pushViewController(controller, animated: true)
+//    }
+    
     @IBAction func btnLogoutClicked(_ sender: Any) {
         let alert = UIAlertController(title: "Alert", message: "Are you sure you want to logout from this account?", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.default, handler: { (action) in
@@ -158,12 +172,19 @@ extension OrganisationListVC : UITableViewDelegate, UITableViewDataSource {
                 
             }
         }
+        customCell.parentVC = self
+        customCell.btnUserClick.tag = indexPath.row
+//        customCell.btnUserClick.addTarget(self, action: #selector(btnUserClicked(_:)), for: .touchUpInside)
         return customCell
     }
 
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 30.0
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
     }
     
     

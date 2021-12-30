@@ -25,3 +25,6 @@ var AppColor = UIColor(red: 104.0/255.0, green: 112.0/255.0, blue: 234.0/255.0, 
 var AppDarkGrayColor = UIColor(red: 85.0/255.0, green: 85.0/255.0, blue: 85.0/255.0, alpha: 1.0)
 var AppGrayColor = UIColor(red: 114.0/255.0, green: 114.0/255.0, blue: 114.0/255.0, alpha: 1.0)
 var errorRedColor = UIColor(red: 255.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0)
+
+
+let APP_DEL =  (UIApplication.shared.delegate) as! AppDelegate

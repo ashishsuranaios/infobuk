@@ -12,13 +12,13 @@ extension UIView {
     func setShodowEffectWithCornerRadius(radius : CGFloat) {
         var shadowLayer: CAShapeLayer!
         shadowLayer = CAShapeLayer()
-         shadowLayer.path = UIBezierPath(roundedRect: bounds, cornerRadius: 12).cgPath
+        shadowLayer.path = UIBezierPath(roundedRect: CGRect(x: 8, y: 8, width: bounds.width-16, height: bounds.height-16), cornerRadius: 12).cgPath
          shadowLayer.fillColor = UIColor.white.cgColor
 
          shadowLayer.shadowColor = UIColor.lightGray.cgColor
          shadowLayer.shadowPath = shadowLayer.path
-        shadowLayer.shadowOffset = CGSize(width: 0.5, height: 0.5)
-        shadowLayer.shadowOpacity = 0.5
+        shadowLayer.shadowOffset = CGSize(width: 0.3, height: 0.3)
+        shadowLayer.shadowOpacity = 0.3
         shadowLayer.shadowRadius = radius
 
          layer.insertSublayer(shadowLayer, at: 0)

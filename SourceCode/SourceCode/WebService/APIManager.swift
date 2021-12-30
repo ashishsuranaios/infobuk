@@ -25,6 +25,8 @@ class APICallManager {
         case AddOrg = "addOrg"
         case Login = "actions/login"
         case ResetPassword = "actions/sendPasswordResetLink"
+        case tagsRelated = "actions/handleCategories"
+        case tagsChildRelated = "actions/handleValueByCategoryId"
 
     }
     
@@ -203,6 +205,124 @@ class APICallManager {
         )
     }
     
+    // MARK : TagList View API
+    
+    func requestForTagListView(param : [String : String], onSuccess successCallback : ((_ countryList : TagsModel) -> Void)?, onFailure failureCallback: ((_ errorMessage : String) -> Void)?) {
+        // Build URL
+        let url = API_BASE_URL + Endpoint.tagsRelated.rawValue
+        let token = UserDefaults.standard.value(forKey: loginTokenLocal) as? String ?? ""
+
+        let headers: HTTPHeaders = [
+            "Content-Type": "application/x-www-form-urlencoded",
+            "Accept": "*/*",
+            "Authorization" : "Bearer \(token)"
+        ]
+        // call API
+        self.createRequest(
+            url, method: .post, headers: headers, parameters: param,
+            onSuccess: {(responseObject: JSON) -> Void in
+                // Create dictionary
+                // Convert JSON String to Model
+               
+                if let responseDict = responseObject.dictionaryObject {
+                    let t1 = (try? JSONSerialization.data(withJSONObject: responseDict, options: []))!
+                    let jsonDecoder = JSONDecoder()
+                    let responseModel = try? jsonDecoder.decode(TagsModel.self, from: t1)
+//                    let responseModel : SignUpModel = self.stringArrayToData(stringArray: responseDict) as! SignUpModel
+//                    // Fire callback
+                    if responseModel?.success ?? false {
+                        successCallback?(responseModel!)
+                    } else {
+                        failureCallback?("An error has occured.")
+                    }
+                } else {
+                    failureCallback?("An error has occured.")
+                }
+        },
+            onFailure: {(errorMessage: String) -> Void in
+                failureCallback?(errorMessage)
+        }
+        )
+    }
+    
+    // MARK : Add Tag Group
+    
+    func requestForAddTagGroup(param : [String : String], onSuccess successCallback : ((_ countryList : TagsModel) -> Void)?, onFailure failureCallback: ((_ errorMessage : String) -> Void)?) {
+        // Build URL
+        let url = API_BASE_URL + Endpoint.tagsRelated.rawValue
+        let token = UserDefaults.standard.value(forKey: loginTokenLocal) as? String ?? ""
+
+        let headers: HTTPHeaders = [
+            "Content-Type": "application/x-www-form-urlencoded",
+            "Accept": "*/*",
+            "Authorization" : "Bearer \(token)"
+        ]
+        // call API
+        self.createRequest(
+            url, method: .post, headers: headers, parameters: param,
+            onSuccess: {(responseObject: JSON) -> Void in
+                // Create dictionary
+                // Convert JSON String to Model
+               
+                if let responseDict = responseObject.dictionaryObject {
+                    let t1 = (try? JSONSerialization.data(withJSONObject: responseDict, options: []))!
+                    let jsonDecoder = JSONDecoder()
+                    let responseModel = try? jsonDecoder.decode(TagsModel.self, from: t1)
+//                    let responseModel : SignUpModel = self.stringArrayToData(stringArray: responseDict) as! SignUpModel
+//                    // Fire callback
+//                    if responseModel?.success ?? false {
+                        successCallback?(responseModel!)
+//                    } else {
+//                        failureCallback?("An error has occured.")
+//                    }
+                } else {
+                    failureCallback?("An error has occured.")
+                }
+        },
+            onFailure: {(errorMessage: String) -> Void in
+                failureCallback?(errorMessage)
+        }
+        )
+    }
+    
+    func requestForAddTagChild(param : [String : String], onSuccess successCallback : ((_ countryList : TagsModel) -> Void)?, onFailure failureCallback: ((_ errorMessage : String) -> Void)?) {
+        // Build URL
+        let url = API_BASE_URL + Endpoint.tagsChildRelated.rawValue
+        let token = UserDefaults.standard.value(forKey: loginTokenLocal) as? String ?? ""
+
+        let headers: HTTPHeaders = [
+            "Content-Type": "application/x-www-form-urlencoded",
+            "Accept": "*/*",
+            "Authorization" : "Bearer \(token)"
+        ]
+        // call API
+        self.createRequest(
+            url, method: .post, headers: headers, parameters: param,
+            onSuccess: {(responseObject: JSON) -> Void in
+                // Create dictionary
+                // Convert JSON String to Model
+               
+                if let responseDict = responseObject.dictionaryObject {
+                    let t1 = (try? JSONSerialization.data(withJSONObject: responseDict, options: []))!
+                    let jsonDecoder = JSONDecoder()
+                    let responseModel = try? jsonDecoder.decode(TagsModel.self, from: t1)
+//                    let responseModel : SignUpModel = self.stringArrayToData(stringArray: responseDict) as! SignUpModel
+//                    // Fire callback
+                    if responseModel?.success ?? false {
+                        successCallback?(responseModel!)
+                    } else {
+                        failureCallback?("An error has occured.")
+                    }
+                } else {
+                    failureCallback?("An error has occured.")
+                }
+        },
+            onFailure: {(errorMessage: String) -> Void in
+                failureCallback?(errorMessage)
+        }
+        )
+    }
+    
     func stringArrayToData(stringArray: Any) -> Any? {
         let t1 = (try? JSONSerialization.data(withJSONObject: stringArray, options: []))!
         let jsonDecoder = JSONDecoder()
@@ -210,40 +330,7 @@ class APICallManager {
         return responseModel
     }
     
-    // MARK: Contact
-//    func callAPIGetPeople(
-//        onSuccess successCallback: ((_ people: [PeopleModel]) -> Void)?,
-//        onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
-//
-//        // Build URL
-//        let url = API_BASE_URL + Endpoint.People.rawValue
-//
-//        // call API
-//        self.createRequest(
-//            url, method: .get, headers: nil, parameters: nil,
-//            onSuccess: {(responseObject: JSON) -> Void in
-//                // Create dictionary
-//                if let responseDict = responseObject["data"].arrayObject {
-//                    let peopleDict = responseDict as! [[String:AnyObject]]
-//
-//                    // Create object
-//                    var data = [PeopleModel]()
-//                    for item in peopleDict {
-//                        let single = PeopleModel.build(item)
-//                        data.append(single)
-//                    }
-//
-//                    // Fire callback
-//                    successCallback?(data)
-//                } else {
-//                    failureCallback?("An error has occured.")
-//                }
-//        },
-//            onFailure: {(errorMessage: String) -> Void in
-//                failureCallback?(errorMessage)
-//        }
-//        )
-//    }
+
     
     // MARK: Request Handler
     // Create request
