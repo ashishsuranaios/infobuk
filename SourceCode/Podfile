@@ -11,6 +11,8 @@ pod 'SwiftyJSON'
 pod 'IQKeyboardManagerSwift'
 pod 'NVActivityIndicatorView'
 pod 'JWTDecode', '~> 2.6'
+pod 'GrowingTextView', '0.7.2'
+
 
   # Pods for SourceCode
 

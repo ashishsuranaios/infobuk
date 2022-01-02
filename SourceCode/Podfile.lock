@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.4.4)
+  - GrowingTextView (0.7.2)
   - IQKeyboardManagerSwift (6.5.9)
   - JWTDecode (2.6.3)
   - MaterialComponents/AnimationTiming (124.2.0)
@@ -40,6 +41,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - GrowingTextView (= 0.7.2)
   - IQKeyboardManagerSwift
   - JWTDecode (~> 2.6)
   - "MaterialComponents/TextControls+OutlinedTextFields"
@@ -50,6 +52,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - GrowingTextView
     - IQKeyboardManagerSwift
     - JWTDecode
     - MaterialComponents
@@ -60,6 +63,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
+  GrowingTextView: 876bf42005b5e4a4fd740597db12caaf41f0fe6c
   IQKeyboardManagerSwift: 6e839c575c4aa1078d58a596e41244e77abe918f
   JWTDecode: 33e5e26e5ddbd21b2065820894c08fef0cad9509
   MaterialComponents: 1a9b2d9d45b1601ae544de85089adc4c464306d4
@@ -68,6 +72,6 @@ SPEC CHECKSUMS:
   NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: e20829436d93922ef33652d2f0a0cd66523bc425
+PODFILE CHECKSUM: bdf91ed432d1195522616989e1e558bb3029ab3d
 
 COCOAPODS: 1.11.2

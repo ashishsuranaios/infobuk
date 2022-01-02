@@ -21,6 +21,9 @@ class MainViewController: UIViewController {
     }
     
     func startLoading() {
+        if nvActivityIndicatorView != nil {
+            nvActivityIndicatorView.removeFromSuperview()
+        }
         nvActivityIndicatorView = NVActivityIndicatorView(frame: CGRect(x: self.view.frame.width/2 - 40, y: self.view.frame.height/2 - 40, width: 80, height: 80), type: .ballClipRotateMultiple, color: AppColor, padding: 10.0)
         self.view.addSubview(nvActivityIndicatorView)
         nvActivityIndicatorView.startAnimating()

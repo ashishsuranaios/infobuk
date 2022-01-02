@@ -38,8 +38,9 @@ struct CategoriesAndValues : Codable {
     let id : String?
     let name : String?
     let values_ : [Values]?
-    let valuesSorted : [ValuesSorted]?
+    var valuesSorted : [ValuesSorted]?
     var isSelected = false
+    var searchString : String = ""
 
     enum CodingKeys: String, CodingKey {
 
@@ -48,6 +49,7 @@ struct CategoriesAndValues : Codable {
         case values_ = "values"
         case valuesSorted = "valuesSorted"
         case isSelected = "isSelected"
+        case searchString = "searchString"
 
     }
 
@@ -58,6 +60,7 @@ struct CategoriesAndValues : Codable {
         values_ = try values.decodeIfPresent([Values].self, forKey: .values_)
         valuesSorted = try values.decodeIfPresent([ValuesSorted].self, forKey: .valuesSorted)
         isSelected = try values.decodeIfPresent(Bool.self, forKey: .isSelected) ?? false
+        searchString = try values.decodeIfPresent(String.self, forKey: .searchString) ?? ""
 
     }
 
@@ -66,17 +69,20 @@ struct CategoriesAndValues : Codable {
 struct Values : Codable {
     let id : String?
     let value : String?
+    var isSelected = false
 
     enum CodingKeys: String, CodingKey {
 
         case id = "id"
         case value = "value"
+        case isSelected = "isSelected"
     }
 
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         id = try values.decodeIfPresent(String.self, forKey: .id)
         value = try values.decodeIfPresent(String.self, forKey: .value)
+        isSelected = try values.decodeIfPresent(Bool.self, forKey: .isSelected) ?? false
     }
 
 }
@@ -85,17 +91,20 @@ struct Values : Codable {
 struct ValuesSorted : Codable {
     let id : String?
     let value : String?
+    var isSelected = false
 
     enum CodingKeys: String, CodingKey {
 
         case id = "id"
         case value = "value"
+        case isSelected = "isSelected"
     }
 
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         id = try values.decodeIfPresent(String.self, forKey: .id)
         value = try values.decodeIfPresent(String.self, forKey: .value)
+        isSelected = try values.decodeIfPresent(Bool.self, forKey: .isSelected) ?? false
     }
 
 }

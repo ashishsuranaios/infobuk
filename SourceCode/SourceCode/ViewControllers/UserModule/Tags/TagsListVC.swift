@@ -45,7 +45,6 @@ class TagsListVC: MainViewController {
         APICallManager.instance.requestForTagListView(param: param) { (res) in
             if res.success ?? false {
                 self.tagsModel = res
-
                 self.tblView.reloadData()
             } else {
             }
@@ -100,6 +99,7 @@ class TagsListVC: MainViewController {
     }
     
     func deleteTagGroup (index : Int) {
+        self.startLoading()
         let catId =  (tagsModel?.categoriesAndValues?[index].id ?? "")
 
         let param  = [ "orgId" : "\(APP_DEL.userSelectedDict["orgId"] ?? "")","userId" : "\(APP_DEL.userSelectedDict["userId"] ?? "")","action" : "delete", "categoryId" : catId]

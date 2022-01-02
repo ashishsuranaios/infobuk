@@ -126,7 +126,7 @@ class RegisterVC: MainViewController {
     @IBAction func btnAgreeTermsAndConditionClicked(_ sender: Any) {
         isAgreeTerms = !isAgreeTerms
         if isAgreeTerms {
-            imgAgreeTerms.image = UIImage(named: "checkbox_selected")
+            imgAgreeTerms.image = UIImage(named: "checkbox_app_selected")
         } else {
             imgAgreeTerms.image = UIImage(named: "checkbox_unselected")
         }

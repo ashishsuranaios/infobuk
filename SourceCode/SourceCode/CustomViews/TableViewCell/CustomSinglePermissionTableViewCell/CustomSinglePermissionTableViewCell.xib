@@ -76,7 +76,7 @@
                                         </constraints>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.94875019790000004" green="0.95264691109999999" blue="0.97327417140000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="GpY-jS-vxS" firstAttribute="leading" secondItem="fGS-jt-KR0" secondAttribute="leading" constant="8" id="1Gd-9R-3OO"/>
                                     <constraint firstAttribute="trailing" secondItem="GpY-jS-vxS" secondAttribute="trailing" constant="8" id="DkJ-Yh-r5D"/>
@@ -105,7 +105,7 @@
                                         <color key="textColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="fLp-3b-UUY">
+                                    <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="fLp-3b-UUY">
                                         <rect key="frame" x="10" y="43.5" width="280" height="40"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -124,16 +124,16 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nVa-5T-5fn">
                                                 <rect key="frame" x="0.0" y="0.0" width="280" height="54"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yPU-5w-Iy0">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkbox_unselected" translatesAutoresizingMaskIntoConstraints="NO" id="yPU-5w-Iy0">
                                                         <rect key="frame" x="5" y="15" width="24" height="24"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="24" id="7xx-KB-jo4"/>
                                                             <constraint firstAttribute="width" constant="24" id="g9W-4h-0Qf"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nre-xS-fes">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nre-xS-fes">
                                                         <rect key="frame" x="39" y="5" width="231" height="44"/>
-                                                        <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="16"/>
+                                                        <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -151,16 +151,16 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="evc-pX-64q">
                                                 <rect key="frame" x="0.0" y="54" width="280" height="53.5"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OAh-in-tOh">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkbox_unselected" translatesAutoresizingMaskIntoConstraints="NO" id="OAh-in-tOh">
                                                         <rect key="frame" x="5" y="15" width="24" height="24"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="24" id="41T-9v-C4m"/>
                                                             <constraint firstAttribute="width" constant="24" id="B87-ae-mnl"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KcN-aZ-ifE">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Broadcast messages" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KcN-aZ-ifE">
                                                         <rect key="frame" x="39" y="5" width="231" height="43.5"/>
-                                                        <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="16"/>
+                                                        <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -178,16 +178,16 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lCz-zn-v2i">
                                                 <rect key="frame" x="0.0" y="107.5" width="280" height="54"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8g0-ml-mau">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkbox_unselected" translatesAutoresizingMaskIntoConstraints="NO" id="8g0-ml-mau">
                                                         <rect key="frame" x="5" y="15" width="24" height="24"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="24" id="UTk-vg-KP8"/>
                                                             <constraint firstAttribute="width" constant="24" id="hJJ-nW-8nf"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zkf-TI-Did">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Take Attendace" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zkf-TI-Did">
                                                         <rect key="frame" x="39" y="5" width="231" height="44"/>
-                                                        <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="16"/>
+                                                        <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -244,6 +244,9 @@
                 <outlet property="btnExpandCollapse" destination="eji-LK-Mhp" id="Dyg-Id-G2O"/>
                 <outlet property="cnstrntHeightCollView" destination="uRm-wT-T5k" id="d8g-Xo-u53"/>
                 <outlet property="collView" destination="fLp-3b-UUY" id="zyT-09-BsJ"/>
+                <outlet property="imgBroadcastMsgSelection" destination="OAh-in-tOh" id="W4w-Ws-3dg"/>
+                <outlet property="imgTakeAttendanceSelection" destination="8g0-ml-mau" id="czA-YH-8hu"/>
+                <outlet property="imgViewSelection" destination="yPU-5w-Iy0" id="9X0-jx-FKU"/>
                 <outlet property="lblName" destination="GpY-jS-vxS" id="zBW-oZ-jUv"/>
                 <outlet property="mainStackViewBg" destination="lCs-tV-Wf4" id="Iaz-Qn-NE0"/>
             </connections>
@@ -251,6 +254,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="checkbox_unselected" width="48" height="48"/>
         <image name="delete_red_icon" width="256" height="256"/>
         <image name="edit_purple_icon" width="256" height="256"/>
         <systemColor name="systemBackgroundColor">

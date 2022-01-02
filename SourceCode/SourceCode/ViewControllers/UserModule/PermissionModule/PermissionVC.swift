@@ -11,14 +11,52 @@ class PermissionVC: MainViewController {
     @IBOutlet weak var tblView: UITableView!
     var expandIndexList = [Int]()
 
-
+    var permissionModel : PermissionsModel?
+    var tagsModel : TagsModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setUI()
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.getTagsList()
+    }
+    
+    func getTagsList() {
+        self.startLoading()
+        let param : [String : String] = [ "orgId" : "\(APP_DEL.userSelectedDict["orgId"] ?? "")","userId" : "\(APP_DEL.userSelectedDict["userId"] ?? "")","action" : "view"]
+        APICallManager.instance.requestForTagListView(param: param) { (res) in
+            if res.success ?? false {
+                self.tagsModel = res
+                self.getPermissionList()
+            } else {
+                self.stopLoading()
+            }
+        } onFailure: { (err) in
+            self.stopLoading()
+
+        }
+    }
+    
+    func getPermissionList() {
+        self.startLoading()
+        let param : [String : String] = [ "orgId" : "\(APP_DEL.userSelectedDict["orgId"] ?? "")","userId" : "\(APP_DEL.userSelectedDict["userId"] ?? "")","action" : "view"]
+        APICallManager.instance.requestForPermissionList(param: param) { (res) in
+            if res.success ?? false {
+                self.permissionModel = res
+                self.tblView.reloadData()
+            } else {
+            }
+            self.stopLoading()
+        } onFailure: { (err) in
+            self.stopLoading()
+        }
+    }
 
     func setUI() {
+
         tblView.delegate = self
         tblView.dataSource = self
         tblView.register(UINib(nibName: "CustomSinglePermissionTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomSinglePermissionTableViewCell")
@@ -34,8 +72,73 @@ class PermissionVC: MainViewController {
     }
     
     // MARK :- BUtton Action
+    
+    @IBAction func btnAddClicked(_ sender: Any) {
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "AddPermissionVC") as! AddPermissionVC
+        controller.strTitleName = "Add Permission"
+        controller.type = 0
+        controller.categoriesArray = tagsModel?.categoriesAndValues ?? [CategoriesAndValues]()
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
     @IBAction func btnBackClicked(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    @objc @IBAction func btnExpandClicked(_ sender: UIButton) {
+        if expandIndexList.contains(sender.tag){
+            expandIndexList.remove(at: expandIndexList.firstIndex(of: sender.tag)!)
+        } else {
+            expandIndexList.append(sender.tag)
+        }
+//        let boolValue =  !(tagsModel?.categoriesAndValues?[sender.tag].isSelected ?? true)
+//        tagsModel?.categoriesAndValues?[sender.tag].isSelected = boolValue
+        self.tblView.reloadData()
+    }
+    
+    @objc @IBAction func btnEditClicked(_ sender: UIButton) {
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "AddPermissionVC") as! AddPermissionVC
+        controller.strTitleName = "Edit Permission"
+        controller.type = 1
+        controller.recordEdit = permissionModel?.permissions?[sender.tag]
+        controller.categoriesArray = tagsModel?.categoriesAndValues ?? [CategoriesAndValues]()
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    @objc @IBAction func btnDeleteClicked(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Infobuk", message: "Are you sure you want to delete custom permission?", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.default, handler: { (action) in
+            self.deleteTagGroup(index: sender.tag)
+        }))
+        alert.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.default, handler: { (action) in
+        }))
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
+    func deleteTagGroup (index : Int) {
+        self.startLoading()
+
+//        let catId =  (tagsModel?.categoriesAndValues?[index].id ?? "")
+//
+//        let param  = [ "orgId" : "\(APP_DEL.userSelectedDict["orgId"] ?? "")","userId" : "\(APP_DEL.userSelectedDict["userId"] ?? "")","action" : "delete", "categoryId" : catId]
+//
+//        APICallManager.instance.requestForAddTagGroup(param: param) { (res) in
+//            if res.success ?? false {
+//                let alert = UIAlertController(title: "Infobuk", message: "Success", preferredStyle: UIAlertController.Style.alert)
+//                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: { (action) in
+//                    self.expandIndexList.removeAll()
+//                    self.viewWillAppear(true)
+//                }))
+//                self.present(alert, animated: true, completion: nil)
+//            } else {
+//                self.showAlert(msg: res.error ?? "Something went wrong. Please try again.")
+//            }
+//            self.stopLoading()
+//        } onFailure: { (err) in
+//            self.stopLoading()
+//
+//        }
     }
 
 }
@@ -52,28 +155,32 @@ extension PermissionVC : UITableViewDelegate, UITableViewDataSource {
 //
 //            }
 //        }
-        return 10
+        return permissionModel?.permissions?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let customCell = tableView.dequeueReusableCell(withIdentifier: "CustomSinglePermissionTableViewCell", for: indexPath) as! CustomSinglePermissionTableViewCell
+        let recPermission = permissionModel?.permissions?[indexPath.row]
         
-//        customCell.lblName.text = tagsModel?.categoriesAndValues?[indexPath.row].name ?? ""
-//        customCell.tagsModel = tagsModel
-//        customCell.parentVC = self
-//        customCell.btnExpandCollapse.tag = indexPath.row
-//        customCell.btnEdit.tag = indexPath.row
-//        customCell.btnDelete.tag = indexPath.row
-//        customCell.btnExpandCollapse.addTarget(self, action: #selector(btnExpandClicked(_:)), for: .touchUpInside)
-//        customCell.btnEdit.addTarget(self, action: #selector(btnEditTagGroup(_:)), for: .touchUpInside)
-//        customCell.btnDelete.addTarget(self, action: #selector(btnDeleteTagGroup(_:)), for: .touchUpInside)
-//
-//        if expandIndexList.contains(indexPath.row) {
-//            customCell.bottomView.isHidden = false
+        
+        
+        customCell.lblName.text = recPermission?.name ?? ""
+        customCell.record = recPermission!
+        customCell.parentVC = self
+        customCell.btnExpandCollapse.tag = indexPath.row
+        customCell.btnEdit.tag = indexPath.row
+        customCell.btnDelete.tag = indexPath.row
+        customCell.btnExpandCollapse.addTarget(self, action: #selector(btnExpandClicked(_:)), for: .touchUpInside)
+        customCell.btnEdit.addTarget(self, action: #selector(btnEditClicked(_:)), for: .touchUpInside)
+        customCell.btnDelete.addTarget(self, action: #selector(btnDeleteClicked(_:)), for: .touchUpInside)
+        customCell.tagsModel = self.tagsModel
+        
+        if expandIndexList.contains(indexPath.row) {
+            customCell.bottomView.isHidden = false
             customCell.reloadBottomData()
-//        } else {
-//            customCell.bottomView.isHidden = true
-//        }
+        } else {
+            customCell.bottomView.isHidden = true
+        }
 
         return customCell
     }

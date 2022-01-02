@@ -25,35 +25,49 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hen-3c-Szy">
                         <rect key="frame" x="5" y="3" width="107" height="34"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="XQQ-Ob-n2a">
-                                <rect key="frame" x="10" y="5" width="68" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="cLq-9y-o2e"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="14"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pKO-lc-LHt">
-                                <rect key="frame" x="83" y="5" width="24" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="pKO-lc-LHt" secondAttribute="height" id="J8u-Gc-NwP"/>
-                                    <constraint firstAttribute="width" constant="24" id="xyh-zr-g6m"/>
-                                </constraints>
-                                <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
-                                <state key="normal" image="delete_white_icon">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ejt-if-U21">
+                                <rect key="frame" x="5" y="0.0" width="97" height="34"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="XQQ-Ob-n2a">
+                                        <rect key="frame" x="0.0" y="0.0" width="68" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="cLq-9y-o2e"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nMj-a3-eWq">
+                                        <rect key="frame" x="73" y="0.0" width="24" height="34"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pKO-lc-LHt">
+                                                <rect key="frame" x="0.0" y="5" width="24" height="24"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="pKO-lc-LHt" secondAttribute="height" id="J8u-Gc-NwP"/>
+                                                    <constraint firstAttribute="width" constant="24" id="zDb-NL-uMt"/>
+                                                </constraints>
+                                                <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                                <state key="normal" image="delete_white_icon">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="pKO-lc-LHt" firstAttribute="leading" secondItem="nMj-a3-eWq" secondAttribute="leading" id="NAE-Fo-qL6"/>
+                                            <constraint firstItem="pKO-lc-LHt" firstAttribute="centerY" secondItem="nMj-a3-eWq" secondAttribute="centerY" id="bKs-Fn-EJc"/>
+                                            <constraint firstAttribute="trailing" secondItem="pKO-lc-LHt" secondAttribute="trailing" id="ehV-LQ-839"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="pKO-lc-LHt" firstAttribute="centerY" secondItem="hen-3c-Szy" secondAttribute="centerY" id="0Uj-sy-Z4N"/>
-                            <constraint firstAttribute="bottom" secondItem="XQQ-Ob-n2a" secondAttribute="bottom" constant="5" id="239-nG-qpV"/>
-                            <constraint firstItem="XQQ-Ob-n2a" firstAttribute="leading" secondItem="hen-3c-Szy" secondAttribute="leading" constant="10" id="2ia-el-1zT"/>
-                            <constraint firstAttribute="trailing" secondItem="pKO-lc-LHt" secondAttribute="trailing" id="5ym-od-EAV"/>
-                            <constraint firstItem="XQQ-Ob-n2a" firstAttribute="top" secondItem="hen-3c-Szy" secondAttribute="top" constant="5" id="SOR-rf-Wy5"/>
-                            <constraint firstItem="pKO-lc-LHt" firstAttribute="leading" secondItem="XQQ-Ob-n2a" secondAttribute="trailing" constant="5" id="yWW-Ia-FNy"/>
+                            <constraint firstItem="ejt-if-U21" firstAttribute="top" secondItem="hen-3c-Szy" secondAttribute="top" id="ael-ZY-sxu"/>
+                            <constraint firstAttribute="bottom" secondItem="ejt-if-U21" secondAttribute="bottom" id="dlh-aD-0qs"/>
+                            <constraint firstItem="ejt-if-U21" firstAttribute="leading" secondItem="hen-3c-Szy" secondAttribute="leading" constant="5" id="oQS-Pm-3uG"/>
+                            <constraint firstAttribute="trailing" secondItem="ejt-if-U21" secondAttribute="trailing" constant="5" id="rgE-OS-MnG"/>
                         </constraints>
                     </view>
                 </subviews>

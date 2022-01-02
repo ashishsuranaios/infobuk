@@ -27,6 +27,9 @@ class APICallManager {
         case ResetPassword = "actions/sendPasswordResetLink"
         case tagsRelated = "actions/handleCategories"
         case tagsChildRelated = "actions/handleValueByCategoryId"
+        case PermissionsApi  = "actions/handlePermissions"
+        case CustomFields = "actions/handleFields"
+        case BroadcastMessages = "actions/manageBroadcastMessage"
 
     }
     
@@ -310,6 +313,123 @@ class APICallManager {
 //                    // Fire callback
                     if responseModel?.success ?? false {
                         successCallback?(responseModel!)
+                    } else {
+                        failureCallback?("An error has occured.")
+                    }
+                } else {
+                    failureCallback?("An error has occured.")
+                }
+        },
+            onFailure: {(errorMessage: String) -> Void in
+                failureCallback?(errorMessage)
+        }
+        )
+    }
+    
+    func requestForPermissionList(param : [String : String], onSuccess successCallback : ((_ countryList : PermissionsModel) -> Void)?, onFailure failureCallback: ((_ errorMessage : String) -> Void)?) {
+        // Build URL
+        let url = API_BASE_URL + Endpoint.PermissionsApi.rawValue
+        let token = UserDefaults.standard.value(forKey: loginTokenLocal) as? String ?? ""
+
+        let headers: HTTPHeaders = [
+            "Content-Type": "application/x-www-form-urlencoded",
+            "Accept": "*/*",
+            "Authorization" : "Bearer \(token)"
+        ]
+        // call API
+        self.createRequest(
+            url, method: .post, headers: headers, parameters: param,
+            onSuccess: {(responseObject: JSON) -> Void in
+                // Create dictionary
+                // Convert JSON String to Model
+               
+                if let responseDict = responseObject.dictionaryObject {
+                    let t1 = (try? JSONSerialization.data(withJSONObject: responseDict, options: []))!
+                    let jsonDecoder = JSONDecoder()
+                    let responseModel = try? jsonDecoder.decode(PermissionsModel.self, from: t1)
+//                    let responseModel : SignUpModel = self.stringArrayToData(stringArray: responseDict) as! SignUpModel
+//                    // Fire callback
+                    if responseModel?.success ?? false {
+                        successCallback?(responseModel!)
+//                        successCallback?(responseDict, responseModel)
+                    } else {
+                        failureCallback?("An error has occured.")
+                    }
+                } else {
+                    failureCallback?("An error has occured.")
+                }
+        },
+            onFailure: {(errorMessage: String) -> Void in
+                failureCallback?(errorMessage)
+        }
+        )
+    }
+    
+    func requestForCustomFieldsList(param : [String : String], onSuccess successCallback : ((_ countryList : CustomFields) -> Void)?, onFailure failureCallback: ((_ errorMessage : String) -> Void)?) {
+        // Build URL
+        let url = API_BASE_URL + Endpoint.CustomFields.rawValue
+        let token = UserDefaults.standard.value(forKey: loginTokenLocal) as? String ?? ""
+
+        let headers: HTTPHeaders = [
+            "Content-Type": "application/x-www-form-urlencoded",
+            "Accept": "*/*",
+            "Authorization" : "Bearer \(token)"
+        ]
+        // call API
+        self.createRequest(
+            url, method: .post, headers: headers, parameters: param,
+            onSuccess: {(responseObject: JSON) -> Void in
+                // Create dictionary
+                // Convert JSON String to Model
+               
+                if let responseDict = responseObject.dictionaryObject {
+                    let t1 = (try? JSONSerialization.data(withJSONObject: responseDict, options: []))!
+                    let jsonDecoder = JSONDecoder()
+                    let responseModel = try? jsonDecoder.decode(CustomFields.self, from: t1)
+//                    let responseModel : SignUpModel = self.stringArrayToData(stringArray: responseDict) as! SignUpModel
+//                    // Fire callback
+                    if responseModel?.success ?? false {
+                        successCallback?(responseModel!)
+//                        successCallback?(responseDict, responseModel)
+                    } else {
+                        failureCallback?("An error has occured.")
+                    }
+                } else {
+                    failureCallback?("An error has occured.")
+                }
+        },
+            onFailure: {(errorMessage: String) -> Void in
+                failureCallback?(errorMessage)
+        }
+        )
+    }
+    
+    func requestForBroadcastMessagesList(param : [String : String], onSuccess successCallback : ((_ countryList : BroadcastMsgModel) -> Void)?, onFailure failureCallback: ((_ errorMessage : String) -> Void)?) {
+        // Build URL
+        let url = API_BASE_URL + Endpoint.BroadcastMessages.rawValue
+        let token = UserDefaults.standard.value(forKey: loginTokenLocal) as? String ?? ""
+
+        let headers: HTTPHeaders = [
+            "Content-Type": "application/x-www-form-urlencoded",
+            "Accept": "*/*",
+            "Authorization" : "Bearer \(token)"
+        ]
+        // call API
+        self.createRequest(
+            url, method: .post, headers: headers, parameters: param,
+            onSuccess: {(responseObject: JSON) -> Void in
+                // Create dictionary
+                // Convert JSON String to Model
+               
+                if let responseDict = responseObject.dictionaryObject {
+                    let t1 = (try? JSONSerialization.data(withJSONObject: responseDict, options: []))!
+                    let jsonDecoder = JSONDecoder()
+                    let responseModel = try? jsonDecoder.decode(BroadcastMsgModel.self, from: t1)
+//                    let responseModel : SignUpModel = self.stringArrayToData(stringArray: responseDict) as! SignUpModel
+//                    // Fire callback
+                    if responseModel?.success ?? false {
+                        successCallback?(responseModel!)
+//                        successCallback?(responseDict, responseModel)
                     } else {
                         failureCallback?("An error has occured.")
                     }

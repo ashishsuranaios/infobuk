@@ -58,7 +58,7 @@ class UserDashboardVC: UIViewController {
     }
     
     @IBAction func btnCustomFieldsClicked(_ sender: Any) {
-        let controller = self.storyboard?.instantiateViewController(withIdentifier: "TagsListVC") as! TagsListVC
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "CustomFieldsListVC") as! CustomFieldsListVC
         self.navigationController?.pushViewController(controller, animated: true)
     }
     
@@ -68,7 +68,7 @@ class UserDashboardVC: UIViewController {
     }
     
     @IBAction func btnBroadCastClicked(_ sender: Any) {
-        let controller = self.storyboard?.instantiateViewController(withIdentifier: "TagsListVC") as! TagsListVC
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "BroadcastMessagesListVC") as! BroadcastMessagesListVC
         self.navigationController?.pushViewController(controller, animated: true)
     }
     
