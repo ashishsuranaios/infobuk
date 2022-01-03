@@ -59,6 +59,9 @@ class AddPermissionVC: MainViewController {
     }
     
     func setUI (){
+        let tap = UITapGestureRecognizer(target: self, action: #selector(btnAddTagClicked(_:)))
+        collView.addGestureRecognizer(tap)
+        
         collView.delegate = self
         collView.dataSource = self
         
@@ -96,7 +99,7 @@ class AddPermissionVC: MainViewController {
     func updateSaveButton() {
         let deadlineTime = DispatchTime.now() + .milliseconds(500)
         DispatchQueue.main.asyncAfter(deadline: deadlineTime) {
-            if (self.txtField.text?.count ?? 0 > 0) {
+            if (self.txtField.text?.count ?? 0 > 0 && self.categorySelected.count > 0) {
                 self.btnSave.backgroundColor = AppColor
                 self.btnSave.alpha = 1.0
                 self.btnSave.isUserInteractionEnabled = true
@@ -224,11 +227,10 @@ class AddPermissionVC: MainViewController {
         var tagChildArray = [String]()
 
         let strId = categorySelected[sender.tag] ?? ""
-        if !deleteCategorySelected.contains(strId){
+        if !deleteCategorySelected.contains(strId) && recordEdit != nil{
             deleteCategorySelected.append(strId)
-        } else {
-            return
         }
+        
         let strIdArray = strId.components(separatedBy: "_")
         if let strFirst = strIdArray.first as? String {
             if strFirst == "category" {
@@ -242,6 +244,11 @@ class AddPermissionVC: MainViewController {
         for rec in (categoriesArray)! {
             if tagArray.contains(rec.id ?? "") {
                 categoriesArray?[i].isSelected = false
+                var j = 0
+                for _ in rec.valuesSorted! {
+                    categoriesArray?[i].valuesSorted?[j].isSelected = false
+                    j = j + 1
+                }
             } else {
                 var j = 0
                 for rec1 in rec.valuesSorted! {

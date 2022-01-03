@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		18183668275B2BD600380E11 /* PhoneCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18183667275B2BD600380E11 /* PhoneCode.swift */; };
 		182866912781935600B8A963 /* AddBroadcastMessagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182866902781935600B8A963 /* AddBroadcastMessagesVC.swift */; };
+		1838E59D27836ED80072287D /* AddCustomFieldsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1838E59C27836ED80072287D /* AddCustomFieldsVC.swift */; };
 		18711EA527770C4E0041E8AC /* TagChildSingleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18711EA327770C4E0041E8AC /* TagChildSingleTableViewCell.swift */; };
 		18711EA627770C4E0041E8AC /* TagChildSingleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18711EA427770C4E0041E8AC /* TagChildSingleTableViewCell.xib */; };
 		18711EAB277719F70041E8AC /* AddTagsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18711EAA277719F70041E8AC /* AddTagsVC.swift */; };
@@ -93,6 +94,7 @@
 		06DC8A32D71D3B0AE44B775F /* Pods_SourceCode_SourceCodeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SourceCode_SourceCodeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18183667275B2BD600380E11 /* PhoneCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneCode.swift; sourceTree = "<group>"; };
 		182866902781935600B8A963 /* AddBroadcastMessagesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBroadcastMessagesVC.swift; sourceTree = "<group>"; };
+		1838E59C27836ED80072287D /* AddCustomFieldsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCustomFieldsVC.swift; sourceTree = "<group>"; };
 		18711EA327770C4E0041E8AC /* TagChildSingleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagChildSingleTableViewCell.swift; sourceTree = "<group>"; };
 		18711EA427770C4E0041E8AC /* TagChildSingleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagChildSingleTableViewCell.xib; sourceTree = "<group>"; };
 		18711EAA277719F70041E8AC /* AddTagsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTagsVC.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				18744E1A278097D700088128 /* CustomFieldsListVC.swift */,
+				1838E59C27836ED80072287D /* AddCustomFieldsVC.swift */,
 			);
 			path = CustomFields;
 			sourceTree = "<group>";
@@ -832,6 +835,7 @@
 				75DC02EA275F639A00BBBEFC /* CustomOnlyLabelCell.swift in Sources */,
 				18BBBC722780185200558A82 /* SelectionImglblTableViewCell.swift in Sources */,
 				18C66606277F3555009E9506 /* PermissionsModel.swift in Sources */,
+				1838E59D27836ED80072287D /* AddCustomFieldsVC.swift in Sources */,
 				188324172776F22500D216D2 /* TagsListVC.swift in Sources */,
 				75BBB7832755EA6700460069 /* AppDelegate.swift in Sources */,
 				18744E2A27809F6400088128 /* SingleCustomFieldsTableViewCell.swift in Sources */,

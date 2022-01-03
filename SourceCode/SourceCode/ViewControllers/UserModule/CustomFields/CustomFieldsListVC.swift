@@ -60,10 +60,10 @@ class CustomFieldsListVC: MainViewController {
     // MARK :- BUtton Action
     
     @IBAction func btnAddClicked(_ sender: Any) {
-        let controller = self.storyboard?.instantiateViewController(withIdentifier: "AddPermissionVC") as! AddPermissionVC
-//        controller.strTitleName = "Add Permission"
-//        controller.type = 0
-//        controller.categoriesArray = tagsModel?.categoriesAndValues ?? [CategoriesAndValues]()
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "AddCustomFieldsVC") as! AddCustomFieldsVC
+        controller.strTitleName = "Add Custom Fields"
+        controller.type = 0
+//        controller.recordEdit = customFieldsModel?.fields ?? [CategoriesAndValues]()
         self.navigationController?.pushViewController(controller, animated: true)
     }
     
@@ -83,11 +83,11 @@ class CustomFieldsListVC: MainViewController {
     }
     
     @objc @IBAction func btnEditTagGroup(_ sender: UIButton) {
-//        let controller = self.storyboard?.instantiateViewController(withIdentifier: "AddTagsVC") as! AddTagsVC
-//        controller.strTitleName = "Edit tag group"
-//        controller.type = 1
-//        controller.recordTagGroup =  tagsModel?.categoriesAndValues?[sender.tag]
-//        self.navigationController?.pushViewController(controller, animated: true)
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "AddCustomFieldsVC") as! AddCustomFieldsVC
+        controller.strTitleName = "Edit Custom Fields"
+        controller.type = 1
+        controller.recordEdit = (customFieldsModel?.fields?[sender.tag])!
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     
     @objc @IBAction func btnDeleteTagGroup(_ sender: UIButton) {

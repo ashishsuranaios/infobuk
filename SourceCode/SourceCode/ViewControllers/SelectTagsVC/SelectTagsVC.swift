@@ -205,7 +205,7 @@ extension SelectTagsVC : UITableViewDelegate, UITableViewDataSource {
             customCell.btnTagSelection.section = indexPath.section
             customCell.btnTagSelection.tag = indexPath.row
             customCell.btnTagSelection.addTarget(self, action: #selector(btnTagChildSelectionClicked(_:)), for: .touchUpInside)
-            if (rec.isSelected ?? false) {
+            if (rec.isSelected || displayTagGroupArray[indexPath.section].isSelected) {
                 customCell.imgSelection.image = UIImage(named: "checkbox_app_selected")
             } else {
                 customCell.imgSelection.image = UIImage(named: "checkbox_unselected")
