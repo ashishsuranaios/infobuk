@@ -138,7 +138,13 @@ extension TagsListVC : UITableViewDelegate, UITableViewDataSource {
 //
 //            }
 //        }
-        return tagsModel?.categoriesAndValues?.count ?? 0
+        let rowCount = tagsModel?.categoriesAndValues?.count ?? 0
+        if rowCount <= 0  &&  tagsModel != nil {
+            tblView.setEmptyMessage("No tags and tag group found")
+        } else {
+            tblView.restore()
+        }
+        return rowCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

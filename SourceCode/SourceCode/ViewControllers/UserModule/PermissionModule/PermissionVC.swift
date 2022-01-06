@@ -155,7 +155,13 @@ extension PermissionVC : UITableViewDelegate, UITableViewDataSource {
 //
 //            }
 //        }
-        return permissionModel?.permissions?.count ?? 0
+        let rowCount = permissionModel?.permissions?.count ?? 0
+        if rowCount <= 0 &&  permissionModel != nil {
+            tblView.setEmptyMessage("No permission found")
+        } else {
+            tblView.restore()
+        }
+        return rowCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

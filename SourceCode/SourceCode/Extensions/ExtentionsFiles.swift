@@ -30,6 +30,20 @@ extension UIView {
         self.layer.masksToBounds = true
         
     }
+    
+    class func fromNib(named: String? = nil) -> Self {
+        let name = named ?? "\(Self.self)"
+        guard
+            let nib = Bundle.main.loadNibNamed(name, owner: nil, options: nil)
+            else { fatalError("missing expected nib named: \(name)") }
+        guard
+            /// we're using `first` here because compact map chokes compiler on
+            /// optimized release, so you can't use two views in one nib if you wanted to
+            /// and are now looking at this
+            let view = nib.first as? Self
+            else { fatalError("view of type \(Self.self) not found in \(nib)") }
+        return view
+    }
 }
 
 
@@ -109,5 +123,29 @@ extension Array {
             remove(at: index)
             lastIndex = index
         }
+    }
+}
+
+
+extension UITableView {
+
+    func setEmptyMessage(_ message: String) {
+        let bgView = EmptyResultView.fromNib(named: "EmptyResultView")
+        bgView.frame = CGRect(x: 0, y: 0, width: self.bounds.size.width, height: self.bounds.size.height)
+        bgView.lblTitle.text = message 
+//        let messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.bounds.size.width, height: self.bounds.size.height))
+//        messageLabel.text = message
+//        messageLabel.textColor = .black
+//        messageLabel.numberOfLines = 0
+//        messageLabel.textAlignment = .center
+//        messageLabel.font = UIFont(name: "TrebuchetMS", size: 15)
+//        messageLabel.sizeToFit()
+
+        self.backgroundView = bgView
+        self.separatorStyle = .none
+    }
+
+    func restore() {
+        self.backgroundView = nil
     }
 }

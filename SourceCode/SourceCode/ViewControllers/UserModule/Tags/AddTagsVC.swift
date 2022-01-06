@@ -97,6 +97,7 @@ class AddTagsVC: MainViewController {
                 self.stopLoading()
             } onFailure: { (err) in
                 self.stopLoading()
+                self.showAlert(msg: err)
 
             }
         } else if type == 3 {
@@ -111,6 +112,7 @@ class AddTagsVC: MainViewController {
                 self.stopLoading()
             } onFailure: { (err) in
                 self.stopLoading()
+                self.showAlert(msg: err)
 
             }
         } else if type == 0 { // for Add tag group
@@ -125,6 +127,7 @@ class AddTagsVC: MainViewController {
                 self.stopLoading()
             } onFailure: { (err) in
                 self.stopLoading()
+                self.showAlert(msg: err)
 
             }
         } else if type == 2 { // for add tag child
@@ -139,6 +142,7 @@ class AddTagsVC: MainViewController {
                 self.stopLoading()
             } onFailure: { (err) in
                 self.stopLoading()
+                self.showAlert(msg: err)
 
             }
         }

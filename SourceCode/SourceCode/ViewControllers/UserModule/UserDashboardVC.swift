@@ -16,6 +16,8 @@ class UserDashboardVC: UIViewController {
     @IBOutlet weak var shadowBroadcastsBg: UIView!
     @IBOutlet weak var shadowRecordsBg: UIView!
 
+    @IBOutlet weak var lblName: UILabel!
+
     
     var isShadowApplied = false
 
@@ -37,7 +39,7 @@ class UserDashboardVC: UIViewController {
             shadowUsersBg.setShodowEffectWithCornerRadius(radius: shodowBgViewCornerRadius)
             shadowBroadcastsBg.setShodowEffectWithCornerRadius(radius: shodowBgViewCornerRadius)
             shadowRecordsBg.setShodowEffectWithCornerRadius(radius: shodowBgViewCornerRadius)
-
+            lblName.text =  APP_DEL.userSelectedDict["fullName"] ?? ""
         }
         
     }

@@ -5,7 +5,7 @@
       "scale" : "1x"
     },
     {
-      "filename" : "delete_red_icon.png",
+      "filename" : "outline_delete_outline_white_48pt_3x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
@@ -17,5 +17,8 @@
   "info" : {
     "author" : "xcode",
     "version" : 1
+  },
+  "properties" : {
+    "template-rendering-intent" : "template"
   }
 }

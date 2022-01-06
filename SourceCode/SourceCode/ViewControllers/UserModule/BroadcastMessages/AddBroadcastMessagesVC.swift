@@ -117,6 +117,7 @@ class AddBroadcastMessagesVC: MainViewController {
                 self.stopLoading()
             } onFailure: { (err) in
                 self.stopLoading()
+                self.showAlert(msg: err)
 
             }
         } else if type == 0 { // for Add tag group
@@ -130,6 +131,7 @@ class AddBroadcastMessagesVC: MainViewController {
                 self.stopLoading()
             } onFailure: { (err) in
                 self.stopLoading()
+                self.showAlert(msg: err)
 
             }
         }

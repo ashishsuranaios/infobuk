@@ -62,6 +62,7 @@
                                                     <constraint firstAttribute="height" constant="30" id="nWP-0e-rWF"/>
                                                     <constraint firstAttribute="width" secondItem="fBY-X9-GRw" secondAttribute="height" id="z1t-ES-RSd"/>
                                                 </constraints>
+                                                <color key="tintColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                                                 <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 <state key="normal" title="Button" image="edit_purple_icon"/>
@@ -72,6 +73,7 @@
                                                     <constraint firstAttribute="width" secondItem="71m-KO-3pj" secondAttribute="height" id="7OZ-Z2-iNu"/>
                                                     <constraint firstAttribute="height" constant="30" id="Dkq-Sp-uzj"/>
                                                 </constraints>
+                                                <color key="tintColor" red="0.89730726520000004" green="0.041818279110000002" blue="0.30441381639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                                                 <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 <state key="normal" title="Button" image="delete_red_icon"/>
@@ -129,7 +131,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="delete_red_icon" width="256" height="256"/>
-        <image name="edit_purple_icon" width="256" height="256"/>
+        <image name="delete_red_icon" width="72" height="72"/>
+        <image name="edit_purple_icon" width="72" height="72"/>
     </resources>
 </document>

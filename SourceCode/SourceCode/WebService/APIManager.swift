@@ -236,7 +236,7 @@ class APICallManager {
                     if responseModel?.success ?? false {
                         successCallback?(responseModel!)
                     } else {
-                        failureCallback?("An error has occured.")
+                        failureCallback?(responseModel?.error ?? "An error has occured.")
                     }
                 } else {
                     failureCallback?("An error has occured.")
@@ -314,7 +314,7 @@ class APICallManager {
                     if responseModel?.success ?? false {
                         successCallback?(responseModel!)
                     } else {
-                        failureCallback?("An error has occured.")
+                        failureCallback?(responseModel?.error ?? "An error has occured.")
                     }
                 } else {
                     failureCallback?("An error has occured.")
@@ -353,7 +353,7 @@ class APICallManager {
                         successCallback?(responseModel!)
 //                        successCallback?(responseDict, responseModel)
                     } else {
-                        failureCallback?("An error has occured.")
+                        failureCallback?(responseModel?.error ?? "An error has occured.")
                     }
                 } else {
                     failureCallback?("An error has occured.")
@@ -392,7 +392,7 @@ class APICallManager {
                         successCallback?(responseModel!)
 //                        successCallback?(responseDict, responseModel)
                     } else {
-                        failureCallback?("An error has occured.")
+                        failureCallback?(responseModel?.error ?? "An error has occured.")
                     }
                 } else {
                     failureCallback?("An error has occured.")
@@ -431,7 +431,7 @@ class APICallManager {
                         successCallback?(responseModel!)
 //                        successCallback?(responseDict, responseModel)
                     } else {
-                        failureCallback?("An error has occured.")
+                        failureCallback?(responseModel?.error ?? "An error has occured.")
                     }
                 } else {
                     failureCallback?("An error has occured.")

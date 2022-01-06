@@ -60,6 +60,9 @@ class CustomFieldsListVC: MainViewController {
     // MARK :- BUtton Action
     
     @IBAction func btnAddClicked(_ sender: Any) {
+        
+
+        
         let controller = self.storyboard?.instantiateViewController(withIdentifier: "AddCustomFieldsVC") as! AddCustomFieldsVC
         controller.strTitleName = "Add Custom Fields"
         controller.type = 0
@@ -139,7 +142,13 @@ extension CustomFieldsListVC : UITableViewDelegate, UITableViewDataSource {
 //
 //            }
 //        }
-        return customFieldsModel?.fields?.count ?? 0
+        let rowCount = customFieldsModel?.fields?.count ?? 0
+        if rowCount <= 0 &&  customFieldsModel != nil {
+            tblView.setEmptyMessage("No custom fields found")
+        } else {
+            tblView.restore()
+        }
+        return rowCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

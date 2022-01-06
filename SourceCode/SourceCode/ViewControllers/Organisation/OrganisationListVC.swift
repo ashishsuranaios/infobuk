@@ -180,7 +180,7 @@ extension OrganisationListVC : UITableViewDelegate, UITableViewDataSource {
 
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 30.0
+        return 35.0
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

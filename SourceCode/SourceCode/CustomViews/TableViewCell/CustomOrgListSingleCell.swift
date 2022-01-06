@@ -53,20 +53,20 @@ class CustomOrgListSingleCell: UITableViewCell {
             if let keyValue = allKeys[index] as? String {
                 if let userRec = usersDict[keyValue] as? [String : Any] {
                     lblName.text = (userRec["fullName"] ?? "") as? String
-                    lblType.text = " " + ((userRec["userType"] ?? "") as? String)!.capitalizingFirstLetter() + " "
+                    lblType.text = "  " + ((userRec["userType"] ?? "") as? String)!.capitalizingFirstLetter() + "   "
                     
                     if let status = userRec["orgStatus"] as? String {
                         if status == "accepted" {
                             lblStatus.isHidden = true
                         } else if status == "blocked" {
                             lblStatus.isHidden = false
-                            lblStatus.text = " " + status.capitalizingFirstLetter() + " "
+                            lblStatus.text = "  " + status.capitalizingFirstLetter() + "   "
                             lblStatus.viewBorder(borderColor: UIColor.red, borderWidth: 1.0)
                             lblStatus.setCornerRadius(radius: lblStatus.frame.size.height/2)
                             lblStatus.textColor = UIColor.red
                         }else {
                             lblStatus.isHidden = false
-                            lblStatus.text = " " + status.capitalizingFirstLetter() + " "
+                            lblStatus.text = "  " + status.capitalizingFirstLetter() + "   "
                             lblStatus.viewBorder(borderColor: UIColor.orange, borderWidth: 1.0)
                             lblStatus.setCornerRadius(radius: lblStatus.frame.size.height/2)
                             lblStatus.textColor = UIColor.orange

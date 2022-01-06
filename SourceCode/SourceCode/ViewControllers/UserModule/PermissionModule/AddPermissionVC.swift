@@ -308,6 +308,7 @@ class AddPermissionVC: MainViewController {
                 self.stopLoading()
             } onFailure: { (err) in
                 self.stopLoading()
+                self.showAlert(msg: err)
 
             }
         } else if type == 0 { // for Add
@@ -326,6 +327,7 @@ class AddPermissionVC: MainViewController {
                 self.stopLoading()
             } onFailure: { (err) in
                 self.stopLoading()
+                self.showAlert(msg: err)
 
             }
         }

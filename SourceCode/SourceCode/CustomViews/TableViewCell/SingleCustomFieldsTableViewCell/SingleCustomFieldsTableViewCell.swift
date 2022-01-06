@@ -28,7 +28,9 @@ class SingleCustomFieldsTableViewCell: UITableViewCell {
 
     
     @IBOutlet weak var imgUnique: UIImageView!
-
+    @IBOutlet weak var btnInfo1: UIButton!
+    @IBOutlet weak var btnInfo2: UIButton!
+    @IBOutlet weak var btnInfo3: UIButton!
     
     var parentVC : MainViewController?
     var index = 0
@@ -102,6 +104,14 @@ class SingleCustomFieldsTableViewCell: UITableViewCell {
             }
         }
         return strId
+    }
+    
+    // MARK :- BUtton Action
+    @IBAction func btnInfoClicked(_ sender: Any) {
+        let controller = parentVC?.storyboard?.instantiateViewController(withIdentifier: "InfoWebviewVC") as! InfoWebviewVC
+        controller.strTitle = "Custom Fields"
+        controller.htmlData = "<p>Custom fields help you to add information to contacts which isn't provided by default.</p><p>You can add all kinds of information like Passport numbers, Roll numbers, Driving License, Address etc.</p> <p><strong>Field Name</strong><br />Name of the field as is seen by all users. Eg. \"Roll no.\", \"Address\"</p><ol class=\"list-unstyled\"><li><strong>Field Type</strong><ol><li><strong>Text</strong>&nbsp;- For small amount of text eg. Driving License, City etc. (Limited to 250 characters)</li><li><strong>Options</strong>&nbsp;- For small set of predefined categories - eg: Gender (Male, Female, other)</li></ol></li></ol><p><strong>Unique field</strong><br />For fields which can't be duplicate, eg. Registration ID, Driving License, National ID</p>"
+        parentVC?.navigationController?.present(controller, animated: true, completion: nil)
     }
     
 }

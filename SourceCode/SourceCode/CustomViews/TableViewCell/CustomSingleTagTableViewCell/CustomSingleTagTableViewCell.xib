@@ -56,6 +56,7 @@
                                                             <constraint firstAttribute="height" constant="30" id="OMZ-0W-SGw"/>
                                                             <constraint firstAttribute="width" secondItem="Lkl-Fb-04t" secondAttribute="height" id="s6k-mO-EOh"/>
                                                         </constraints>
+                                                        <color key="tintColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                                                         <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         <state key="normal" title="Button" image="edit_purple_icon"/>
@@ -66,6 +67,7 @@
                                                             <constraint firstAttribute="width" secondItem="aVc-wi-xxM" secondAttribute="height" id="VH6-UP-k0t"/>
                                                             <constraint firstAttribute="height" constant="30" id="ayc-jF-Jel"/>
                                                         </constraints>
+                                                        <color key="tintColor" red="0.89730726520000004" green="0.041818279110000002" blue="0.30441381639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                                                         <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         <state key="normal" title="Button" image="delete_red_icon"/>
@@ -177,8 +179,8 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="delete_red_icon" width="256" height="256"/>
-        <image name="edit_purple_icon" width="256" height="256"/>
+        <image name="delete_red_icon" width="72" height="72"/>
+        <image name="edit_purple_icon" width="72" height="72"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

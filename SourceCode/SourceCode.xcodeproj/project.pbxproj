@@ -10,6 +10,7 @@
 		18183668275B2BD600380E11 /* PhoneCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18183667275B2BD600380E11 /* PhoneCode.swift */; };
 		182866912781935600B8A963 /* AddBroadcastMessagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182866902781935600B8A963 /* AddBroadcastMessagesVC.swift */; };
 		1838E59D27836ED80072287D /* AddCustomFieldsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1838E59C27836ED80072287D /* AddCustomFieldsVC.swift */; };
+		18694F66278750F100EE4483 /* InfoWebviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18694F65278750F100EE4483 /* InfoWebviewVC.swift */; };
 		18711EA527770C4E0041E8AC /* TagChildSingleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18711EA327770C4E0041E8AC /* TagChildSingleTableViewCell.swift */; };
 		18711EA627770C4E0041E8AC /* TagChildSingleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18711EA427770C4E0041E8AC /* TagChildSingleTableViewCell.xib */; };
 		18711EAB277719F70041E8AC /* AddTagsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18711EAA277719F70041E8AC /* AddTagsVC.swift */; };
@@ -27,6 +28,8 @@
 		188324172776F22500D216D2 /* TagsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188324162776F22500D216D2 /* TagsListVC.swift */; };
 		1883241E2776F59D00D216D2 /* CustomSingleTagTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1883241C2776F59D00D216D2 /* CustomSingleTagTableViewCell.swift */; };
 		1883241F2776F59D00D216D2 /* CustomSingleTagTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1883241D2776F59D00D216D2 /* CustomSingleTagTableViewCell.xib */; };
+		189250AC2784B0F700A9AEF9 /* EmptyResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189250AB2784B0F700A9AEF9 /* EmptyResultView.swift */; };
+		189250B12784B10000A9AEF9 /* EmptyResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 189250B02784B10000A9AEF9 /* EmptyResultView.xib */; };
 		189504DC275D1711007CBE36 /* CustomOrgListSingleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189504DA275D1711007CBE36 /* CustomOrgListSingleCell.swift */; };
 		189504DD275D1711007CBE36 /* CustomOrgListSingleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 189504DB275D1711007CBE36 /* CustomOrgListSingleCell.xib */; };
 		18AF14062780CD5700B9D774 /* BroadcastMessagesListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AF14052780CD5700B9D774 /* BroadcastMessagesListVC.swift */; };
@@ -95,6 +98,7 @@
 		18183667275B2BD600380E11 /* PhoneCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneCode.swift; sourceTree = "<group>"; };
 		182866902781935600B8A963 /* AddBroadcastMessagesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBroadcastMessagesVC.swift; sourceTree = "<group>"; };
 		1838E59C27836ED80072287D /* AddCustomFieldsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCustomFieldsVC.swift; sourceTree = "<group>"; };
+		18694F65278750F100EE4483 /* InfoWebviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoWebviewVC.swift; sourceTree = "<group>"; };
 		18711EA327770C4E0041E8AC /* TagChildSingleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagChildSingleTableViewCell.swift; sourceTree = "<group>"; };
 		18711EA427770C4E0041E8AC /* TagChildSingleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagChildSingleTableViewCell.xib; sourceTree = "<group>"; };
 		18711EAA277719F70041E8AC /* AddTagsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTagsVC.swift; sourceTree = "<group>"; };
@@ -112,6 +116,8 @@
 		188324162776F22500D216D2 /* TagsListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsListVC.swift; sourceTree = "<group>"; };
 		1883241C2776F59D00D216D2 /* CustomSingleTagTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSingleTagTableViewCell.swift; sourceTree = "<group>"; };
 		1883241D2776F59D00D216D2 /* CustomSingleTagTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomSingleTagTableViewCell.xib; sourceTree = "<group>"; };
+		189250AB2784B0F700A9AEF9 /* EmptyResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyResultView.swift; sourceTree = "<group>"; };
+		189250B02784B10000A9AEF9 /* EmptyResultView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyResultView.xib; sourceTree = "<group>"; };
 		189504DA275D1711007CBE36 /* CustomOrgListSingleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomOrgListSingleCell.swift; sourceTree = "<group>"; };
 		189504DB275D1711007CBE36 /* CustomOrgListSingleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomOrgListSingleCell.xib; sourceTree = "<group>"; };
 		18AF14052780CD5700B9D774 /* BroadcastMessagesListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroadcastMessagesListVC.swift; sourceTree = "<group>"; };
@@ -197,6 +203,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18694F64278750D300EE4483 /* InfoWebviewVC */ = {
+			isa = PBXGroup;
+			children = (
+				18694F65278750F100EE4483 /* InfoWebviewVC.swift */,
+			);
+			path = InfoWebviewVC;
+			sourceTree = "<group>";
+		};
 		18711EA227770C250041E8AC /* TagChildSingleTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,6 +272,15 @@
 				1883241D2776F59D00D216D2 /* CustomSingleTagTableViewCell.xib */,
 			);
 			path = CustomSingleTagTableViewCell;
+			sourceTree = "<group>";
+		};
+		189250AA2784B0D400A9AEF9 /* EmptyResultView */ = {
+			isa = PBXGroup;
+			children = (
+				189250AB2784B0F700A9AEF9 /* EmptyResultView.swift */,
+				189250B02784B10000A9AEF9 /* EmptyResultView.xib */,
+			);
+			path = EmptyResultView;
 			sourceTree = "<group>";
 		};
 		189504D8275D16E7007CBE36 /* CustomViews */ = {
@@ -338,6 +361,7 @@
 		18BBBC7727801D3500558A82 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				189250AA2784B0D400A9AEF9 /* EmptyResultView */,
 				18BBBC8227801D6300558A82 /* SelectionImglblView */,
 			);
 			path = Views;
@@ -392,6 +416,7 @@
 		75462D09275626850002FCB8 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				18694F64278750D300EE4483 /* InfoWebviewVC */,
 				18BBBC64278016B200558A82 /* SelectTagsVC */,
 				18B36AD52776D67D00C076DA /* UserModule */,
 				75DC02E4275F53A200BBBEFC /* CountryCodeSelectPopup */,
@@ -676,6 +701,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				187E7C92277E1A8300EE0ED7 /* CustomSinglePermissionTableViewCell.xib in Resources */,
+				189250B12784B10000A9AEF9 /* EmptyResultView.xib in Resources */,
 				75462D1A27562BFC0002FCB8 /* opensans_regular.ttf in Resources */,
 				18711EA627770C4E0041E8AC /* TagChildSingleTableViewCell.xib in Resources */,
 				189504DD275D1711007CBE36 /* CustomOrgListSingleCell.xib in Resources */,
@@ -826,6 +852,7 @@
 				18744E2027809D1000088128 /* CustomFields.swift in Sources */,
 				18BBBC8C2780291500558A82 /* CustomButton.swift in Sources */,
 				18AF14062780CD5700B9D774 /* BroadcastMessagesListVC.swift in Sources */,
+				18694F66278750F100EE4483 /* InfoWebviewVC.swift in Sources */,
 				18711EAB277719F70041E8AC /* AddTagsVC.swift in Sources */,
 				75DC02E6275F53C800BBBEFC /* CountryCodeSelectPopupVC.swift in Sources */,
 				187E7C91277E1A8300EE0ED7 /* CustomSinglePermissionTableViewCell.swift in Sources */,
@@ -859,6 +886,7 @@
 				18AF14122780D46B00B9D774 /* BroadcastMsgSingleTableViewCell.swift in Sources */,
 				18BBBC8627801D7A00558A82 /* SelectionImglblView.swift in Sources */,
 				1883241E2776F59D00D216D2 /* CustomSingleTagTableViewCell.swift in Sources */,
+				189250AC2784B0F700A9AEF9 /* EmptyResultView.swift in Sources */,
 				75B1D8EC2756517C00FABDC2 /* Constants.swift in Sources */,
 				758C1A4027573E66008EDDA8 /* MainViewController.swift in Sources */,
 			);

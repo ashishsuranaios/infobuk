@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="opensans_semibold.ttf">
+            <string>OpenSans-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="EmptyResultView" customModule="SourceCode" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_data_found" translatesAutoresizingMaskIntoConstraints="NO" id="Suz-rc-54J">
+                    <rect key="frame" x="84.5" y="330.5" width="245" height="245"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Suz-rc-54J" secondAttribute="height" id="EcG-gc-HhD"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No data found" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0wp-AC-HV9">
+                    <rect key="frame" x="15" y="590.5" width="384" height="23.5"/>
+                    <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="0wp-AC-HV9" firstAttribute="top" secondItem="Suz-rc-54J" secondAttribute="bottom" constant="15" id="46A-fa-7i7"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="0wp-AC-HV9" secondAttribute="trailing" constant="15" id="OBy-kF-g6b"/>
+                <constraint firstItem="Suz-rc-54J" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.591787" id="SA6-Ox-VLQ"/>
+                <constraint firstItem="Suz-rc-54J" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="Tff-Tr-sp8"/>
+                <constraint firstItem="Suz-rc-54J" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="mIt-OG-8yN"/>
+                <constraint firstItem="0wp-AC-HV9" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="yUM-O3-dTe"/>
+            </constraints>
+            <connections>
+                <outlet property="imgEmpty" destination="Suz-rc-54J" id="5RL-yH-QnG"/>
+                <outlet property="lblTitle" destination="0wp-AC-HV9" id="shL-ON-Hmz"/>
+            </connections>
+            <point key="canvasLocation" x="82.608695652173921" y="132.58928571428572"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="no_data_found" width="360" height="256.5"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -139,7 +139,13 @@ extension BroadcastMessagesListVC : UITableViewDelegate, UITableViewDataSource {
 //
 //            }
 //        }
-        return broadcastMsgModel?.broadcastMessages?.count ?? 0
+        let rowCount = broadcastMsgModel?.broadcastMessages?.count ?? 0
+        if rowCount <= 0 &&  broadcastMsgModel != nil {
+            tblView.setEmptyMessage("No broadcast message found")
+        } else {
+            tblView.restore()
+        }
+        return rowCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

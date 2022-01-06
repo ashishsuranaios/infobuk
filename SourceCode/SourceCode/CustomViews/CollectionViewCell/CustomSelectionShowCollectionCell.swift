@@ -13,7 +13,8 @@ class CustomSelectionShowCollectionCell: UICollectionViewCell {
     @IBOutlet weak var btnDelete: UIButton!
     @IBOutlet weak var viewBg: UIView!
 
-    
+
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
