@@ -88,10 +88,10 @@ class AddCustomFieldsVC: MainViewController {
         
         if type == 1 {
             txtFieldName.text = recordEdit?.fieldName ?? ""
-            txtFieldType.text = (recordEdit?.optionNames?.count ?? 0 > 0) ? "Options" : "Text"
+            txtFieldType.text = (recordEdit?.fieldType ?? "").capitalizingFirstLetter()
             optionsArray = recordEdit?.optionNames ?? [String]()
             
-            if (recordEdit?.optionNames?.count ?? 0 > 0) {
+            if (recordEdit?.fieldType ?? "" == "options"){
                 self.txtFieldAddOption.superview?.superview?.isHidden = false
             }
             collView.reloadData()

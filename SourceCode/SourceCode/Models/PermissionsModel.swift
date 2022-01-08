@@ -11,7 +11,7 @@ struct PermissionsModel : Codable {
     let success : Bool?
     let token : String?
     let permissions : [Permission]?
-    let error : String?
+    var error : String?
 
 
     enum CodingKeys: String, CodingKey {

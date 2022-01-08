@@ -117,6 +117,7 @@ class TagsListVC: MainViewController {
             }
             self.stopLoading()
         } onFailure: { (err) in
+            self.showAlert(msg: err)
             self.stopLoading()
 
         }

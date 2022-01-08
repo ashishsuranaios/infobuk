@@ -58,7 +58,8 @@ class SingleCustomFieldsTableViewCell: UITableViewCell {
     }
     
     func reloadBottomData() {
-        if (record?.optionNames?.count ?? 0 <= 0){
+        self.lblFieldType.text = record?.fieldType?.capitalizingFirstLetter()
+        if (record?.fieldType ?? "" == "text"){
             collView.isHidden = true
             lblOptions.isHidden = true
         } else {

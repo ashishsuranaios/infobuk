@@ -54,7 +54,7 @@ class AddPermissionVC: MainViewController {
         txtField.becomeFirstResponder()
         viewBgCollTags.viewBorder(borderColor: .lightGray, borderWidth: 1.5)
         viewBgCollTags.layer.cornerRadius = 8.0
-        
+        self.updateSaveButton()
         checkForSelectedCategories()
     }
     

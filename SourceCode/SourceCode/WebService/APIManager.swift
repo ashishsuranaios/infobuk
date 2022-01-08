@@ -236,8 +236,10 @@ class APICallManager {
                     if responseModel?.success ?? false {
                         successCallback?(responseModel!)
                     } else {
-                        failureCallback?(responseModel?.error ?? "An error has occured.")
-                    }
+                        var errorStr = responseModel?.error ?? "An error has occured."
+                        errorStr = errorStr.replacingOccurrences(of: "<br>", with: "\n")
+                        errorStr = errorStr.replacingOccurrences(of: "</br>", with: "")
+                        failureCallback?(errorStr)                    }
                 } else {
                     failureCallback?("An error has occured.")
                 }
@@ -273,11 +275,13 @@ class APICallManager {
                     let responseModel = try? jsonDecoder.decode(TagsModel.self, from: t1)
 //                    let responseModel : SignUpModel = self.stringArrayToData(stringArray: responseDict) as! SignUpModel
 //                    // Fire callback
-//                    if responseModel?.success ?? false {
+                    if responseModel?.success ?? false {
                         successCallback?(responseModel!)
-//                    } else {
-//                        failureCallback?("An error has occured.")
-//                    }
+                    } else {
+                        var errorStr = responseModel?.error ?? "An error has occured."
+                        errorStr = errorStr.replacingOccurrences(of: "<br>", with: "\n")
+                        errorStr = errorStr.replacingOccurrences(of: "</br>", with: "")
+                        failureCallback?(errorStr)                          }
                 } else {
                     failureCallback?("An error has occured.")
                 }
@@ -314,8 +318,10 @@ class APICallManager {
                     if responseModel?.success ?? false {
                         successCallback?(responseModel!)
                     } else {
-                        failureCallback?(responseModel?.error ?? "An error has occured.")
-                    }
+                        var errorStr = responseModel?.error ?? "An error has occured."
+                        errorStr = errorStr.replacingOccurrences(of: "<br>", with: "\n")
+                        errorStr = errorStr.replacingOccurrences(of: "</br>", with: "")
+                        failureCallback?(errorStr)                    }
                 } else {
                     failureCallback?("An error has occured.")
                 }
@@ -346,14 +352,17 @@ class APICallManager {
                 if let responseDict = responseObject.dictionaryObject {
                     let t1 = (try? JSONSerialization.data(withJSONObject: responseDict, options: []))!
                     let jsonDecoder = JSONDecoder()
-                    let responseModel = try? jsonDecoder.decode(PermissionsModel.self, from: t1)
+                    var responseModel = try? jsonDecoder.decode(PermissionsModel.self, from: t1)
 //                    let responseModel : SignUpModel = self.stringArrayToData(stringArray: responseDict) as! SignUpModel
 //                    // Fire callback
                     if responseModel?.success ?? false {
                         successCallback?(responseModel!)
 //                        successCallback?(responseDict, responseModel)
                     } else {
-                        failureCallback?(responseModel?.error ?? "An error has occured.")
+                        var errorStr = responseModel?.error ?? "An error has occured."
+                        errorStr = errorStr.replacingOccurrences(of: "<br>", with: "\n")
+                        errorStr = errorStr.replacingOccurrences(of: "</br>", with: "")
+                        failureCallback?(errorStr)
                     }
                 } else {
                     failureCallback?("An error has occured.")
@@ -392,8 +401,10 @@ class APICallManager {
                         successCallback?(responseModel!)
 //                        successCallback?(responseDict, responseModel)
                     } else {
-                        failureCallback?(responseModel?.error ?? "An error has occured.")
-                    }
+                        var errorStr = responseModel?.error ?? "An error has occured."
+                        errorStr = errorStr.replacingOccurrences(of: "<br>", with: "\n")
+                        errorStr = errorStr.replacingOccurrences(of: "</br>", with: "")
+                        failureCallback?(errorStr)                    }
                 } else {
                     failureCallback?("An error has occured.")
                 }
@@ -431,8 +442,10 @@ class APICallManager {
                         successCallback?(responseModel!)
 //                        successCallback?(responseDict, responseModel)
                     } else {
-                        failureCallback?(responseModel?.error ?? "An error has occured.")
-                    }
+                        var errorStr = responseModel?.error ?? "An error has occured."
+                        errorStr = errorStr.replacingOccurrences(of: "<br>", with: "\n")
+                        errorStr = errorStr.replacingOccurrences(of: "</br>", with: "")
+                        failureCallback?(errorStr)                    }
                 } else {
                     failureCallback?("An error has occured.")
                 }

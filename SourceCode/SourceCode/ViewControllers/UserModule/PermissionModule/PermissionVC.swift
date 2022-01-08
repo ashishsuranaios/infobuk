@@ -119,26 +119,27 @@ class PermissionVC: MainViewController {
     func deleteTagGroup (index : Int) {
         self.startLoading()
 
-//        let catId =  (tagsModel?.categoriesAndValues?[index].id ?? "")
-//
-//        let param  = [ "orgId" : "\(APP_DEL.userSelectedDict["orgId"] ?? "")","userId" : "\(APP_DEL.userSelectedDict["userId"] ?? "")","action" : "delete", "categoryId" : catId]
-//
-//        APICallManager.instance.requestForAddTagGroup(param: param) { (res) in
-//            if res.success ?? false {
-//                let alert = UIAlertController(title: "Infobuk", message: "Success", preferredStyle: UIAlertController.Style.alert)
-//                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: { (action) in
-//                    self.expandIndexList.removeAll()
-//                    self.viewWillAppear(true)
-//                }))
-//                self.present(alert, animated: true, completion: nil)
-//            } else {
-//                self.showAlert(msg: res.error ?? "Something went wrong. Please try again.")
-//            }
-//            self.stopLoading()
-//        } onFailure: { (err) in
-//            self.stopLoading()
-//
-//        }
+        let catId =   permissionModel?.permissions?[index].id ?? ""
+
+        let param  = [ "orgId" : "\(APP_DEL.userSelectedDict["orgId"] ?? "")","userId" : "\(APP_DEL.userSelectedDict["userId"] ?? "")","action" : "delete", "permissionId" : catId]
+
+        APICallManager.instance.requestForPermissionList(param: param) { (res) in
+            if res.success ?? false {
+                let alert = UIAlertController(title: "Infobuk", message: "Success", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: { (action) in
+                    self.expandIndexList.removeAll()
+                    self.viewWillAppear(true)
+                }))
+                self.present(alert, animated: true, completion: nil)
+            } else {
+                self.showAlert(msg: res.error ?? "Something went wrong. Please try again.")
+            }
+            self.stopLoading()
+        } onFailure: { (err) in
+            self.stopLoading()
+            self.showAlert(msg: err)
+
+        }
     }
 
 }
