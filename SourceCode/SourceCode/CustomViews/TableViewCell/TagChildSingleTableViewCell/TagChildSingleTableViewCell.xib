@@ -41,14 +41,14 @@
                                             <constraint firstAttribute="width" secondItem="ugN-n3-xUk" secondAttribute="height" id="6Yn-Tz-zwU"/>
                                         </constraints>
                                         <color key="tintColor" red="0.83631205559999999" green="0.63506788020000005" blue="0.18562892080000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                        <inset key="contentEdgeInsets" minX="3" minY="3" maxX="3" maxY="3"/>
                                         <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="Button" image="edit_purple_icon"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S01-cE-HHH">
                                         <rect key="frame" x="24" y="0.0" width="24" height="24"/>
                                         <color key="tintColor" red="0.89730726520000004" green="0.041818279110000002" blue="0.30441381639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                        <inset key="contentEdgeInsets" minX="3" minY="3" maxX="3" maxY="3"/>
                                         <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="Button" image="delete_red_icon"/>
                                     </button>

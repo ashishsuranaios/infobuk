@@ -301,7 +301,9 @@ class AddPermissionVC: MainViewController {
             
             APICallManager.instance.requestForPermissionList(param: param) { (res) in
                 if res.success ?? false {
-                    self.showAlertWithBackAction(msg: "Success")
+                    self.navigationController?.popViewController(animated: true)
+//                    self.showAlertWithBackAction(msg: "Success")
+                    
                 } else {
                     self.showAlert(msg: res.error ?? "Something went wrong. Please try again.")
                 }
@@ -320,7 +322,9 @@ class AddPermissionVC: MainViewController {
             }
             APICallManager.instance.requestForPermissionList(param: param) { (res) in
                 if res.success ?? false {
-                    self.showAlertWithBackAction(msg: "Success")
+                    self.navigationController?.popViewController(animated: true)
+//                    self.showAlertWithBackAction(msg: "Success")
+                    
                 } else {
                     self.showAlert(msg: res.error ?? "Something went wrong. Please try again.")
                 }

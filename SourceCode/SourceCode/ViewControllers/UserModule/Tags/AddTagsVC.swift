@@ -90,7 +90,8 @@ class AddTagsVC: MainViewController {
             APICallManager.instance.requestForAddTagGroup(param: param) { (res) in
                 if res.success ?? false {
 
-                    self.showAlertWithBackAction(msg: "Success")
+                    self.navigationController?.popViewController(animated: true)
+//                    self.showAlertWithBackAction(msg: "Success")
                 } else {
                     self.showAlert(msg: res.error ?? "Something went wrong. Please try again.")
                 }
@@ -105,7 +106,8 @@ class AddTagsVC: MainViewController {
             APICallManager.instance.requestForAddTagChild(param: param) { (res) in
                 if res.success ?? false {
 
-                    self.showAlertWithBackAction(msg: "Success")
+                    self.navigationController?.popViewController(animated: true)
+//                    self.showAlertWithBackAction(msg: "Success")
                 } else {
                     self.showAlert(msg: res.error ?? "Something went wrong. Please try again.")
                 }
@@ -120,7 +122,8 @@ class AddTagsVC: MainViewController {
             APICallManager.instance.requestForAddTagGroup(param: param) { (res) in
                 if res.success ?? false {
 
-                    self.showAlertWithBackAction(msg: "Success")
+                    self.navigationController?.popViewController(animated: true)
+//                    self.showAlertWithBackAction(msg: "Success")
                 } else {
                     self.showAlert(msg: res.error ?? "Something went wrong. Please try again.")
                 }
@@ -135,7 +138,8 @@ class AddTagsVC: MainViewController {
             APICallManager.instance.requestForAddTagChild(param: param) { (res) in
                 if res.success ?? false {
 
-                    self.showAlertWithBackAction(msg: "Success")
+                    self.navigationController?.popViewController(animated: true)
+//                    self.showAlertWithBackAction(msg: "Success")
                 } else {
                     self.showAlert(msg: res.error ?? "Something went wrong. Please try again.")
                 }

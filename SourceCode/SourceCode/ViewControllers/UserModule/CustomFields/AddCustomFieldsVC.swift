@@ -193,7 +193,9 @@ class AddCustomFieldsVC: MainViewController {
             }
             APICallManager.instance.requestForCustomFieldsList(param: param) { (res) in
                 if res.success ?? false {
-                    self.showAlertWithBackAction(msg: "Success")
+                    self.navigationController?.popViewController(animated: true)
+//                    self.showAlertWithBackAction(msg: "Success")
+                    
                 } else {
                     self.showAlert(msg: res.error ?? "Something went wrong. Please try again.")
                 }
@@ -212,7 +214,9 @@ class AddCustomFieldsVC: MainViewController {
             }
             APICallManager.instance.requestForCustomFieldsList(param: param) { (res) in
                 if res.success ?? false {
-                    self.showAlertWithBackAction(msg: "Success")
+                    self.navigationController?.popViewController(animated: true)
+//                    self.showAlertWithBackAction(msg: "Success")
+                    
                 } else {
                     self.showAlert(msg: res.error ?? "Something went wrong. Please try again.")
                 }

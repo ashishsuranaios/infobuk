@@ -60,13 +60,13 @@ class CustomOrgListSingleCell: UITableViewCell {
                             lblStatus.isHidden = true
                         } else if status == "blocked" {
                             lblStatus.isHidden = false
-                            lblStatus.text = "  " + status.capitalizingFirstLetter() + "   "
+                            lblStatus.text = " " + status.capitalizingFirstLetter() + "    "
                             lblStatus.viewBorder(borderColor: UIColor.red, borderWidth: 1.0)
                             lblStatus.setCornerRadius(radius: lblStatus.frame.size.height/2)
                             lblStatus.textColor = UIColor.red
                         }else {
                             lblStatus.isHidden = false
-                            lblStatus.text = "  " + status.capitalizingFirstLetter() + "   "
+                            lblStatus.text = " " + status.capitalizingFirstLetter() + "    "
                             lblStatus.viewBorder(borderColor: UIColor.orange, borderWidth: 1.0)
                             lblStatus.setCornerRadius(radius: lblStatus.frame.size.height/2)
                             lblStatus.textColor = UIColor.orange

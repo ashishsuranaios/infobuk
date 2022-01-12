@@ -110,7 +110,8 @@ class AddBroadcastMessagesVC: MainViewController {
             
             APICallManager.instance.requestForBroadcastMessagesList(param: param) { (res) in
                 if res.success ?? false {
-                    self.showAlertWithBackAction(msg: "Success")
+                    self.navigationController?.popViewController(animated: true)
+//                    self.showAlertWithBackAction(msg: "Success")
                 } else {
                     self.showAlert(msg: res.error ?? "Something went wrong. Please try again.")
                 }
@@ -124,7 +125,9 @@ class AddBroadcastMessagesVC: MainViewController {
             param  = [ "orgId" : "\(APP_DEL.userSelectedDict["orgId"] ?? "")","userId" : "\(APP_DEL.userSelectedDict["userId"] ?? "")","action" : "add", "subject" : txtFieldSubject.text!, "message" : txtViewMessage.text!]
             APICallManager.instance.requestForBroadcastMessagesList(param: param) { (res) in
                 if res.success ?? false {
-                    self.showAlertWithBackAction(msg: "Success")
+                    self.navigationController?.popViewController(animated: true)
+//                    self.showAlertWithBackAction(msg: "Success")
+                    
                 } else {
                     self.showAlert(msg: res.error ?? "Something went wrong. Please try again.")
                 }
