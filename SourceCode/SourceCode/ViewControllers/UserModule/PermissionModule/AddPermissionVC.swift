@@ -141,7 +141,7 @@ class AddPermissionVC: MainViewController {
                 categoriesArray?[i].isSelected = true
             } else {
                 var j = 0
-                for rec1 in rec.valuesSorted! {
+                for rec1 in rec.valuesSorted ?? [ValuesSorted]() {
                     if tagChildArray.contains(rec1.id ?? "") {
                         categoriesArray?[i].valuesSorted?[j].isSelected = true
                     }
@@ -162,7 +162,7 @@ class AddPermissionVC: MainViewController {
             if rec.isSelected {
                 categorySelected.append("category_\(rec.id ?? "")")
             } else {
-                for rec1 in rec.valuesSorted! {
+                for rec1 in rec.valuesSorted ?? [ValuesSorted]() {
                     if rec1.isSelected {
                         categorySelected.append("categoryValue_\(rec1.id ?? "")")
                     }
@@ -176,7 +176,7 @@ class AddPermissionVC: MainViewController {
     
     func getTagText(strId : String) -> String {
         for rec in (categoriesArray)! {
-            for rec1 in rec.valuesSorted! {
+            for rec1 in rec.valuesSorted ?? [ValuesSorted]() {
                 if rec1.id ?? "" == strId {
                     return "\(rec.name ?? "") : \(rec1.value ?? "")"
                 }
@@ -245,13 +245,13 @@ class AddPermissionVC: MainViewController {
             if tagArray.contains(rec.id ?? "") {
                 categoriesArray?[i].isSelected = false
                 var j = 0
-                for _ in rec.valuesSorted! {
+                for _ in rec.valuesSorted ?? [ValuesSorted]() {
                     categoriesArray?[i].valuesSorted?[j].isSelected = false
                     j = j + 1
                 }
             } else {
                 var j = 0
-                for rec1 in rec.valuesSorted! {
+                for rec1 in rec.valuesSorted ?? [ValuesSorted]() {
                     if tagChildArray.contains(rec1.id ?? "") {
                         categoriesArray?[i].valuesSorted?[j].isSelected = false
                     }

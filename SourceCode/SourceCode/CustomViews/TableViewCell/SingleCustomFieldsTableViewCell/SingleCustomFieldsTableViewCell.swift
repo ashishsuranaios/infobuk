@@ -89,7 +89,7 @@ class SingleCustomFieldsTableViewCell: UITableViewCell {
     
     func getTagText(strId : String) -> String {
         for rec in (tagsModel?.categoriesAndValues)! {
-            for rec1 in rec.valuesSorted! {
+            for rec1 in rec.valuesSorted ?? [ValuesSorted]() {
                 if rec1.id ?? "" == strId {
                     return "\(rec.name ?? "") : \(rec1.value ?? "")"
                 }
