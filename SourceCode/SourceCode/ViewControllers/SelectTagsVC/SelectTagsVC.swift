@@ -58,13 +58,13 @@ class SelectTagsVC: UIViewController {
                 if strId == rec.id ?? "" {
                     tagGroupArray[i].isSelected = isSelected
                     var j = 0
-                    for rec1 in tagGroupArray[i].valuesSorted! {
+                    for rec1 in tagGroupArray[i].valuesSorted ?? [ValuesSorted]() {
                         tagGroupArray[i].valuesSorted?[j].isSelected = isSelected
                         j = j + 1
                     }
                     
                     var k = 0
-                    for rec1 in displayTagGroupArray[sender.tag].valuesSorted! {
+                    for rec1 in displayTagGroupArray[sender.tag].valuesSorted ?? [ValuesSorted]() {
                         displayTagGroupArray[sender.tag].valuesSorted?[k].isSelected = isSelected
                         k = k + 1
                     }
@@ -87,7 +87,7 @@ class SelectTagsVC: UIViewController {
                 displayTagGroupArray[sender.section].isSelected = false
             }
             var isAllChildTagSelected = true
-            for rec1 in displayTagGroupArray[sender.section].valuesSorted! {
+            for rec1 in displayTagGroupArray[sender.section].valuesSorted ?? [ValuesSorted]() {
                 if isAllChildTagSelected && !(rec1.isSelected){
                     isAllChildTagSelected = false
                 }
@@ -100,7 +100,7 @@ class SelectTagsVC: UIViewController {
             for rec in tagGroupArray {
                 if strTaggrpId == rec.id ?? "" {
                     var j = 0
-                    for rec1 in tagGroupArray[i].valuesSorted! {
+                    for rec1 in tagGroupArray[i].valuesSorted ?? [ValuesSorted]() {
                         let strTagId = displayTagGroupArray[sender.section].valuesSorted?[sender.tag].id ?? ""
                         if strTagId == rec1.id ?? "" {
                             tagGroupArray[i].valuesSorted?[j].isSelected = isSelected
@@ -108,7 +108,7 @@ class SelectTagsVC: UIViewController {
                                 tagGroupArray[i].isSelected = false
                             }
                             var isAllChildTagSelected = true
-                            for rec1 in tagGroupArray[i].valuesSorted! {
+                            for rec1 in tagGroupArray[i].valuesSorted ?? [ValuesSorted]() {
                                 if isAllChildTagSelected && !(rec1.isSelected){
                                     isAllChildTagSelected = false
                                 }
@@ -141,7 +141,7 @@ extension SelectTagsVC : UITextFieldDelegate {
             var i = 0
             for rec in (tagGroupArray) {
                 var strSearchString = rec.name ?? ""
-                for rec1 in rec.valuesSorted! {
+                for rec1 in rec.valuesSorted ?? [ValuesSorted]() {
                     strSearchString = "\(strSearchString) \(rec1.value ?? "")"
                 }
                 tagGroupArray[i].searchString = strSearchString
