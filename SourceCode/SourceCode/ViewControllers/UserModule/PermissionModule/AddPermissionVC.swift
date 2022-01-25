@@ -139,15 +139,28 @@ class AddPermissionVC: MainViewController {
         for rec in (categoriesArray)! {
             if tagArray.contains(rec.id ?? "") {
                 categoriesArray?[i].isSelected = true
+//                var j = 0
+//                for rec1 in rec.valuesSorted! {
+//                    if tagChildArray.contains(rec1.id ?? "") {
+//                        categoriesArray?[i].valuesSorted?[j].isSelected = false
+//                    }
+//                    j = j + 1
+//                }
             } else {
+                categoriesArray?[i].isSelected = false
+            }
+            
+//                categoriesArray?[i].isSelected = false
                 var j = 0
                 for rec1 in rec.valuesSorted! {
                     if tagChildArray.contains(rec1.id ?? "") {
                         categoriesArray?[i].valuesSorted?[j].isSelected = true
+                    } else {
+                        categoriesArray?[i].valuesSorted?[j].isSelected = false
                     }
                     j = j + 1
                 }
-            }
+            
             i = i + 1
         }
         collView.reloadData()
@@ -161,13 +174,14 @@ class AddPermissionVC: MainViewController {
         for rec in (categoriesArray)! {
             if rec.isSelected {
                 categorySelected.append("category_\(rec.id ?? "")")
-            } else {
-                for rec1 in rec.valuesSorted! {
-                    if rec1.isSelected {
-                        categorySelected.append("categoryValue_\(rec1.id ?? "")")
-                    }
+            }
+            
+            for rec1 in rec.valuesSorted! {
+                if rec1.isSelected {
+                    categorySelected.append("categoryValue_\(rec1.id ?? "")")
                 }
             }
+            
         }
         collView.reloadData()
         self.view.layoutIfNeeded()

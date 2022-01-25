@@ -106,12 +106,12 @@ class TagsListVC: MainViewController {
         
         APICallManager.instance.requestForAddTagGroup(param: param) { (res) in
             if res.success ?? false {
-                let alert = UIAlertController(title: "Infobuk", message: "Success", preferredStyle: UIAlertController.Style.alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: { (action) in
+//                let alert = UIAlertController(title: "Infobuk", message: "Success", preferredStyle: UIAlertController.Style.alert)
+//                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: { (action) in
                     self.expandIndexList.removeAll()
                     self.viewWillAppear(true)
-                }))
-                self.present(alert, animated: true, completion: nil)
+//                }))
+//                self.present(alert, animated: true, completion: nil)
             } else {
                 self.showAlert(msg: res.error ?? "Something went wrong. Please try again.")
             }

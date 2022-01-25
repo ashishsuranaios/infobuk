@@ -96,11 +96,11 @@ class CustomSingleTagTableViewCell: UITableViewCell {
         
         APICallManager.instance.requestForAddTagChild(param: param) { (res) in
             if res.success ?? false {
-                let alert = UIAlertController(title: "Infobuk", message: "Success", preferredStyle: UIAlertController.Style.alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: { (action) in
+//                let alert = UIAlertController(title: "Infobuk", message: "Success", preferredStyle: UIAlertController.Style.alert)
+//                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: { (action) in
                     self.parentVC?.viewWillAppear(true)
-                }))
-                self.parentVC?.present(alert, animated: true, completion: nil)
+//                }))
+//                self.parentVC?.present(alert, animated: true, completion: nil)
             } else {
                 self.parentVC?.showAlert(msg: res.error ?? "Something went wrong. Please try again.")
 
@@ -108,6 +108,7 @@ class CustomSingleTagTableViewCell: UITableViewCell {
             self.parentVC?.stopLoading()
         } onFailure: { (err) in
             self.parentVC?.stopLoading()
+            self.parentVC?.showAlert(msg:err)
 
         }
     }
