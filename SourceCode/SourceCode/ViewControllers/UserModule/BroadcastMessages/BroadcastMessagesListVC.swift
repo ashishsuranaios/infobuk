@@ -146,6 +146,10 @@ extension BroadcastMessagesListVC : UITableViewDelegate, UITableViewDataSource {
         } else {
             tblView.restore()
         }
+        if let permissionModelRec = broadcastMsgModel {
+            let newArray = broadcastMsgModel?.broadcastMessages!.sorted(by: { Int($0.id!)! < Int($1.id!)! })
+            broadcastMsgModel?.broadcastMessages = newArray
+        }
         return rowCount
     }
     

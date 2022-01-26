@@ -59,13 +59,13 @@ class SelectTagsVC: UIViewController {
                     tagGroupArray[i].isSelected = isSelected
                     var j = 0
                     for rec1 in tagGroupArray[i].valuesSorted ?? [ValuesSorted]() {
-                        tagGroupArray[i].valuesSorted?[j].isSelected = isSelected
+                        tagGroupArray[i].valuesSorted?[j].isSelected = false
                         j = j + 1
                     }
                     
                     var k = 0
                     for rec1 in displayTagGroupArray[sender.tag].valuesSorted ?? [ValuesSorted]() {
-                        displayTagGroupArray[sender.tag].valuesSorted?[k].isSelected = isSelected
+                        displayTagGroupArray[sender.tag].valuesSorted?[k].isSelected = false
                         k = k + 1
                     }
                 }
@@ -93,7 +93,13 @@ class SelectTagsVC: UIViewController {
                 }
             }
             displayTagGroupArray[sender.section].isSelected = isAllChildTagSelected
-            
+            if isAllChildTagSelected {
+                var i = 0
+                for _ in displayTagGroupArray[sender.section].valuesSorted ?? [ValuesSorted]() {
+                    displayTagGroupArray[sender.section].valuesSorted![i].isSelected = false
+                    i = i + 1
+                }
+            }
             
             var i = 0
             let strTaggrpId = displayTagGroupArray[sender.section].id ?? ""
@@ -114,6 +120,13 @@ class SelectTagsVC: UIViewController {
                                 }
                             }
                             tagGroupArray[i].isSelected = isAllChildTagSelected
+                            if isAllChildTagSelected {
+                                var k = 0
+                                for _ in tagGroupArray[i].valuesSorted ?? [ValuesSorted]() {
+                                    tagGroupArray[i].valuesSorted![k].isSelected = false
+                                    k = k + 1
+                                }
+                            }
                         }
                         j = j + 1
                     }

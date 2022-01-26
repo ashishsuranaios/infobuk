@@ -8,7 +8,7 @@
 import Foundation
 
 struct BroadcastMsgModel : Codable {
-    let broadcastMessages : [BroadcastMessages]?
+    var broadcastMessages : [BroadcastMessages]?
     let success : Bool?
     let token : String?
     let error : String?

@@ -149,6 +149,12 @@ extension CustomFieldsListVC : UITableViewDelegate, UITableViewDataSource {
         } else {
             tblView.restore()
         }
+        
+        if let permissionModelRec = customFieldsModel {
+            let newArray = customFieldsModel!.fields!.sorted(by: { Int($0.fieldId!)! < Int($1.fieldId!)! })
+            customFieldsModel!.fields = newArray
+        }
+        
         return rowCount
     }
     

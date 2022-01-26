@@ -62,7 +62,7 @@ class CustomSingleTagTableViewCell: UITableViewCell {
         let controller = parentVC?.storyboard?.instantiateViewController(withIdentifier: "AddTagsVC") as! AddTagsVC
         controller.strTitleName = "Edit tag"
         controller.type = 3
-        controller.recordEdit =  tagsModel?.categoriesAndValues?[btnEdit.tag].valuesSorted?[sender.tag]
+        controller.recordEdit =  tagsModel?.categoriesAndValues?[btnEdit.tag].values_?[sender.tag]
         controller.recordTagGroup = tagsModel?.categoriesAndValues?[btnEdit.tag]
         parentVC?.navigationController?.pushViewController(controller, animated: true)
     }
@@ -73,7 +73,7 @@ class CustomSingleTagTableViewCell: UITableViewCell {
         let controller = parentVC?.storyboard?.instantiateViewController(withIdentifier: "AddTagsVC") as! AddTagsVC
         controller.strTitleName = "Add tag"
         controller.type = 2
-        controller.recordEdit =  tagsModel?.categoriesAndValues?[btnEdit.tag].valuesSorted?[sender.tag]
+//        controller.recordEdit =  tagsModel?.categoriesAndValues?[btnEdit.tag].values_?[sender.tag]
         controller.recordTagGroup = tagsModel?.categoriesAndValues?[btnEdit.tag]
         parentVC?.navigationController?.pushViewController(controller, animated: true)
     }
@@ -92,7 +92,7 @@ class CustomSingleTagTableViewCell: UITableViewCell {
     func deleteTag (index : Int) {
         let catId =  (tagsModel?.categoriesAndValues?[btnEdit.tag].id ?? "")
 
-        let param  = [ "orgId" : "\(APP_DEL.userSelectedDict["orgId"] ?? "")","userId" : "\(APP_DEL.userSelectedDict["userId"] ?? "")","action" : "delete", "categoryId" : catId, "valueId" : tagsModel?.categoriesAndValues?[btnEdit.tag].valuesSorted?[index].id ?? ""]
+        let param  = [ "orgId" : "\(APP_DEL.userSelectedDict["orgId"] ?? "")","userId" : "\(APP_DEL.userSelectedDict["userId"] ?? "")","action" : "delete", "categoryId" : catId, "valueId" : tagsModel?.categoriesAndValues?[btnEdit.tag].values_?[index].id ?? ""]
         
         APICallManager.instance.requestForAddTagChild(param: param) { (res) in
             if res.success ?? false {
@@ -127,7 +127,7 @@ extension CustomSingleTagTableViewCell : UITableViewDelegate, UITableViewDataSou
 //
 //            }
 //        }
-        let rowCount = tagsModel?.categoriesAndValues?[btnExpandCollapse.tag].valuesSorted?.count ?? 0
+        let rowCount = tagsModel?.categoriesAndValues?[btnExpandCollapse.tag].values_?.count ?? 0
         cnstrntHeightTblView.constant = CGFloat(rowCount * 35)
         return rowCount
     }
@@ -138,7 +138,7 @@ extension CustomSingleTagTableViewCell : UITableViewDelegate, UITableViewDataSou
         customCell.btnDelete.tag = indexPath.row
         customCell.btnDelete.addTarget(self, action: #selector(btnDeleteTagGroup(_:)), for: .touchUpInside)
         customCell.btnEdit.addTarget(self, action: #selector(btnEditTagGroup(_:)), for: .touchUpInside)
-        customCell.lblTitle.text = tagsModel?.categoriesAndValues?[btnEdit.tag].valuesSorted?[indexPath.row].value ?? ""
+        customCell.lblTitle.text = tagsModel?.categoriesAndValues?[btnEdit.tag].values_?[indexPath.row].value ?? ""
         return customCell
     }
 

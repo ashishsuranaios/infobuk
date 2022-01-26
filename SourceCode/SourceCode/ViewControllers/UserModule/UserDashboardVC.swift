@@ -65,8 +65,8 @@ class UserDashboardVC: UIViewController {
     }
     
     @IBAction func btnUsersClicked(_ sender: Any) {
-        let controller = self.storyboard?.instantiateViewController(withIdentifier: "TagsListVC") as! TagsListVC
-        self.navigationController?.pushViewController(controller, animated: true)
+//        let controller = self.storyboard?.instantiateViewController(withIdentifier: "TagsListVC") as! TagsListVC
+//        self.navigationController?.pushViewController(controller, animated: true)
     }
     
     @IBAction func btnBroadCastClicked(_ sender: Any) {
@@ -75,8 +75,8 @@ class UserDashboardVC: UIViewController {
     }
     
     @IBAction func btnAppNameClicked(_ sender: Any) {
-        let controller = self.storyboard?.instantiateViewController(withIdentifier: "TagsListVC") as! TagsListVC
-        self.navigationController?.pushViewController(controller, animated: true)
+//        let controller = self.storyboard?.instantiateViewController(withIdentifier: "TagsListVC") as! TagsListVC
+//        self.navigationController?.pushViewController(controller, animated: true)
     }
     
 

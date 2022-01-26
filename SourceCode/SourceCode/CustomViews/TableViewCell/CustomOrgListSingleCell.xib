@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -30,7 +30,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="479" height="87"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="248" text="Label dsasfsdfsd" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="tob-w7-cqJ">
-                                <rect key="frame" x="25" y="8" width="314" height="71"/>
+                                <rect key="frame" x="25" y="5" width="314" height="82"/>
                                 <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="16"/>
                                 <color key="textColor" red="0.40784313729999999" green="0.43921568630000002" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -74,7 +74,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="tob-w7-cqJ" firstAttribute="top" secondItem="d26-Iq-zlI" secondAttribute="top" constant="8" id="1Nn-lf-veB"/>
+                            <constraint firstItem="tob-w7-cqJ" firstAttribute="top" secondItem="d26-Iq-zlI" secondAttribute="top" constant="5" id="1Nn-lf-veB"/>
                             <constraint firstItem="tuH-RD-Crg" firstAttribute="centerY" secondItem="d26-Iq-zlI" secondAttribute="centerY" id="1R1-qN-Amc"/>
                             <constraint firstItem="gxK-ye-adK" firstAttribute="top" secondItem="3Od-cl-2ya" secondAttribute="top" id="2RU-Xi-imU"/>
                             <constraint firstItem="yvB-c1-z9G" firstAttribute="top" secondItem="d26-Iq-zlI" secondAttribute="top" id="4Y5-GV-k4M"/>
@@ -84,7 +84,7 @@
                             <constraint firstItem="3Od-cl-2ya" firstAttribute="leading" secondItem="gxK-ye-adK" secondAttribute="trailing" constant="8" symbolic="YES" id="fYJ-Pl-Z44"/>
                             <constraint firstItem="yvB-c1-z9G" firstAttribute="leading" secondItem="d26-Iq-zlI" secondAttribute="leading" id="hHZ-DU-Zm4"/>
                             <constraint firstItem="tob-w7-cqJ" firstAttribute="leading" secondItem="d26-Iq-zlI" secondAttribute="leading" constant="25" id="jVt-2L-YqQ"/>
-                            <constraint firstAttribute="bottom" secondItem="tob-w7-cqJ" secondAttribute="bottom" constant="8" id="nS5-de-d6O"/>
+                            <constraint firstAttribute="bottom" secondItem="tob-w7-cqJ" secondAttribute="bottom" id="nS5-de-d6O"/>
                             <constraint firstItem="3Od-cl-2ya" firstAttribute="centerY" secondItem="d26-Iq-zlI" secondAttribute="centerY" id="rhs-Og-bpf"/>
                             <constraint firstAttribute="bottom" secondItem="yvB-c1-z9G" secondAttribute="bottom" id="vQe-T1-5g6"/>
                             <constraint firstItem="yvB-c1-z9G" firstAttribute="trailing" secondItem="tob-w7-cqJ" secondAttribute="trailing" id="zE5-7k-CNf"/>

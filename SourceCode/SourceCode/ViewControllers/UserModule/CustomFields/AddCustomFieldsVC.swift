@@ -155,6 +155,8 @@ class AddCustomFieldsVC: MainViewController {
                 self.view.layoutIfNeeded()
                 cnstrntHeightCollView.constant = max(collView.collectionViewLayout.collectionViewContentSize.height, 5.0)
                 self.txtFieldAddOption.text = ""
+            } else {
+                self.txtFieldAddOption.text = ""
             }
         }
     }
@@ -176,6 +178,11 @@ class AddCustomFieldsVC: MainViewController {
             self.txtFieldType.text = "Options"
             self.txtFieldAddOption.superview?.superview?.isHidden = false
             self.updateSaveButton()
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: {
+            action in
+                 // Called when user taps outside
+            alert.dismiss(animated: true, completion: nil)
         }))
         self.present(alert, animated: true, completion: nil)
     }

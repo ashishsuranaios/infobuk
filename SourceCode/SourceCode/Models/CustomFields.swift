@@ -8,7 +8,7 @@
 import Foundation
 
 struct CustomFields : Codable {
-    let fields : [Fields]?
+    var fields : [Fields]?
     let success : Bool?
     let token : String?
     let error : String?

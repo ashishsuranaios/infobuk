@@ -25,11 +25,11 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hen-3c-Szy">
                         <rect key="frame" x="5" y="3" width="107" height="34"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ejt-if-U21">
-                                <rect key="frame" x="5" y="0.0" width="97" height="34"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ejt-if-U21">
+                                <rect key="frame" x="8" y="0.0" width="94" height="34"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="XQQ-Ob-n2a">
-                                        <rect key="frame" x="0.0" y="0.0" width="68" height="34"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="70" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="cLq-9y-o2e"/>
                                         </constraints>
@@ -38,7 +38,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nMj-a3-eWq">
-                                        <rect key="frame" x="73" y="0.0" width="24" height="34"/>
+                                        <rect key="frame" x="70" y="0.0" width="24" height="34"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pKO-lc-LHt">
                                                 <rect key="frame" x="0.0" y="5" width="24" height="24"/>
@@ -66,7 +66,7 @@
                         <constraints>
                             <constraint firstItem="ejt-if-U21" firstAttribute="top" secondItem="hen-3c-Szy" secondAttribute="top" id="ael-ZY-sxu"/>
                             <constraint firstAttribute="bottom" secondItem="ejt-if-U21" secondAttribute="bottom" id="dlh-aD-0qs"/>
-                            <constraint firstItem="ejt-if-U21" firstAttribute="leading" secondItem="hen-3c-Szy" secondAttribute="leading" constant="5" id="oQS-Pm-3uG"/>
+                            <constraint firstItem="ejt-if-U21" firstAttribute="leading" secondItem="hen-3c-Szy" secondAttribute="leading" constant="8" id="oQS-Pm-3uG"/>
                             <constraint firstAttribute="trailing" secondItem="ejt-if-U21" secondAttribute="trailing" constant="5" id="rgE-OS-MnG"/>
                         </constraints>
                     </view>

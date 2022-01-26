@@ -37,7 +37,7 @@ struct TagsModel : Codable {
 struct CategoriesAndValues : Codable {
     let id : String?
     let name : String?
-    let values_ : [Values]?
+    let values_ : [ValuesSorted]?
     var valuesSorted : [ValuesSorted]?
     var isSelected = false
     var searchString : String = ""
@@ -57,7 +57,7 @@ struct CategoriesAndValues : Codable {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         id = try values.decodeIfPresent(String.self, forKey: .id)
         name = try values.decodeIfPresent(String.self, forKey: .name)
-        values_ = try values.decodeIfPresent([Values].self, forKey: .values_)
+        values_ = try values.decodeIfPresent([ValuesSorted].self, forKey: .values_)
         valuesSorted = try values.decodeIfPresent([ValuesSorted].self, forKey: .valuesSorted)
         isSelected = try values.decodeIfPresent(Bool.self, forKey: .isSelected) ?? false
         searchString = try values.decodeIfPresent(String.self, forKey: .searchString) ?? ""

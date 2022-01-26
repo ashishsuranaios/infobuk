@@ -24,8 +24,33 @@ class InfoWebviewVC: UIViewController {
     
     func setUI()  {
         lblTitle.text = strTitle
+        let htmlString = """
+        <!doctype html>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <html>
+            <head>
+                <style>
+                    body {
+                        font-size: 16px;
+                        font-family: "AmericanTypewriter"
+
+                        ...
+                    }
+                    ...
+                </style>
+            </head>
+            <body>
+                <div class="container">
+                    <div class="element">
+                        \(htmlData)
+                    </div>
+                </div>
+            </body>
+        </html>
+        """
         let headerString = "<header><meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no'></header>"
-        webView.loadHTMLString(headerString + htmlData, baseURL: nil)
+        webView.loadHTMLString(htmlString, baseURL: nil)
     }
     
     // MARK :- BUtton Action

@@ -145,6 +145,12 @@ extension TagsListVC : UITableViewDelegate, UITableViewDataSource {
         } else {
             tblView.restore()
         }
+        
+        if let tagsModelRec = tagsModel {
+            let newArray = tagsModel!.categoriesAndValues!.sorted(by: { Int($0.id!)! < Int($1.id!)! })
+            tagsModel!.categoriesAndValues = newArray
+        }
+        
         return rowCount
     }
     

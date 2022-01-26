@@ -125,12 +125,12 @@ class PermissionVC: MainViewController {
 
         APICallManager.instance.requestForPermissionList(param: param) { (res) in
             if res.success ?? false {
-                let alert = UIAlertController(title: "Infobuk", message: "Success", preferredStyle: UIAlertController.Style.alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: { (action) in
+//                let alert = UIAlertController(title: "Infobuk", message: "Success", preferredStyle: UIAlertController.Style.alert)
+//                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: { (action) in
                     self.expandIndexList.removeAll()
                     self.viewWillAppear(true)
-                }))
-                self.present(alert, animated: true, completion: nil)
+//                }))
+//                self.present(alert, animated: true, completion: nil)
             } else {
                 self.showAlert(msg: res.error ?? "Something went wrong. Please try again.")
             }
@@ -161,6 +161,10 @@ extension PermissionVC : UITableViewDelegate, UITableViewDataSource {
             tblView.setEmptyMessage("No permission found")
         } else {
             tblView.restore()
+        }
+        if let permissionModelRec = permissionModel {
+            let newArray = permissionModel!.permissions!.sorted(by: { Int($0.id!)! < Int($1.id!)! })
+            permissionModel!.permissions = newArray
         }
         return rowCount
     }

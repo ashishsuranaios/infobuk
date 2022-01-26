@@ -226,6 +226,38 @@
             endingLineNumber = "233"
             landmarkName = "btnAddTagClicked(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0CDFB925-48AE-4CAE-82D7-6BB1F2E53739 - ffeab2d17613f374"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SourceCode.AddPermissionVC.btnAddTagClicked(Any) -&gt; ()"
+                  moduleName = "SourceCode"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/Yashwant/InfoBuk/SourceCode/SourceCode/ViewControllers/UserModule/PermissionModule/AddPermissionVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "233"
+                  endingLineNumber = "233"
+                  offsetFromSymbolStart = "106">
+               </Location>
+               <Location
+                  uuid = "0CDFB925-48AE-4CAE-82D7-6BB1F2E53739 - ffeab2d17613f374"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SourceCode.AddPermissionVC.btnAddTagClicked(Any) -&gt; ()"
+                  moduleName = "SourceCode"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/Yashwant/InfoBuk/SourceCode/SourceCode/ViewControllers/UserModule/PermissionModule/AddPermissionVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "233"
+                  endingLineNumber = "233"
+                  offsetFromSymbolStart = "1045">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -258,54 +290,6 @@
             endingLineNumber = "388"
             landmarkName = "requestForCustomFieldsList(param:onSuccess:onFailure:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "80CD4F4C-B56D-490D-B673-9F9F6FC33C2D"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SourceCode/CustomViews/TableViewCell/CustomOrgListSingleCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
-            landmarkName = "btnUserClicked(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "80CD4F4C-B56D-490D-B673-9F9F6FC33C2D - edc651984811e350"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SourceCode.CustomOrgListSingleCell.btnUserClicked(__C.UIButton) -&gt; ()"
-                  moduleName = "SourceCode"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/Desktop/Yashwant/InfoBuk/SourceCode/SourceCode/CustomViews/TableViewCell/CustomOrgListSingleCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "96"
-                  endingLineNumber = "96"
-                  offsetFromSymbolStart = "1762">
-               </Location>
-               <Location
-                  uuid = "80CD4F4C-B56D-490D-B673-9F9F6FC33C2D - edc651984811e350"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SourceCode.CustomOrgListSingleCell.btnUserClicked(__C.UIButton) -&gt; ()"
-                  moduleName = "SourceCode"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/Desktop/Yashwant/InfoBuk/SourceCode/SourceCode/CustomViews/TableViewCell/CustomOrgListSingleCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "96"
-                  endingLineNumber = "96"
-                  offsetFromSymbolStart = "2686">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -368,7 +352,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "97"
                   endingLineNumber = "97"
-                  offsetFromSymbolStart = "3764">
+                  offsetFromSymbolStart = "3876">
                </Location>
                <Location
                   uuid = "0157C1CF-3EDE-4D9F-90CC-B0E7DDF15729 - 608c53f0cc7c1bbf"
@@ -466,6 +450,22 @@
                   offsetFromSymbolStart = "219">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0A8C3767-DF78-44F3-AB64-57B8B3B3028E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SourceCode/ViewControllers/SelectTagsVC/SelectTagsVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "btnTagChildSelectionClicked(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

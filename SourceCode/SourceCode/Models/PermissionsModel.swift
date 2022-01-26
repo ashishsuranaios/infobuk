@@ -10,7 +10,7 @@ import Foundation
 struct PermissionsModel : Codable {
     let success : Bool?
     let token : String?
-    let permissions : [Permission]?
+    var permissions : [Permission]?
     var error : String?
 
 

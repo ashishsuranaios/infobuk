@@ -11,6 +11,9 @@
         <array key="opensans_bold.ttf">
             <string>OpenSans-Bold</string>
         </array>
+        <array key="opensans_regular.ttf">
+            <string>OpenSans-Regular</string>
+        </array>
         <array key="opensans_semibold.ttf">
             <string>OpenSans-SemiBold</string>
         </array>
@@ -44,11 +47,11 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LvC-Ri-Ket" customClass="CustomButton" customModule="SourceCode" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="94" width="74" height="22"/>
+                                        <rect key="frame" x="10" y="94" width="77" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="22" id="GOf-kH-bMu"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                        <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="15"/>
                                         <state key="normal" title="Read More">
                                             <color key="titleColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
