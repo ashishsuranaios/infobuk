@@ -11,7 +11,6 @@ class OrganisationListVC: UIViewController {
     
     @IBOutlet weak var tblView: UITableView!
 
-
     var loginModel : [String : Any]?
     var allKeys = [String]()
     
@@ -63,6 +62,11 @@ class OrganisationListVC: UIViewController {
     // MARK :- Button action
     @IBAction func btnAddOrgClicked(_ sender: Any) {
         let controller = self.storyboard?.instantiateViewController(withIdentifier: "AddOrganisationVC") as! AddOrganisationVC
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    @IBAction func btnOrgSettingClicked(_ sender: UIButton) {
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "OrgSettingVC") as! OrgSettingVC
         self.navigationController?.pushViewController(controller, animated: true)
     }
     
@@ -174,7 +178,10 @@ extension OrganisationListVC : UITableViewDelegate, UITableViewDataSource {
         }
         customCell.parentVC = self
         customCell.btnUserClick.tag = indexPath.row
-//        customCell.btnUserClick.addTarget(self, action: #selector(btnUserClicked(_:)), for: .touchUpInside)
+        
+//        customCell.btnSetting.tag = indexPath.row
+//        customCell.btnSetting.addTarget(self, action: #selector(btnOrgSettingClicked(_:)), for: .touchUpInside)
+        
         return customCell
     }
 

@@ -53,6 +53,9 @@
                                 </constraints>
                                 <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                 <state key="normal" image="setting_icon"/>
+                                <connections>
+                                    <action selector="btnSettingClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="bVi-d5-ETj"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" text="  Standard  " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Od-cl-2ya">
                                 <rect key="frame" x="357" y="34.5" width="64" height="18"/>

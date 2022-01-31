@@ -82,6 +82,25 @@ class CustomOrgListSingleCell: UITableViewCell {
         
     }
     
+    @objc @IBAction func btnSettingClicked(_ sender: UIButton) {
+        if let usersDict = orgDict?["users"] as? [String : Any] {
+            var allKeys = Array(usersDict.keys)
+            allKeys = allKeys.sorted {$0.localizedStandardCompare($1) == .orderedAscending}
+
+            if let keyValue = allKeys[sender.tag] as? String {
+                if var userRec = usersDict[keyValue] as? [String : Any] {
+                    userRec["orgName"] = orgDict?["orgName"] ?? ""
+                    APP_DEL.userSelectedDict = userRec as! [String : String]
+                    
+                    let controller = parentVC?.storyboard?.instantiateViewController(withIdentifier: "OrgSettingVC") as! OrgSettingVC
+                    parentVC?.navigationController?.pushViewController(controller, animated: true)
+                }
+                
+            }
+        }
+        
+    }
+    
     @objc @IBAction func btnUserClicked(_ sender: UIButton) {
         
         if let usersDict = orgDict?["users"] as? [String : Any] {

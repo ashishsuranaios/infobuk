@@ -37,6 +37,7 @@
 		18AF14122780D46B00B9D774 /* BroadcastMsgSingleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AF14102780D46B00B9D774 /* BroadcastMsgSingleTableViewCell.swift */; };
 		18AF14132780D46B00B9D774 /* BroadcastMsgSingleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18AF14112780D46B00B9D774 /* BroadcastMsgSingleTableViewCell.xib */; };
 		18B36AD72776D6A600C076DA /* UserDashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B36AD62776D6A600C076DA /* UserDashboardVC.swift */; };
+		18B882FA27A577CD0014760F /* OrgSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B882F927A577CD0014760F /* OrgSettingVC.swift */; };
 		18BBBC69278016DE00558A82 /* SelectTagsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BBBC68278016DE00558A82 /* SelectTagsVC.swift */; };
 		18BBBC722780185200558A82 /* SelectionImglblTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BBBC702780185200558A82 /* SelectionImglblTableViewCell.swift */; };
 		18BBBC732780185200558A82 /* SelectionImglblTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18BBBC712780185200558A82 /* SelectionImglblTableViewCell.xib */; };
@@ -125,6 +126,7 @@
 		18AF14102780D46B00B9D774 /* BroadcastMsgSingleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroadcastMsgSingleTableViewCell.swift; sourceTree = "<group>"; };
 		18AF14112780D46B00B9D774 /* BroadcastMsgSingleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BroadcastMsgSingleTableViewCell.xib; sourceTree = "<group>"; };
 		18B36AD62776D6A600C076DA /* UserDashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDashboardVC.swift; sourceTree = "<group>"; };
+		18B882F927A577CD0014760F /* OrgSettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrgSettingVC.swift; sourceTree = "<group>"; };
 		18BBBC68278016DE00558A82 /* SelectTagsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTagsVC.swift; sourceTree = "<group>"; };
 		18BBBC702780185200558A82 /* SelectionImglblTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionImglblTableViewCell.swift; sourceTree = "<group>"; };
 		18BBBC712780185200558A82 /* SelectionImglblTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectionImglblTableViewCell.xib; sourceTree = "<group>"; };
@@ -578,6 +580,7 @@
 			children = (
 				75F083C4275900F300A4D9F8 /* OrganisationListVC.swift */,
 				18805842275D2E4B008AD317 /* AddOrganisationVC.swift */,
+				18B882F927A577CD0014760F /* OrgSettingVC.swift */,
 			);
 			path = Organisation;
 			sourceTree = "<group>";
@@ -844,6 +847,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18B882FA27A577CD0014760F /* OrgSettingVC.swift in Sources */,
 				75BBB7872755EA6700460069 /* ViewController.swift in Sources */,
 				187E7C9C277E1DDB00EE0ED7 /* CustomSelectionShowCollectionCell.swift in Sources */,
 				18744E1B278097D700088128 /* CustomFieldsListVC.swift in Sources */,

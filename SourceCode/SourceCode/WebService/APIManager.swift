@@ -30,6 +30,7 @@ class APICallManager {
         case PermissionsApi  = "actions/handlePermissions"
         case CustomFields = "actions/handleFields"
         case BroadcastMessages = "actions/manageBroadcastMessage"
+        case OrgStatusChange = "actions/changeOrgStatus"
 
     }
     
@@ -443,6 +444,47 @@ class APICallManager {
 //                        successCallback?(responseDict, responseModel)
                     } else {
                         var errorStr = responseModel?.error ?? "An error has occured."
+                        errorStr = errorStr.replacingOccurrences(of: "<br>", with: "\n")
+                        errorStr = errorStr.replacingOccurrences(of: "</br>", with: "")
+                        failureCallback?(errorStr)                    }
+                } else {
+                    failureCallback?("An error has occured.")
+                }
+        },
+            onFailure: {(errorMessage: String) -> Void in
+                failureCallback?(errorMessage)
+        }
+        )
+    }
+    
+    func requestForOrganisationStatusChanged(param : [String : String], onSuccess successCallback : ((_ countryList : LoginModel) -> Void)?, onFailure failureCallback: ((_ errorMessage : String) -> Void)?) {
+        // Build URL
+        let url = API_BASE_URL + Endpoint.OrgStatusChange.rawValue
+        let token = UserDefaults.standard.value(forKey: loginTokenLocal) as? String ?? ""
+
+        let headers: HTTPHeaders = [
+            "Content-Type": "application/x-www-form-urlencoded",
+            "Accept": "*/*",
+            "Authorization" : "Bearer \(token)"
+        ]
+        // call API
+        self.createRequest(
+            url, method: .post, headers: headers, parameters: param,
+            onSuccess: {(responseObject: JSON) -> Void in
+                // Create dictionary
+                // Convert JSON String to Model
+               
+                if let responseDict = responseObject.dictionaryObject {
+                    let t1 = (try? JSONSerialization.data(withJSONObject: responseDict, options: []))!
+                    let jsonDecoder = JSONDecoder()
+                    let responseModel = try? jsonDecoder.decode(LoginModel.self, from: t1)
+//                    let responseModel : SignUpModel = self.stringArrayToData(stringArray: responseDict) as! SignUpModel
+//                    // Fire callback
+                    if responseModel?.success ?? false && ((responseModel?.token ?? "").count > 0) {
+                        successCallback?(responseModel!)
+//                        successCallback?(responseDict, responseModel)
+                    } else {
+                        var errorStr = "An error has occured."
                         errorStr = errorStr.replacingOccurrences(of: "<br>", with: "\n")
                         errorStr = errorStr.replacingOccurrences(of: "</br>", with: "")
                         failureCallback?(errorStr)                    }

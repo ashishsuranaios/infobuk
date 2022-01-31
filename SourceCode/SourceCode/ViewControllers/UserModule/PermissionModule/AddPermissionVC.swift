@@ -36,7 +36,7 @@ class AddPermissionVC: MainViewController {
     var categorySelected  = [String]()
     var deleteCategorySelected  = [String]()
 
-    var isCanView = false
+    var isCanView = true
     var isBroadcastMsgs = false
     var isTakeAttendance = false
 
