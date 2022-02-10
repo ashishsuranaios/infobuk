@@ -47,7 +47,7 @@ class AddBroadcastMessagesVC: MainViewController {
         self.txtViewMessage.delegate = self
         self.txtFieldSubject.delegate = self
         
-        self.setUpTexxtField(textField: txtFieldSubject, errorText: "Please enter a valid name", placeHolder: "Friendly Permission Name")
+        self.setUpTexxtField(textField: txtFieldSubject, errorText: "Please enter a valid name", placeHolder: "Subject")
         self.txtViewMessage.layer.borderWidth = 1.0
         self.txtViewMessage.layer.borderColor = UIColor.lightGray.cgColor
         self.txtViewMessage.layer.cornerRadius = 8.0

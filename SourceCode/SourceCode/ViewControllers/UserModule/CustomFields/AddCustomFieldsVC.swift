@@ -97,7 +97,7 @@ class AddCustomFieldsVC: MainViewController {
             collView.reloadData()
             self.view.layoutIfNeeded()
             cnstrntHeightCollView.constant = max(collView.collectionViewLayout.collectionViewContentSize.height, 5.0)
-            imgIsUnique.image = UIImage(named: isUnique ? "checkbox_app_selected" : "checkbox_unselected")
+            imgIsUnique.image = UIImage(named: (recordEdit?.isUnique ?? "0" == "1") ? "checkbox_app_selected" : "checkbox_unselected")
 
         }
    
@@ -107,7 +107,7 @@ class AddCustomFieldsVC: MainViewController {
     }
     
     func updateSaveButton() {
-        let deadlineTime = DispatchTime.now() + .milliseconds(500)
+        let deadlineTime = DispatchTime.now() + .milliseconds(100)
         DispatchQueue.main.asyncAfter(deadline: deadlineTime) {
             if (self.txtFieldName.text?.count ?? 0 > 0) && (self.txtFieldType.text?.count ?? 0 > 0) && (self.txtFieldType.text! == "Options" ? (self.optionsArray.count > 0) : true) {
                 self.btnSave.backgroundColor = AppColor
